@@ -33,7 +33,7 @@ De uma forma geral, vamos tentar <ins>definir</ins> e <ins>caracterizar</ins> al
 
 ### 3.5.1. Node Js First Example
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1010)
+* [Node Js First Example | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1010s)
 
 * Crie pasta para o projeto e um arquivo `first_example.js` com um comando simples:
 
@@ -54,7 +54,7 @@ Welcome to Edureka
 
 ### 3.5.2. Blocking and Non-Blocking
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1050)
+* [Blocking and Non-Blocking | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1050s)
 
 * Edit `text.txt`, `blocking.js` e `non-blocking.js`
 * Run `blocking.js`
@@ -67,7 +67,7 @@ End here!
 
 ### 3.5.3. NPM - Modules, Globals and Timers
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1430)
+* [NPM Modules, Globals and Timers | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1430s)
 
 * Comandos básicos: 
   * `npm install`: instala todos os módulos do package.json; 
@@ -84,7 +84,7 @@ End here!
 
 ### 3.5.4. Filesystem
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1615)
+* [Filesystem | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1615s)
 
 * File I/O is provided by simple wrappers `fs`
 * File System functions podem ser Synchronous read ou Assynchronous
@@ -98,7 +98,7 @@ End here!
 
 ### 3.5.5. Events
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1905)
+* [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1905s)
 
 * Node.js is event-driven architecture: Certain objects (emitters) periodically emit events which further invokes the listeners
 * Node.js provide concurrency by using the concept of events and callbacks
@@ -113,7 +113,7 @@ C:\..\>node events.js
 
 ### 3.5.6. HTTP
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=1985)
+* [HTTP | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1985s)
 
 * Edit `index.html`, `http.js`
 * Run `http.js`
@@ -149,9 +149,19 @@ Welcome Edureka
 Request for /text.txt received.
 ```
 
-### 3.5.7. Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://youtu.be/JnvKXcSI7yk?t=2090)
+### 3.5.7. Data Types
+
+* [Data Types | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5012s)
+
+* **Primitive Data Types**: String, Number, Boolean, Null, Undefined
+* **Non Primitives Data Types**: Object, Date, Array
+
+
+
+### 3.5.8. Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+
+* [Hands On Node.js Project Express, jade, nano, Apache CouchDB, etc | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=2090s)
 
 * Download and install `apache-couchdb-3.3.2.msi` database from https://couchdb.apache.org/
   * Run Apache CouchDB `http://localhost:5984/_utils/index.html#login`
