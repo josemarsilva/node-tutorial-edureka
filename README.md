@@ -157,7 +157,13 @@ Request for /text.txt received.
   * Run Apache CouchDB `http://localhost:5984/_utils/index.html#login`
   * Login using same username and password for installation
   * Create a database called `adddress`
+  * Click on left tool bar icon of setup `http://localhost:5984/_utils/index.html#setup/singlenode` and setup Apache CouchDB
+    * Use login and password informed in installation
+    * Bind address the node will listen on: `0.0.0.0`, Port: `5984`
+    * Click on `Configure Node`
   * Run windows command `services.msc` and look for `Apache CouchDB` service name. Check if it is running
+  * Be sure firewall port `5984` is opened
+  * For more about Apache CouchDB see this [tutorial video](https://www.youtube.com/watch?v=nlqv9Np3iAU)
 
 
 * Create a new Node.js project folder and initialize project
@@ -214,6 +220,7 @@ C:\..\> npm install logger --save
 C:\..\> npm install json --save
 C:\..\> npm install express-session --save
 C:\..\> npm install method-override --save
+C:\..\> npm install ejs --save
 C:\..\> npm install --save
 ```
 
@@ -253,14 +260,24 @@ C:\..\> type package.json
 
 * Edit `app.js`
 * Create sub-folder(s):  `./routes` and `./views`
-  * Create/edit/configure view(s) layout(s): `./views/layout.jade` and `./views/index.jade`
-  * Create/edit/configure route(s): `./routes/index.js` e `./routes/createdb.js`
-
-* Run `app`
+* Create/edit/configure view(s) layout(s): `./views/index.jade` for default extendable pages
+* Create/edit/configure view(s) layout(s): `./views/layout.jade` for initial page with main commands: new Contact, new Database, etc
+* Create/edit/configure route(s): `./routes/index.js`
+* Create/edit/configure route(s): `./routes/createdb.js`
+* Run application
 
 ```cmd
-C:\...\node-tutorial-edureka-ha
+C:\...\node-tutorial-edureka-handson-1> node app.js
 ```
+
+* Open application on your browser
+  * `http://localhost:3000`
+* Test Application
+  * Create contacts records: `[ {"name": "Um", "phone": "1"}, {"name": "Dois", "phone": "2"}, {"name": "Tres", "phone": "3"} ]`
+  * Create database `teste`
+  * Delete record `1`
+  * View record `2`
+  
 
 
 ## I - Referências
