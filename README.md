@@ -44,8 +44,7 @@ C:\..\> cd
 C:\...\node-tutorial-edureka
 ```
 
-* Edit `first_example.js`
-* Run `first_example.js`
+* Edit `first_example.js` and Run
 
 ```cmd
 C:\..\> node first_example.js
@@ -56,8 +55,7 @@ Welcome to Edureka
 
 * [Blocking and Non-Blocking | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1050s)
 
-* Edit `text.txt`, `blocking.js` e `non-blocking.js`
-* Run `blocking.js`
+* Edit `text.txt`, `blocking.js`,  `non-blocking.js` and Run
 
 ```cmd
 C:\..\>node blocking.js
@@ -95,6 +93,15 @@ End here!
   * read(fd, buffer, offset, length, position, callback)
   * readFile(file[,options],callback)
 
+* [Filesystem exercices | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5395s)
+
+* Edit `file.txt`, `filesystem-read-write.js` and Run
+
+```cmd
+C:\..\>node filesystem-read-write.js
+```
+
+
 
 ### 3.5.5. Events
 
@@ -104,12 +111,14 @@ End here!
 * Node.js provide concurrency by using the concept of events and callbacks
 * All objects that emit events are instances of EventEmitter class
 
-* Edit `text.txt`, `events.js`
-* Run `events.js`
+* Edit `text.txt`, `events.js` and Run
 
 ```cmd
 C:\..\>node events.js
 ```
+
+* [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5625s)
+
 
 ### 3.5.6. HTTP
 
@@ -150,13 +159,32 @@ Request for /text.txt received.
 ```
 
 
-### 3.5.7. Data Types
+### 3.5.7. Data Types, Variables, Operators, Functions
 
 * [Data Types | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5012s)
 
-* **Primitive Data Types**: String, Number, Boolean, Null, Undefined
-* **Non Primitives Data Types**: Object, Date, Array
+* Primitive Data Types: `String`, `Number`, `Boolean`, `Null`, `Undefined`
+* Non Primitives Data Types: `Object`, `Date`, `Array`
+* Declare variable: `var varName = value;`
+* Operators:
+  * Arithmetic: `+`, `-`, `/`, `*`, `%`, `++`, `--`
+  * Assignment: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
+  * Conditional: `=?`
+  * Comparison: `==,` `===`, `!=`, `!==`, `>`, `>=`, `<`, `<=`
+  * Logical: `&&` (and), `||` (or), `!` (not)
+  * Bitwise: `&`, `|`, `^`, `~`, `<<`, `>>`, `>>>`
 
+* Edit `datatypes-variables-operarators-functions.js` and Run
+
+```cmd
+C:\..\>node datatypes-variables-operarators-functions.js
+```
+
+* Edit `objects.js` and run
+
+```cmd
+C:\..\>node objects.js
+```
 
 
 ### 3.5.8. Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
