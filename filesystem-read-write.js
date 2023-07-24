@@ -14,7 +14,7 @@ fs.writeFile("./hello.txt", 'Hello Node.js, How are you?', function(err){
             if(!err){
                 console.log(data.toString());
             }
-        })
+        });
     }
 
-})
+});

@@ -3,6 +3,26 @@
 Este repositório contém os artefatos do projeto / laboratório   **node-tutorial-edureka**.  Este projeto / laboratório consiste em:
 * Tutorial Node JS Full Course - Leran Nde.js in 7 hours | Node.js Tutorial for Beginners | Edureka
 
+##### Table of Contents  
+- [1. Introdução](#1-introdução)
+- [2. Documentação](#2-documentação)
+  * [2.9. Glossário de Termos (Glossary)](#29-glossário-de-termos-glossary)
+- [3. Projeto / Laboratório](#3-projeto--laboratório)
+  * [3.1. Pré-Requisitos, Pré-Condições e Premissas](#31-pré-requisitos-pré-condições-e-premissas)
+    + [3.1.1. Tecnologias e ferramentas](#311-tecnologias-e-ferramentas)
+    + [3.1.2. Ferramental de apoio](#312-ferramental-de-apoio)
+  * [3.5. Guia de Estudo](#35-guia-de-estudo)
+    + [3.5.1. ](#351-node-js-first-example) Node.js First Example
+    + [3.5.2. ](#352-blocking-and-non-blocking) Blocking and Non-Blocking
+    + [3.5.3. ](353-npm---modules-globals-and-timers) NPM - Modules, Globas and Timers
+    + [3.5.4. ](#354-filesystem) Filesystem
+    + [3.5.5. ](#355-events) Events
+    + [3.5.6. ](#356-http) HTTP
+    + [3.5.7. ](#357-data-types-variables-operators-functions) Data Types, Variables, Operators, Functions
+    + [3.5.8. ](#358-hands-on-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)  Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+
+
+
 ## 2. Documentação
 
 ### 2.9. Glossário de Termos (Glossary)
@@ -79,14 +99,21 @@ End here!
   * `setInterval(callback, delay, [...args])`
   * `setImmediate(callback, delay, [...args])`
 
+* [NPM Tutorial | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=7117s)
+
+  * Provides online repositories for packages/modules for Node.js
+  * Provides CLI
+  * Helps on incorporate pre-build packages in your project, download various standalone tools, run package without having to download it, share code betweens developers, create virtual teams to share codes, automatically update application
+
 
 ### 3.5.4. Filesystem
 
 * [Filesystem | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1615s)
+* [Filesystem | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5394s)
 
 * File I/O is provided by simple wrappers `fs`
 * File System functions podem ser Synchronous read ou Assynchronous
-* File System functions para: open, path, flags e close
+* File System functions used: open, path, flags, close, read, create, updae, delete and rename files
   * fs.open(path, flag[,mode],callback)
   * fs.openSync(path, flag[,mode])
   * fs.close(fd,callback)
@@ -106,6 +133,9 @@ C:\..\>node filesystem-read-write.js
 ### 3.5.5. Events
 
 * [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1905s)
+* [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=6000s)
+* [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5625s)
+
 
 * Node.js is event-driven architecture: Certain objects (emitters) periodically emit events which further invokes the listeners
 * Node.js provide concurrency by using the concept of events and callbacks
@@ -116,8 +146,11 @@ C:\..\>node filesystem-read-write.js
 ```cmd
 C:\..\>node events.js
 ```
+* Edit `events-emitter-listener.js` and Run and test in your browser `http://localhost:3000`
 
-* [Events | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5625s)
+```cmd
+C:\..\>node events.js
+```
 
 
 ### 3.5.6. HTTP
@@ -158,6 +191,29 @@ Welcome Edureka
 Request for /text.txt received.
 ```
 
+* [HTTP | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=6277s)
+
+* Web Application Architecture:
+  * **Client**: This layer consist of web browsers, mobile browsers or applications wich can make HTTP requests to the web server
+    * **Mobile Browser**
+    * **Web Browser**
+    * **Application**
+  * **Server**: This layer consist of web server which can intercept request made by the clients and response them
+    * **Web Server**
+  * **Business Layer**: This layer contains the application server which is utilized by the server to do the required processing. This layer interact data layer via database or external programs
+    * **Application Server**
+    * **File System**
+  * **Data Layer**: This layer contains the database or any other source of data
+    * **Database**
+    * **External System**
+
+* Edit `http-server.js`, Run `http-server.js` and Test `http://localhost:8082`
+
+```cmd
+C:\..\> node http-server.js
+```
+
+
 
 ### 3.5.7. Data Types, Variables, Operators, Functions
 
@@ -180,14 +236,45 @@ Request for /text.txt received.
 C:\..\>node datatypes-variables-operarators-functions.js
 ```
 
+* [Objects | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=5348s)
+
 * Edit `objects.js` and run
 
 ```cmd
 C:\..\>node objects.js
 ```
 
+### 3.5.8. Express
 
-### 3.5.8. Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+* [Express | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=6342s)
+
+* Express is a Node.js framework which facilitates the management of the flow of data between server and routes in the server-side applications
+  * Faster application development
+  * Provides 2 templates engines: Jade and EJS
+  * Helps in building application of single-page, muli-page and hybrid types
+  * Helps to connect any database: MySQL, Redis, MongoDB, etc
+  * Simplifies configuration and custumize applications
+  * Defines an error handling process
+
+* Install Express a **third party** library
+
+```bash
+$ npm install express
+```
+
+* Edit `express-demo.js`, `db.json`
+* Run `express-demo.js`
+
+```cmd
+C:\..\> node express-demo.js
+```
+
+* See also:
+  * https://expressjs.com/pt-br/
+  * https://www.npmjs.com/package/express
+
+
+### 3.5.9. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
 * [Hands On Node.js Project Express, jade, nano, Apache CouchDB, etc | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=2090s)
 
@@ -207,10 +294,10 @@ C:\..\>node objects.js
 * Create a new Node.js project folder and initialize project
 
 ```cmd
-C:\..\> md node-tutorial-edureka-handson-1
-C:\..\> cd node-tutorial-edureka-handson-1
-C:\..\node-tutorial-edureka-handson-1\> cd
-C:\..\node-tutorial-edureka-handson-1
+C:\..\> md node-tutorial-edureka-express-jade-nano
+C:\..\> cd node-tutorial-edureka-express-jade-nano
+C:\..\node-tutorial-edureka-express-jade-nano\> cd
+C:\..\node-tutorial-edureka-express-jade-nano
 C:\..\> npm init
 :
 package name: (tutorial-edureka-handson-1)
@@ -222,7 +309,7 @@ git repository:
 keywords:
 author: Josemar Silva
 license: (ISC)
-About to write to C:\GitHome\ws-github-03\node-tutorial-edureka-handson-1\package.json:
+About to write to C:\GitHome\ws-github-03\node-tutorial-edureka-express-jade-nano\package.json:
 :
 {
   "name": "tutorial-edureka-handson-1",
@@ -243,8 +330,8 @@ Is this OK? (yes) yes:
 * Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
 
 ```cmd
-C:\..\node-tutorial-edureka-handson-1\> cd
-C:\..\node-tutorial-edureka-handson-1
+C:\..\node-tutorial-edureka-express-jade-nano\> cd
+C:\..\node-tutorial-edureka-express-jade-nano
 C:\..\> npm install express --save
 C:\..\> npm install jade --save
 C:\..\> npm audit fix --force --save
@@ -305,7 +392,7 @@ C:\..\> type package.json
 * Run application
 
 ```cmd
-C:\...\node-tutorial-edureka-handson-1> node app.js
+C:\...\node-tutorial-edureka-express-jade-nano> node app.js
 ```
 
 * Open application on your browser
