@@ -285,8 +285,8 @@ C:\..\> node express-demo.js
 * Create a folder for handson-express
 
 ```bash
-$ mkdir nodejs-express-tutorial
-$ cd nodejs-express-tutorial
+$ mkdir node-express-tutorial
+$ cd node-express-tutorial
 ```
 
 * Run npm init and answer <enter> for each configuration item accepting defaults values
@@ -323,8 +323,33 @@ POST /
 ```
 
 
+### 3.5.10. Hands on fast-xml-parser
 
-### 3.5.10. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+* [A beginner’s guide to parse and create XML with Node.js](https://geshan.com.np/blog/2022/11/nodejs-xml-parser/#parse-xml-with-nodejs)
+
+* Create a folder for handson-express
+
+```bash
+$ mkdir node-fast-xml-parser
+$ cd node-fast-xml-parser
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+$ npm install fast-xml-parser --save
+```
+
+* Create/Copy-and-Paste sub-folder `./xml` the following files: `books.xml` and `nfe-1.xml`
+* Edit/Create `eval-fast-xml-parser.js` 
+* Run application `node server.js` and Test 
+
+
+
+### 3.5.11. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
 * [Hands On Node.js Project Express, jade, nano, Apache CouchDB, etc | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=2090s)
 
