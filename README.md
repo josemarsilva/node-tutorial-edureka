@@ -12,15 +12,17 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.1.1. Tecnologias e ferramentas](#311-tecnologias-e-ferramentas)
     + [3.1.2. Ferramental de apoio](#312-ferramental-de-apoio)
   * [3.5. Guia de Estudo](#35-guia-de-estudo)
-    + [3.5.1. ](#351-node-js-first-example) Node.js First Example
-    + [3.5.2. ](#352-blocking-and-non-blocking) Blocking and Non-Blocking
-    + [3.5.3. ](353-npm---modules-globals-and-timers) NPM - Modules, Globas and Timers
-    + [3.5.4. ](#354-filesystem) Filesystem
-    + [3.5.5. ](#355-events) Events
-    + [3.5.6. ](#356-http) HTTP
-    + [3.5.7. ](#357-data-types-variables-operators-functions) Data Types, Variables, Operators, Functions
-    + [3.5.8. ](#358-express) Express
-    + [3.5.9. ](#359-hands-on-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)  Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+    + [3.5.1. Node.js First Example](#351-node-js-first-example)
+    + [3.5.2. Blocking and Non-Blocking](#352-blocking-and-non-blocking)
+    + [3.5.3. NPM - Modules, Globas and Timers](353-npm---modules-globals-and-timers)
+    + [3.5.4. Filesystem](#354-filesystem)
+    + [3.5.5. Events](#355-events)
+    + [3.5.6. HTTP](#356-http)
+    + [3.5.7. Data Types, Variables, Operators, Functions](#357-data-types-variables-operators-functions)
+    + [3.5.8. Express](#358-express)
+    + [3.5.9. Hands on Express features, Routing and REST API](#359-hands-on-express-features-routing-and-rest-api)
+    + [3.5.10. Hands on fast-xml-parser](#3510-hands-on-fast-xml-parser)
+    + [3.5.11. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3511-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
 
 
 
