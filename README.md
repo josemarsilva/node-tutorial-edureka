@@ -19,7 +19,8 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.5. ](#355-events) Events
     + [3.5.6. ](#356-http) HTTP
     + [3.5.7. ](#357-data-types-variables-operators-functions) Data Types, Variables, Operators, Functions
-    + [3.5.8. ](#358-hands-on-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)  Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+    + [3.5.8. ](#358-express) Express
+    + [3.5.9. ](#359-hands-on-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)  Hands On Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
 
 
@@ -88,9 +89,10 @@ End here!
 * [NPM Modules, Globals and Timers | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=1430s)
 
 * Comandos básicos: 
-  * `npm install`: instala todos os módulos do package.json; 
+  * `npm install`: instala todos os módulos do `package.json`; 
   * `npm install <module-name>`: instala um módulo específico; 
   * `npm install <module-name> -g`: instala dependências globais;
+  * pasta `node_modules` contém os binários dos módulos instalados no projeto;
 * Global Objects
   * `__dirname`: diretório corrente que contém o código
   * `__filename`: nome do arquivo corrente que contém o código
@@ -103,7 +105,8 @@ End here!
 
   * Provides online repositories for packages/modules for Node.js
   * Provides CLI
-  * Helps on incorporate pre-build packages in your project, download various standalone tools, run package without having to download it, share code betweens developers, create virtual teams to share codes, automatically update application
+  * Helps on incorporate pre-build packages in your project, download various standalone tools, run package without having to download it, share code betweens developers, create virtual teams to share codes, automatically update application. Example of NPM modules: **express**, **body-parser**, **nodemon**, **babel-core**, **lodash**, **react**, **request**, **async**, etc
+
 
 
 ### 3.5.4. Filesystem
@@ -247,6 +250,7 @@ C:\..\>node objects.js
 ### 3.5.8. Express
 
 * [Express | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=6342s)
+* [Express features | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=9092s)
 
 * Express is a Node.js framework which facilitates the management of the flow of data between server and routes in the server-side applications
   * Faster application development
@@ -274,7 +278,53 @@ C:\..\> node express-demo.js
   * https://www.npmjs.com/package/express
 
 
-### 3.5.9. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+### 3.5.9. Hands on Express features, Routing and REST API
+
+* [Hands on Express features, Routing and REST API | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=9092s)
+
+* Create a folder for handson-express
+
+```bash
+$ mkdir nodejs-express-tutorial
+$ cd nodejs-express-tutorial
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+$ npm install express --save
+```
+
+* Edit/Create `server.js` - Import Express library, create application, define a default get method and run server listening port 8080
+* Run application `node server.js` and Test using browser to acess `http://localhost:8080`. Expected page content is `Hello World Express Tutorial !!! \o/`
+
+```bash
+$ node server.js
+```
+
+* Edit/Create file `server.js` - Configure Routing methods [`GET`, `POST`] and Test them.
+  * Observe result and log
+
+```bash
+$ curl http://localhost:8080
+<h1>Hello World Express Tutorial</h1> <br> You have done a <b>GET</b> successfully !!! \o/ 
+
+$ curl -X POST http://localhost:8080 -d '{"key1": "value1", "key2": "value2"}'
+<h1>Hello World Express Tutorial</h1> <br> You have done a <b>POST</b> successfully !!! \o/ 
+```
+
+```log
+Server started and running on 8080
+GET /
+POST /
+```
+
+
+
+### 3.5.10. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
 * [Hands On Node.js Project Express, jade, nano, Apache CouchDB, etc | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=2090s)
 
