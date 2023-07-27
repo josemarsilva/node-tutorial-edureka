@@ -21,8 +21,10 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.7. Data Types, Variables, Operators, Functions](#357-data-types-variables-operators-functions)
     + [3.5.8. Express](#358-express)
     + [3.5.9. Hands on Express features, Routing and REST API](#359-hands-on-express-features-routing-and-rest-api)
-    + [3.5.10. Hands on fast-xml-parser](#3510-hands-on-fast-xml-parser)
-    + [3.5.11. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3511-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
+    + [3.5.10. Hands on Express Generator](#3510-hands-on-express-generator)
+    + [3.5.11. RESTfull API](#3511-restfull-api)
+    + [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
+    + [3.5.. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3511-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
 
 
 
@@ -284,7 +286,7 @@ C:\..\> node express-demo.js
 
 * [Hands on Express features, Routing and REST API | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=9092s)
 
-* Create a folder for handson-express
+* Create a folder for hands on laboratory
 
 ```bash
 $ mkdir node-express-tutorial
@@ -324,8 +326,113 @@ GET /
 POST /
 ```
 
+### 3.5.10. Hands on Express Generator
 
-### 3.5.10. Hands on fast-xml-parser
+* [Hands on Express Generator | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=9897s)
+
+* Create a folder for hands on laboratory
+
+```bash
+$ mkdir node-express-generator-tutorial
+$ cd node-express-generator-tutorial
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+	:
+	a lot of <enter>
+	:
+$ sudo npm install express-generator -g
+```
+
+* Run Express Generator, install dependencies
+
+```bash
+$ express
+	:
+destination is not empty, continue? [y/N] y
+	:
+   create : public/
+   create : routes/
+   create : views/
+   create : app.js
+   create : package.json
+   create : bin/
+   create : bin/www
+	:
+$ npm install
+```
+
+* Start application and Test opening browser `http://localhost:3000`
+
+```bash
+npm start
+	:
+> node-express-generator-tutorial@0.0.0 start
+> node ./bin/www
+	:
+```
+
+* Observe application generated:
+  * `package.json`: key "script/start" points to "node ./bin/www"
+  * `./app.js`: main application
+  * sub-folders: 
+    * `./bin`: main program generated that runs http server;  
+	* `./public`: public and statics documents, images, styles, etc
+	* `./routes`: path routing
+	* `./views`: views in jade format
+
+
+### 3.5.11. RESTfull API
+
+* [Hands on Express Generator | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=10092s)
+
+* **REST** is **RE** presentantion of **S** tate **T** ransfer: architectural style as well approach for communications with various web services
+* Priciples of REST API: **Stateless**, **Client Server**, **Uniform Interface**, **Cacheable**, **Layered** and **Code on Demand**
+* Methods: **GET**, **POST**, **PUT** and **DELETE**
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-restfull-api-express-generator-tutorial
+$ cd node-restfull-api-express-generator-tutorial
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+	:
+	a lot of <enter>
+	:
+```
+
+* Install dependencies
+
+```bash
+$ npm install --save express
+```
+
+* Create/Edit `application.js`
+* Run application `node application.js` and Test:
+  * Test GET on `http://localhost:3000`
+    * `curl http://localhost:3000` or via browser
+  * Test GET on `http://localhost:3000/people`
+    * `curl http://localhost:3000/people` or via browser
+  * Test POST on `http://localhost:3000/people` using Postman
+    * `curl -X POST http://localhost:3000/people -d '{"name": "Josemar" }'`
+
+
+
+
+
+### 3.5.12. Hands on fast-xml-parser
 
 * [A beginner’s guide to parse and create XML with Node.js](https://geshan.com.np/blog/2022/11/nodejs-xml-parser/#parse-xml-with-nodejs)
 
@@ -351,7 +458,7 @@ $ npm install fast-xml-parser --save
 
 
 
-### 3.5.11. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
+### 3.5.99. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)
 
 * [Hands On Node.js Project Express, jade, nano, Apache CouchDB, etc | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=2090s)
 
