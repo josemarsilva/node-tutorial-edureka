@@ -25,6 +25,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.11. RESTfull API](#3511-restfull-api)
     + [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
     + [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
+    + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-node-js-and-docker)
 
 
 
@@ -586,7 +587,68 @@ C:\...\node-tutorial-edureka-express-jade-nano> node app.js
   * Create database `teste`
   * Delete record `1`
   * View record `2`
-  
+
+### 3.5.14. Hands on Node.js and Docker
+
+* [Hands on Express Generator | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=17118s)
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-docker-express-tutorial
+$ cd node-docker-express-tutorial
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+	:
+	a lot of <enter>
+	:
+```
+
+* Install dependencies
+
+```bash
+$ npm install --save express
+```
+
+* Create/Edit `app.js`
+* Run application `node app.js`
+* Test application
+  * GET on `http://localhost:3000` using curl or browser
+    * via curl: `curl http://localhost:3000`
+    * browser: url `http://localhost:3000`
+
+
+* Create/Edit `Dockerfile` and configure with Node
+  * Use DocherHub documentation `https://hub.docker.com/_/node`, look for "How to use this image
+  * Configure `Dockerfile` with best practices and official documentation sugestion
+
+* Build Docker Container image
+
+```bash
+$ docker build -t node-docker-express-tutorial .
+$ docker image ls
+REPOSITORY                    TAG     ID             CREATED         SIZE
+   :                           :       :                :             :
+node-docker-express-tutorial  latest  418785daeb07   2 minutes ago   916MB
+   :                           :       :                :             :
+```
+
+* Run Docker Container image
+
+```bash
+$ docker run -d -p 3000:3000 node-docker-express-tutorial
+```
+
+* Test application
+  * GET on `http://localhost:3000` using curl or browser observe result `Hello from Docker !`
+    * via curl: `curl http://localhost:3000`
+    * browser: url `http://localhost:3000`
 
 
 ## I - Referências
