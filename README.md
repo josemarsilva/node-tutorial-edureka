@@ -26,6 +26,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
     + [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
     + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-node-js-and-docker)
+    + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
 
 
 
@@ -345,7 +346,7 @@ $ cd node-express-generator-tutorial
 ```bash
 $ npm init
 	:
-	a lot of <enter>
+	a lot of <enter> later ...
 	:
 $ sudo npm install express-generator -g
 ```
@@ -410,7 +411,7 @@ $ cd node-restfull-api-express-generator-tutorial
 ```bash
 $ npm init
 	:
-	a lot of <enter>
+	a lot of <enter> later ...
 	:
 ```
 
@@ -478,86 +479,59 @@ $ npm install fast-xml-parser --save
 
 * Create a new Node.js project folder and initialize project
 
-```cmd
-C:\..\> md node-tutorial-edureka-express-jade-nano
-C:\..\> cd node-tutorial-edureka-express-jade-nano
-C:\..\node-tutorial-edureka-express-jade-nano\> cd
-C:\..\node-tutorial-edureka-express-jade-nano
-C:\..\> npm init
-:
-package name: (tutorial-edureka-handson-1)
-version: (1.0.0)
-description:
-entry point: (index.js) app.js
-test command:
-git repository:
-keywords:
-author: Josemar Silva
-license: (ISC)
-About to write to C:\GitHome\ws-github-03\node-tutorial-edureka-express-jade-nano\package.json:
-:
-{
-  "name": "tutorial-edureka-handson-1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Josemar Silva",
-  "license": "ISC"
-}
-:
-Is this OK? (yes) yes:
-:
+```bash
+$ mkdir node-express-jade-nano-coachdb
+$ cd node-express-jade-nano-coachdb
+$ npm init
+  :
+  a lot of <enter> later ...
+  :
 ```
 
 * Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
 
 ```cmd
-C:\..\node-tutorial-edureka-express-jade-nano\> cd
-C:\..\node-tutorial-edureka-express-jade-nano
-C:\..\> npm install express --save
-C:\..\> npm install jade --save
-C:\..\> npm audit fix --force --save
-C:\..\> npm install nano --save
-C:\..\> npm audit fix --force --save
-C:\..\> npm install body-parser --save
-C:\..\> npm install errorhandler --save
-C:\..\> npm install url --save
-C:\..\> npm install serve-favicon --save
-C:\..\> npm install logger --save
-C:\..\> npm install json --save
-C:\..\> npm install express-session --save
-C:\..\> npm install method-override --save
-C:\..\> npm install ejs --save
-C:\..\> npm install --save
+$ npm install express --save
+$ npm install jade --save
+$ npm install nano --save
+$ npm install body-parser --save
+$ npm install errorhandler --save
+$ npm install url --save
+$ npm install serve-favicon --save
+$ npm install logger --save
+$ npm install json --save
+$ npm install express-session --save
+$ npm install method-override --save
+$ npm install ejs --save
+$ npm install --save
+$ npm audit fix --force
 ```
 
-```cmd
-C:\..\> dir
-    :         :        :                :
-19/07/2023  21:34    <DIR>          node_modules
-19/07/2023  21:34            36.326 package-lock.json
-19/07/2023  21:34               523 package.json
-    :         :        :                :
-C:\..\> type package.json
+```bash
+$ ls -la 
+     :            :             :         :   :  :    :
+drwxrwxrwx 1 josemarsilva josemarsilva   512 Jul 27 17:44 node_modules
+-rwxrwxrwx 1 josemarsilva josemarsilva 46416 Jul 27 17:44 package-lock.json
+-rwxrwxrwx 1 josemarsilva josemarsilva   565 Jul 27 17:44 package.json
+     :            :             :         :   :  :    :
+$ cat package.json
 {
-  "name": "tutorial-edureka-handson-1",
+  "name": "express-jade-nano-coachdb",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Josemar Silva",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
     "errorhandler": "^1.5.1",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "jade": "^0.29.0",
+    "jade": "^0.31.2",
     "json": "^11.0.0",
     "logger": "^0.0.1",
     "method-override": "^3.0.0",
@@ -576,8 +550,8 @@ C:\..\> type package.json
 * Create/edit/configure route(s): `./routes/createdb.js`
 * Run application
 
-```cmd
-C:\...\node-tutorial-edureka-express-jade-nano> node app.js
+```bash
+$ node app.js
 ```
 
 * Open application on your browser
@@ -587,6 +561,7 @@ C:\...\node-tutorial-edureka-express-jade-nano> node app.js
   * Create database `teste`
   * Delete record `1`
   * View record `2`
+
 
 ### 3.5.14. Hands on Node.js and Docker
 
@@ -606,7 +581,7 @@ $ cd node-docker-express-tutorial
 ```bash
 $ npm init
 	:
-	a lot of <enter>
+	a lot of <enter> later ...
 	:
 ```
 
@@ -649,6 +624,104 @@ $ docker run -d -p 3000:3000 node-docker-express-tutorial
   * GET on `http://localhost:3000` using curl or browser observe result `Hello from Docker !`
     * via curl: `curl http://localhost:3000`
     * browser: url `http://localhost:3000`
+
+
+### 3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial
+
+* [Hands on Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=17918s)
+
+* Melhor laboratório de Node.js, mongoDB, Angular
+* What is Mean?
+  * Mongodb, Express, Angular and Node.js application
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-express-mongodb-angular-tutorial
+$ cd node-express-mongodb-angular-tutorial
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init
+	:
+	a lot of <enter> later ...
+	:
+```
+
+* Install dependencies
+
+```bash
+$ npm install express --save
+$ npm install mongoose cors body-parser --save
+$ # npm install nodemon --save
+```
+
+* Create/Edit `app.js`
+* Run application `node app.js`
+* Test application
+  * GET on `http://localhost:3000` using curl or browser
+    * via curl: `curl http://localhost:3000`
+    * browser: url `http://localhost:3000`
+    * expected return is `Hello !!!`
+  * GET on `http://localhost:3000/api/contacts` using curl or browser
+    * via curl: `curl http://localhost:3000/api/contacts`
+    * browser: url `http://localhost:3000/api/contacts`
+    * expected return is `Retrieving the contact list`
+
+* Create sub-folder routes `./routes` and Create/Edit routes files `./routes/route.js`
+* Create sub-folder routes `./public` and Create/Edit routes files `./public/index.html`
+* Create sub-folder routes `./models` and Create/Edit routes files `./models/contacts.js`
+* Edit `./routes/route.js` and implement contact schema, post and delete method 
+
+* Run mongoDB container
+
+```bash
+$ docker run -d -p 27017:27017 --name node-express-mongodb-angular-tutorial -e MONGO_INITDB_ROOT_USERNAME=mongouser -e MONGO_INITDB_ROOT_PASSWORD=mongopassword mongo
+```
+
+* Edit `app.js` and implement connection to mongodb database
+* Run application `node app.js` expected console log messages are:
+
+```log
+Server started listening port 3000
+Connected to database mongodb @ localhost:27017`
+```
+
+* Test application
+  * GET on `http://localhost:3000` using curl or browser or postman
+    * via curl: `curl http://localhost:3000`
+    * browser: url `http://localhost:3000`
+    * expected return is `Hello !!!`
+  * GET on `http://localhost:3000/api/contacts` using curl or browser or postman
+    * via curl: `curl http://localhost:3000/api/contacts`
+    * browser: url `http://localhost:3000/api/contacts`
+    * expected return is `Retrieving the contact list`
+  * POST on `http://localhost:3000/api/contact` using postman
+    * url: `http://localhost:3000/api/contact`
+    * body: `{ "first_name": "Bruce", "last_name": "Wayne", "phone": "(11)9191-9191" }`
+    * expected return is 
+  * GET on `http://localhost:3000/api/contacts` using curl or browser or postman
+    * via curl: `curl http://localhost:3000/api/contacts`
+    * browser: url `http://localhost:3000/api/contacts`
+    * expected return is
+
+```json
+[
+  {
+    "_id": "1a2b3c4d5e6f7g8h9i0j",
+    "first_name": "Bruce",
+    "last_name": "Wayne",
+    "phone": "(11)9191-9191"
+  }
+]
+```
+
+* [Hands on Angular and Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=20520s)
+
 
 
 ## I - Referências
