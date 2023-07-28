@@ -1,4 +1,4 @@
-// required modules
+// Required modules
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
@@ -9,14 +9,28 @@ var app = express();
 
 const route = require('./routes/route');
 
-// connect to mongodb
-mongoose.connect('mongodb://localhost:27017/contactlist');
+// Connect to mongodb
+const mongodbUsername = encodeURIComponent('mongouser');
+const mongodbPassword = encodeURIComponent('mongopassword');
+const mongodbHost = '127.0.0.1';
+const mongodbPort = '27017';
+const mongodbDatabase = 'contactlist';
+const mongodbAuthMechanism = 'DEFAULT'; // Use "DEFAULT" if not using LDAP
+const mongodbConnectionString = `mongodb://${mongodbUsername}:${mongodbPassword}@${mongodbHost}:${mongodbPort}/${mongodbDatabase}?authMechanism=${mongodbAuthMechanism}`;
 
-// on connection
+mongoose.connect(mongodbConnectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    authSource: 'admin' // The authSource should be set to the database where the user is defined (usually "admin")  
+  });
+
+
+// On connection connected
 mongoose.connection.on('connected',()=> {
-    console.log('Connected to database mongodb @ localhost:27017')
+    console.log('Connected to database ' + `mongodb://${mongodbUsername}@${mongodbHost}:${mongodbPort}/${mongodbDatabase}?authMechanism=${mongodbAuthMechanism}`)
 });
 
+// On connection error
 mongoose.connection.on('error',(err)=>{
     if(err){
         console.log('Error in Database connection');
@@ -28,20 +42,19 @@ app.get('/', (req,res)=>{
     res.send('Hello !!!');
 });
 
-// add middleware - cors
+// Add middleware - cors
 app.use(cors());
 
-// body - parser
+// Use body - parser
 app.use(bodyparser.json());
 
-// static files
+// Use static files
 app.use(express.static(path.join(__dirname,'public')));
 
-// routes
+// Use routes
 app.use('/api', route);
 
-// start listening
-const port = 3000;
-app.listen(port,()=>{
-    console.log('Server started listening port ' + port);
+// Start server listening
+app.listen(3000,()=>{
+    console.log('Server started listening port 3000');
 });

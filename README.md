@@ -699,26 +699,57 @@ Connected to database mongodb @ localhost:27017`
   * GET on `http://localhost:3000/api/contacts` using curl or browser or postman
     * via curl: `curl http://localhost:3000/api/contacts`
     * browser: url `http://localhost:3000/api/contacts`
-    * expected return is `Retrieving the contact list`
+    * expected return message is `Retrieving the contact list`
   * POST on `http://localhost:3000/api/contact` using postman
     * url: `http://localhost:3000/api/contact`
-    * body: `{ "first_name": "Bruce", "last_name": "Wayne", "phone": "(11)9191-9191" }`
-    * expected return is 
+    * body (JSON): `{ "first_name": "Bruce", "last_name": "Wayne", "phone": "(11)9191-9191" }`
+    * expected return message:
+
+```json
+{
+    "msg": "Contact added successfully",
+    "contact": {
+        "first_name": "Bruce",
+        "last_name": "Wayne",
+        "phone": "(11)9191-9191",
+        "_id": "64c2f9dfecc7e7bf42f9853c"
+    }
+}
+```
+
+* Test application
   * GET on `http://localhost:3000/api/contacts` using curl or browser or postman
     * via curl: `curl http://localhost:3000/api/contacts`
     * browser: url `http://localhost:3000/api/contacts`
-    * expected return is
+    * expected return message is:
 
 ```json
 [
-  {
-    "_id": "1a2b3c4d5e6f7g8h9i0j",
-    "first_name": "Bruce",
-    "last_name": "Wayne",
-    "phone": "(11)9191-9191"
-  }
+    {
+        "_id": "64c2f1b5966a30c5722e220f",
+        "first_name": "Bruce",
+        "last_name": "Wayne",
+        "phone": "(11)9191-9191",
+        "__v": 0
+    },
+    {
+        "_id": "64c2f9dfecc7e7bf42f9853c",
+        "first_name": "Bruce",
+        "last_name": "Wayne",
+        "phone": "(11)9191-9191",
+        "__v": 0
+    }
 ]
 ```
+
+* Test application
+  * DELETE on `http://localhost:3000/api/contact/64c2f1b5966a30c5722e220f` using postman
+    * expected return message:
+
+```json
+{"msg":"Contact deleted successfully"}
+```
+
 
 * [Hands on Angular and Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=20520s)
 
