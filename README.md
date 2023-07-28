@@ -27,6 +27,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
     + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-node-js-and-docker)
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
+    + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
 
 
 
@@ -826,6 +827,60 @@ $ ng g service contact
   * Edit file `./src/app/contact.ts` and define class and attributes using `?` for optionals
   * Edit file `./src/app/contact.service.ts` and import {Http, Headeres} and implement {get, add, delete}
   * Edit file `./src/app/contacts/contacts.component.ts`, import { ContactService, Contact }, declare variables { `contacts`, `contact`, `first_name`, `last_name`, `phone`}, create a `constructor()` and define a `ngOnInit()` 
+
+
+
+### 3.5.16. Angular and RxJS
+
+* Angular
+  * 
+* RXJS
+  * [Learn RxJS Angular, RxJS pipe, async pipe, RxJS observables, Behaviorsubject, Combinelatest](https://www.youtube.com/watch?v=2T3F5TfrYwI)
+  * [Behaviorsubject vs Subject rxjs - What to Use?](https://www.youtube.com/watch?v=TFXpoabwBfU)
+  
+Angular provides several lifecycle hooks that allow you to tap into different stages of a component's lifecycle. These hooks are methods that you can implement in your component class to execute custom logic at specific points in the component's lifecycle. Here are the Angular lifecycle hooks and when they should be used:
+* `ngOnChanges()`: This hook is called when one or more input properties (@Input) of the component change. It receives a SimpleChanges object that provides information about the changes. 
+  * Use this hook to respond to changes in input properties and perform any necessary actions based on the new values.
+* `ngOnInit()`: This hook is called once after Angular has initialized the component and set up the data-bound properties. It is commonly used for initialization tasks such as initializing variables, subscribing to Observables, or fetching initial data. 
+  * Use this hook to perform any setup logic that needs to happen before rendering the component.
+* `ngDoCheck()`: This hook is called during every change detection cycle. It allows you to perform custom change detection and respond to changes that Angular doesn't detect automatically. 
+  * Use this hook with caution, as it can impact performance if not used properly. It is generally recommended to rely on Angular's default change detection mechanism.
+* `ngAfterContentInit()`: This hook is called after Angular has projected external content into the component's view. It is used when a component has projected content using the <ng-content> directive. 
+  * Use this hook to perform initialization logic that relies on the content projected into the component.
+* `ngAfterContentChecked()`: This hook is called after Angular has checked the projected content for any changes. It is called after every change detection cycle that includes the projected content. 
+  * Use this hook when you need to perform custom logic after Angular has checked the projected content.
+* `ngAfterViewInit()`: This hook is called after Angular has fully initialized the component's view and its child views (if any). It is commonly used for initialization tasks that require access to the component's view or interacting with child components. 
+  * Use this hook to perform any setup logic that relies on the component's view hierarchy.
+* `ngAfterViewChecked()`: This hook is called after Angular has checked the component's view and its child views for any changes. It is called after every change detection cycle that includes the component's view. 
+  * Use this hook when you need to perform custom logic after Angular has checked the component's view.
+* `ngOnDestroy()`: This hook is called just before Angular destroys the component and cleans up resources. It is used to perform cleanup tasks such as unsubscribing from Observables or releasing any resources held by the component. 
+  * Use this hook to release resources and prevent memory leaks.
+
+These are the primary lifecycle hooks provided by Angular. Each hook serves a specific purpose and allows you to integrate custom logic at different stages of a component's lifecycle. By understanding and leveraging these hooks, you can control the behavior and perform necessary actions at the appropriate points in your component's lifecycle.
+
+In Angular, a component goes through a series of lifecycle stages from its creation to its destruction. The lifecycle of a component can be divided into several distinct phases, each with its corresponding lifecycle hooks. Here is an overview of the lifecycle stages of an Angular component:
+
+* **Creation**:
+  * `constructor()`: The component's constructor is called when the component is instantiated. It is used for basic initialization and dependency injection setup.
+* **Initialization**:
+  * `ngOnChanges()`: This hook is called when one or more input properties (@Input) of the component change. It allows you to respond to changes in input properties.
+  * `ngOnInit()`: This hook is called after Angular has initialized the component's data-bound properties (@Input) and before the first change detection cycle. It is commonly used for initialization tasks.
+* **Content Projection**:
+  * `ngAfterContentInit()`: This hook is called after Angular has projected external content into the component's view using the <ng-content> directive. It allows you to perform initialization logic that relies on the projected content.
+  * `ngAfterContentChecked()`: This hook is called after Angular has checked the projected content for any changes. It is called after every change detection cycle that includes the projected content.
+* **View Initialization**:
+  * `ngAfterViewInit()`: This hook is called after Angular has fully initialized the component's view and its child views (if any). It is commonly used for initialization tasks that require access to the component's view hierarchy.
+  * `ngAfterViewChecked()`: This hook is called after Angular has checked the component's view and its child views for any changes. It is called after every change detection cycle that includes the component's view.
+* **Component Update**:
+  * `ngOnChanges()`: This hook is called again when input properties change after the component has been initialized. It allows you to respond to subsequent changes in input properties.
+  * `ngDoCheck()`: This hook is called during every change detection cycle and allows you to perform custom change detection and respond to changes that Angular doesn't detect automatically.
+* **Destruction**:
+  * `ngOnDestroy()`: This hook is called just before Angular destroys the component and cleans up resources. It is used for cleanup tasks such as unsubscribing from Observables or releasing any resources held by the component.
+
+Throughout these lifecycle stages, Angular performs change detection to detect and update bindings between the component and its templates. The lifecycle hooks provide opportunities to tap into these stages and execute custom logic as needed.
+
+It's important to note that these lifecycle stages apply to Angular components and may differ for other Angular constructs like directives or services. Understanding the component lifecycle is crucial for implementing proper initialization, cleanup, and responding to changes in Angular components.
+
 
 
 
