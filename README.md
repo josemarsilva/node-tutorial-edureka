@@ -28,6 +28,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-node-js-and-docker)
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
+    + [3.5.17. Selenium WebDriver ChromeDriver](#3517-selenium-webdriver-chromedriver)
 
 
 
@@ -896,6 +897,20 @@ Throughout these lifecycle stages, Angular performs change detection to detect a
 It's important to note that these lifecycle stages apply to Angular components and may differ for other Angular constructs like directives or services. Understanding the component lifecycle is crucial for implementing proper initialization, cleanup, and responding to changes in Angular components.
 
 
+### 3.5.17. Selenium WebDriver ChromeDriver
+
+* [NodeJs e Selenium, como automatizar suas tarefas.](https://www.youtube.com/watch?v=-9TP-8BocdA)
+
+* Create folder for project, init npm and install dependencies
+
+```bash
+$ mkdir node-selenium-webdriver
+$ cd mkdir node-selenium-webdriver
+$ npm init
+$ npm install selenium-webdriver --save
+$ npm install chromedriver --save
+
+```
 
 
 ## I - Referências
