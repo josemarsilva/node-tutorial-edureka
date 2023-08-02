@@ -629,6 +629,8 @@ $ docker run -d -p 3000:3000 node-docker-express-tutorial
 
 ### 3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial
 
+#### a. API
+
 * [Hands on Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=17918s)
 
 * Melhor laboratório de Node.js, mongoDB, Angular
@@ -751,6 +753,7 @@ Connected to database mongodb @ localhost:27017`
 {"msg":"Contact deleted successfully"}
 ```
 
+#### b. Angular
 
 * [What is Angular | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=18073s)
 * [Hands on Angular and Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=20520s)
@@ -779,8 +782,14 @@ $ npx ng new client
 
 ```bash
 $ cd ./client
-$ npm start 
-$ ng serve
+$ pwd
+ ... /node-tutorial-edureka/node-express-mongodb-angular-tutorial/client
+$ echo 'To run app you can use "npm start" or "ng serve"'
+$ npm start
+   :
+Generating browser application bundles (phase: setup)...
+   :
+Generating browser application bundles (phase: building)...
    :
 ✔ Compiled successfully.
 ```
@@ -822,18 +831,23 @@ For more information, see https://angular.io/cli/.
 $ ng g component contacts
 $ ng g service contact
 ```
-
+* Create sub-folder's: `../client/src/app/model`, `./src/app/services`
 * Create/Edit manually a **new schema** for component **contact**
-  * Edit file `./src/app/contact.ts` and define class and attributes using `?` for optionals
-  * Edit file `./src/app/contact.service.ts` and import {Http, Headeres} and implement {get, add, delete}
+  * Edit file `./src/app/model/contact.ts` and define class and attributes using `?` for optionals
+  * Edit file `./src/app/services/contact.service.ts` and import {Http, Headeres} and implement {get, add, delete}
   * Edit file `./src/app/contacts/contacts.component.ts`, import { ContactService, Contact }, declare variables { `contacts`, `contact`, `first_name`, `last_name`, `phone`}, create a `constructor()` and define a `ngOnInit()` 
+  * Edit file `./src/app/contacts/contacts.component.css`, 
+    * Use `http://bootswatch.com` to prototype and choose one template html. Ex: Darkly
+  * Edit file `./src/app/contacts/contacts.component.html`, 
+    * Write `ng*` loop code to print dinamically all contacts
 
 
 
 ### 3.5.16. Angular and RxJS
 
 * Angular
-  * 
+  * [Angular Course Online Free - Tutorial for Beginners](https://www.youtube.com/watch?v=N4MF3mDPFww&list=PLEjh-YiSBCDLC_zhXQ2J5SkHrLHdmV8qc)
+  * [Angular Full Course - Learn Angular in 6 Hours | Angular Tutorial For Beginners | Edureka](https://www.youtube.com/watch?v=Ati-oip_HcU)
 * RXJS
   * [Learn RxJS Angular, RxJS pipe, async pipe, RxJS observables, Behaviorsubject, Combinelatest](https://www.youtube.com/watch?v=2T3F5TfrYwI)
   * [Behaviorsubject vs Subject rxjs - What to Use?](https://www.youtube.com/watch?v=TFXpoabwBfU)
