@@ -34,9 +34,11 @@ async function mainScript() {
       await inputTextSearch.sendKeys("Hello, World!", Key.RETURN);
 
       // Wait for the search results to load (just for demonstration purposes)
+      console.log('Waiting until title page ... ');
       await driver.wait(until.titleContains("Hello, World!"), 5000);
 
       // Sleep 
+      console.log('Sleeping ... ');
       sleep(10);
 
     
