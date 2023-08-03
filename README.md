@@ -899,19 +899,23 @@ It's important to note that these lifecycle stages apply to Angular components a
 
 ### 3.5.17. Selenium WebDriver ChromeDriver
 
+* [Introduction to WebDriverJS — Selenium WebDriver for Node.js](https://www.youtube.com/watch?v=X3pTXG9a1oQ&list=PLt1BzgDPWET4m4c4hrOZe--apdA6P2WoA)
 * [NodeJs e Selenium, como automatizar suas tarefas.](https://www.youtube.com/watch?v=-9TP-8BocdA)
 
 * Create folder for project, init npm and install dependencies
+* Download Chrome driver from https://chromedriver.chromium.org/downloads into `./chromedriver`
 
 ```bash
 $ mkdir node-selenium-webdriver
 $ cd mkdir node-selenium-webdriver
+$ mkdir chromedriver
+$ echo chromedriver > .gitignore
 $ npm init
 $ npm install selenium-webdriver --save
 $ npm install chromedriver --save
-
 ```
 
+* Create/Edit `index.js`
 
 ## I - Referências
 

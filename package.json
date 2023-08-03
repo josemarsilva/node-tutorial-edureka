@@ -1,4 +1,24 @@
 {
+  "name": "study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "first_example.js",
+  "scripts": {
+    "start_blocking": "node blocking.js",
+    "start_datatypes-variables-operarators-functions": "node datatypes-variables-operarators-functions.js",
+    "start_events-emitter-listener.js": "node events-emitter-listener.js",
+    "start_events.js": "node events.js",
+    "start_express-demo.js": "node express-demo.js",
+    "start_filesystem-read-write.js": "node filesystem-read-write.js",
+    "start_first_example.js": "node first_example.js",
+    "start_http-server.js": "node http-server.js",
+    "start_http.js": "node http.js",
+    "start_non-blocking.js": "node non-blocking.js",
+    "start_objects.js": "node objects.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "fast-xml-parser": "^4.2.6",
