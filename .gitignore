@@ -1,3 +1,6 @@
+# Custom Project
+chromedriver/*
+
 # Logs
 logs
 *.log
