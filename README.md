@@ -28,7 +28,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-node-js-and-docker)
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
-    + [3.5.17. Selenium WebDriver ChromeDriver](#3517-selenium-webdriver-chromedriver)
+    + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-handson-on-node-js-selenium-webdriver-chromedriver)
 
 
 
@@ -897,7 +897,7 @@ Throughout these lifecycle stages, Angular performs change detection to detect a
 It's important to note that these lifecycle stages apply to Angular components and may differ for other Angular constructs like directives or services. Understanding the component lifecycle is crucial for implementing proper initialization, cleanup, and responding to changes in Angular components.
 
 
-### 3.5.17. Selenium WebDriver ChromeDriver
+### 3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver
 
 * [Introduction to WebDriverJS — Selenium WebDriver for Node.js](https://www.youtube.com/watch?v=X3pTXG9a1oQ&list=PLt1BzgDPWET4m4c4hrOZe--apdA6P2WoA)
 * [NodeJs e Selenium, como automatizar suas tarefas.](https://www.youtube.com/watch?v=-9TP-8BocdA)
@@ -907,7 +907,26 @@ It's important to note that these lifecycle stages apply to Angular components a
 
 ```bash
 $ mkdir node-selenium-webdriver
-$ cd mkdir node-selenium-webdriver
+$ mkdir chromedriver
+$ echo chromedriver > .gitignore
+$ cd node-selenium-webdriver
+$ npm init
+$ npm install selenium-webdriver --save
+$ npm install chromedriver --save
+```
+
+* Create/Edit `index.js`
+
+### 3.5.18. Hands on Node.js Cucumber Selenium 
+
+* [How to - Cucumber & Selenium with Node JS](https://www.youtube.com/watch?v=bsGr6xjZ0mY)
+
+* Create folder for project, init npm and install dependencies
+* Download Chrome driver from https://chromedriver.chromium.org/downloads into `./chromedriver`
+
+```bash
+$ mkdir node-cucumber-selenium
+$ cd node-cucumber-selenium
 $ mkdir chromedriver
 $ echo chromedriver > .gitignore
 $ npm init

@@ -1,12 +1,12 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const { Select } = require('selenium-webdriver/lib/webdriver');
+const chromeDriverPath = 'C:\\GitHome\\ws-github-03\\study-node\\chromedriver\\chrome-win64';
 
 // mainScript()
 async function mainScript() {
   // Set up the Chrome driver with the correct binary path
   const options = new chrome.Options();
-  const chromeDriverPath = 'C:\\GitHome\\ws-github-03\\study-node\\node-selenium-webdriver\\chromedriver\\chrome-win64';
   options.setChromeBinaryPath(chromeDriverPath);
 
   // Set the path to ChromeDriver executable
