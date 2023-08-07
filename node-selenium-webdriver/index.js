@@ -1,6 +1,9 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const { Select } = require('selenium-webdriver/lib/webdriver');
+
+
+// Set up chromeDriverPath
 const chromeDriverPath = 'C:\\GitHome\\ws-github-03\\study-node\\chromedriver\\chrome-win64';
 
 // mainScript()
