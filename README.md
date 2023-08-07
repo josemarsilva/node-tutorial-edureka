@@ -302,7 +302,7 @@ $ cd node-express-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
+$ npm init -y # a lot of <enter>
 $ npm install express --save
 ```
 
@@ -346,10 +346,7 @@ $ cd node-express-generator-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
-	:
-	a lot of <enter> later ...
-	:
+$ npm init -y # a lot of <enter>
 $ sudo npm install express-generator -g
 ```
 
@@ -411,10 +408,7 @@ $ cd node-restfull-api-express-generator-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
-	:
-	a lot of <enter> later ...
-	:
+$ npm init -y # a lot of <enter>
 ```
 
 * Install dependencies
@@ -452,7 +446,7 @@ $ cd node-fast-xml-parser
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
+$ npm init -y # a lot of <enter>
 $ npm install fast-xml-parser --save
 ```
 
@@ -484,10 +478,7 @@ $ npm install fast-xml-parser --save
 ```bash
 $ mkdir node-express-jade-nano-coachdb
 $ cd node-express-jade-nano-coachdb
-$ npm init
-  :
-  a lot of <enter> later ...
-  :
+$ npm init -y # a lot of <enter>
 ```
 
 * Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
@@ -581,10 +572,7 @@ $ cd node-docker-express-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
-	:
-	a lot of <enter> later ...
-	:
+$ npm init -y # a lot of <enter>
 ```
 
 * Install dependencies
@@ -650,10 +638,7 @@ $ cd node-express-mongodb-angular-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init
-	:
-	a lot of <enter> later ...
-	:
+$ npm init -y # a lot of <enter>
 ```
 
 * Install dependencies
@@ -908,9 +893,9 @@ It's important to note that these lifecycle stages apply to Angular components a
 ```bash
 $ mkdir node-selenium-webdriver
 $ mkdir chromedriver
-$ echo chromedriver > .gitignore
+$ echo chromedriver >> .gitignore
 $ cd node-selenium-webdriver
-$ npm init
+$ npm init -y # a lot of <enter>
 $ npm install selenium-webdriver --save
 $ npm install chromedriver --save
 ```
@@ -920,6 +905,11 @@ $ npm install chromedriver --save
 ### 3.5.18. Hands on Node.js Cucumber Selenium 
 
 * [How to - Cucumber & Selenium with Node JS](https://www.youtube.com/watch?v=bsGr6xjZ0mY)
+* [Selenium cucumber javascript combined](https://www.youtube.com/watch?v=C7cSKtnovEo)
+* [Cucumber Official Documentation](https://cucumber.io/)
+* [npm chai](https://www.npmjs.com/package/chai)
+* [npm pretty-format](https://www.npmjs.com/package/pretty-format)
+* [npm selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
 
 * Create folder for project, init npm and install dependencies
 * Download Chrome driver from https://chromedriver.chromium.org/downloads into `./chromedriver`
@@ -927,14 +917,67 @@ $ npm install chromedriver --save
 ```bash
 $ mkdir node-cucumber-selenium
 $ cd node-cucumber-selenium
-$ mkdir chromedriver
-$ echo chromedriver > .gitignore
-$ npm init
+$ npm init -y # a lot of <enter>
+$ npm install @cucumber/cucumber --save
+$ npm install chai --save
+$ npm install pretty-format --save
 $ npm install selenium-webdriver --save
 $ npm install chromedriver --save
+$ mkdir chromedriver
+$ echo chromedriver >> .gitignore
 ```
 
-* Create/Edit `index.js`
+* Create a folder to store features files for cucumber, support files and common stpes files:
+
+```bash
+$ mkdir features
+$ mkdir features/step-definitions
+```
+
+* Criar a estrutura de uma feature simples:
+  * Create/Edit a features files with extension (.feature) `autenticar-acesso-e-login-financer.feature`
+  * Create/Edit a **given** steps files with extension (.js) `./features/step-definitions/given-autenticar-acesso-e-login.js`
+  * Create/Edit a **when** steps files with extension (.js) `./features/step-definitions/when-autenticar-acesso-e-login.js`
+  * Create/Edit a **then** steps files with extension (.js) `./features/step-definitions/then-autenticar-acesso-e-login.js`
+* Configurar o script de teste em `package.json` para executar a(s) features do cucumber:
+
+```package.json
+  :
+"scripts": {
+  "test": "./node_modules/.bin/cucumber-js",
+  "test_pretty_formatter": "./node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter"
+}
+  : 
+```
+
+* Executar(run) a feature simples criada e observar o resultado  no console: `./node_modules/.bin/cucumber-js` ou `npm run test`
+
+```console
+Before - Autenticar credenciais acessar o sistema
+.Acessar o sistema pela url no ambiente desejado || url= https://frontend.hml.seuativo.com.br/
+.Autenticar credenciais acessar o sistema || login= josemarsilva@inmetrics.com.br password= EHDK!hekq6m7
+.Página principal de entrada do sistema será apresentada
+.After - Autenticar credenciais acessar o sistema
+.
+
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.021s (executing steps: 0m00.002s)
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Share your Cucumber Report with your team at https://reports.cucumber.io     │
+│                                                                              │
+│ Command line option:    --publish                                            │
+│ Environment variable:   CUCUMBER_PUBLISH_ENABLED=true                        │
+│                                                                              │
+│ More information at https://cucumber.io/docs/cucumber/environment-variables/ │
+│                                                                              │
+│ To disable this message, add this to your ./cucumber.js:                     │
+│ module.exports = { default: '--publish-quiet' }                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+
+
 
 ## I - Referências
 
