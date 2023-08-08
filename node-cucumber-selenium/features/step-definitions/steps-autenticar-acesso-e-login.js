@@ -1,5 +1,11 @@
-const { By, until, Key } = require("selenium-webdriver");
-const { promisify } = require('util');
+const { By, Key, until } = require("selenium-webdriver");
+
+const {expect} = require('chai');
+
+const webdriver = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
+
+const { sleep } = require('./steps-util-commons.js');
 
 
 // ////////////////////////////////////////////////////////////////////////////
@@ -8,7 +14,8 @@ const { promisify } = require('util');
 async function stepNavigateToLogin(driver, url) {
   console.log('stepNavigateToLogin()');
 
-  const emailLoginById = "formly_2_input_username_0";
+  const loginById = "formly_2_input_username_0";
+
 
   // Navigate to Url ...
   console.log(' - Navigate to Url', url);
@@ -19,9 +26,9 @@ async function stepNavigateToLogin(driver, url) {
   }
 
   // Wait until Main page is available ...
-  console.log(' - Wait until page element available',emailLoginById);
+  console.log(' - Wait until page element available',loginById);
   try{
-    await driver.wait(until.elementLocated(By.id(emailLoginById)), 1);
+    await driver.wait(until.elementLocated(By.id(loginById)), 5000);
   } catch (err) {
     console.error(err);
   }
@@ -35,14 +42,16 @@ async function stepNavigateToLogin(driver, url) {
 // ////////////////////////////////////////////////////////////////////////////
 async function stepFillSubmit(driver, login, password) {
   console.log('stepFillSubmit()');
-  const emailLoginById = "formly_2_input_username_0";
+  const loginById = "formly_2_input_username_0";
   const passwordById = "formly_2_input_password_1";
   const enterByClassName = "btn"
 
+  await sleep(3000);
+
   // login
   try {
-    console.log(' - Fill', emailLoginById);
-    var inputTextEmailLogin = await driver.findElement(By.id(emailLoginById));
+    console.log(' - Fill', loginById);
+    var inputTextEmailLogin = await driver.findElement(By.id(loginById));
   } catch (err) {
     console.error(err);
   }
@@ -69,11 +78,21 @@ async function stepFillSubmit(driver, login, password) {
 }
 
 
+// ////////////////////////////////////////////////////////////////////////////
+//
+// ////////////////////////////////////////////////////////////////////////////
+async function stepAssertPage(driver) {
+  console.log('stepAssertPage()');
+  sleep(1000);
+  expect(1).equals(1);
+}
+
 
 // ////////////////////////////////////////////////////////////////////////////
 //
 // ////////////////////////////////////////////////////////////////////////////
 module.exports = {
-    stepNavigateToLogin: stepNavigateToLogin,
-    stepFillSubmit: stepFillSubmit
+    stepNavigateToLogin,
+    stepFillSubmit,
+    stepAssertPage
 };

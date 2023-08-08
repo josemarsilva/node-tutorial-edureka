@@ -1,29 +1,30 @@
-const {Given, Before, After, setDefaultTimeout} = require('@cucumber/cucumber');
+const { Given, Before, After, When } = require('@cucumber/cucumber');
 
-const {getWebdriver, quitWebdriver} = require('./steps-webdriver.js');
-const {stepNavigateToLogin} = require('./steps-autenticar-acesso-e-login.js');
-const {sleep} = require('./steps-util-commons.js');
+const webdriver = require('selenium-webdriver');
+const chrome = require('selenium-webdriver/chrome');
+const { By, Key, until } = require("selenium-webdriver");
 
-// setDefaultTimeout( 60 * 1000); // 60 milliseconds
+const { getWebdriver } = require('./steps-webdriver');
+const { stepNavigateToLogin, stepFillSubmit } = require('./steps-autenticar-acesso-e-login.js');
+const { sleep } = require('./steps-util-commons.js');
 
+let driver = null;
 
 Before(function() {
-    console.log('Before');
-    let driver = getWebdriver();
-    sleep(1000);
-        
+  console.log('Before');
+  driver = getWebdriver();
+    
 });
 
 
 After(function() {
-    console.log('After');
-    quitWebdriver(getWebdriver());
-
+  console.log('After');
+ 
 });
 
 
-Given('Acessar o sistema pela url no ambiente desejado {string}', (url) =>{
-    console.log('Acessar o sistema pela url no ambiente desejado', url);
-    stepNavigateToLogin(driver, url);
+Given('Acessar o sistema pela url no ambiente desejado {string}', {timeout: 60* 1000}, async (url) =>{
+  console.log('Acessar o sistema pela url no ambiente desejado', url);
+  stepNavigateToLogin(driver, url) ;  
 
 });
