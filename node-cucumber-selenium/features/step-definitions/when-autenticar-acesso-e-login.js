@@ -1,15 +1,12 @@
-const {When, Before, After} = require('@cucumber/cucumber');
+const { When } = require('@cucumber/cucumber');
 
-Before(function() {
-    console.log('Before - Autenticar credenciais acessar o sistema');
-});
+const {stepFillSubmit} = require('./steps-autenticar-acesso-e-login.js');
+const {getWebdriver} = require('./steps-webdriver.js');
+const {sleep} = require('./steps-util-commons.js');
 
-After(function() {
-    console.log('After - Autenticar credenciais acessar o sistema');
-});
 
 When('Autenticar credenciais acessar o sistema {string} {string}', (login, password) =>{
-    console.log('Autenticar credenciais acessar o sistema', '||', 'login=', login, 'password=', password);
+    console.log('Autenticar credenciais acessar o sistema', login, password);
+    // stepFillSubmit(getWebdriver(), login, password);
 
-}
-);
+});

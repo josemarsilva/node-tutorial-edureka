@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js"
+    "test": "./node_modules/.bin/cucumber-js",
+    "test_cmd": "node_modules\\.bin\\cucumber-js.cmd",
+    "test_cmd_f": "node_modules\\.bin\\cucumber-js.cmd --name \"Autenticar e acessar o sistema - profile (F)Financ/Financer\""
   },
   "author": "",
   "license": "ISC",
