@@ -904,12 +904,12 @@ $ npm install chromedriver --save
 
 ### 3.5.18. Hands on Node.js Cucumber Selenium 
 
-* [How to - Cucumber & Selenium with Node JS](https://www.youtube.com/watch?v=bsGr6xjZ0mY)
 * [Selenium cucumber javascript combined](https://www.youtube.com/watch?v=C7cSKtnovEo)
+* [How to - Cucumber & Selenium with Node JS](https://www.youtube.com/watch?v=bsGr6xjZ0mY)
 * [Cucumber Official Documentation](https://cucumber.io/)
-* [npm chai](https://www.npmjs.com/package/chai)
-* [npm pretty-format](https://www.npmjs.com/package/pretty-format)
-* [npm selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
+* [npm chai - Official](https://www.npmjs.com/package/chai)
+* [npm pretty-format - Official](https://www.npmjs.com/package/pretty-format)
+* [npm selenium-webdriver - Official](https://www.npmjs.com/package/selenium-webdriver)
 
 * Create folder for project, init npm and install dependencies
 * Download Chrome driver from https://chromedriver.chromium.org/downloads into `./chromedriver`
@@ -939,6 +939,9 @@ $ mkdir features/step-definitions
   * Create/Edit a **given** steps files with extension (.js) `./features/step-definitions/given-autenticar-acesso-e-login.js`
   * Create/Edit a **when** steps files with extension (.js) `./features/step-definitions/when-autenticar-acesso-e-login.js`
   * Create/Edit a **then** steps files with extension (.js) `./features/step-definitions/then-autenticar-acesso-e-login.js`
+  * Create/Edit um arquivo para organizar as funções de uso geral e comuns `steps-util-common.js`
+  * Create/Edit um arquivo para organizar as funções básicas do WebDriver `steps-webdriver.js`
+  * Create/Edit um arquivo para organizar as funções de navegação de autenticação `steps-autenticar-acesso-e-login.js`
 * Configurar o script de teste em `package.json` para executar a(s) features do cucumber:
 
 ```package.json
@@ -950,7 +953,7 @@ $ mkdir features/step-definitions
   : 
 ```
 
-* Executar(run) a feature simples criada e observar o resultado  no console: `./node_modules/.bin/cucumber-js` ou `npm run test`
+* Executar(run) a feature simples criada e observar o resultado  no console: `./node_modules/.bin/cucumber-js` ou `npm run test` ou `npm run test_cmd`
 
 ```console
 Before - Autenticar credenciais acessar o sistema
