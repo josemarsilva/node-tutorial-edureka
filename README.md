@@ -29,6 +29,7 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
     + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-handson-on-node-js-selenium-webdriver-chromedriver)
+    + [3.5.18. Hands On Node, Express and Redis](#3518-hands-on-node--express-and-redis)
 
 
 
@@ -980,6 +981,65 @@ Before - Autenticar credenciais acessar o sistema
 ```
 
 
+### 3.5.18. Hands On Node, Express and Redis
+
+* [Redis Caching in Node.js](https://www.youtube.com/watch?v=oaJq1mQ3dFI)
+
+* Create a new Node.js project folder and initialize project
+
+```bash
+$ mkdir node-express-redis
+$ cd node-express-redis
+$ npm init -y # a lot of <enter>
+```
+
+* Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
+
+```cmd
+$ npm install express --save
+$ npm install node-fetch --save
+$ npm install redis --save
+```
+
+```bash
+$ cat package.json
+{
+  "name": "express-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "redis": "^4.6.7"
+  }
+}
+```
+
+* Create/Edit `index.js`
+
+```bash
+$ node index.js
+```
+
+* Open application on your browser
+  * `http://localhost:3000/repos/bradtraversy`
+  * Observe result
+
+```json
+{
+"login": "bradtraversy",
+  :
+"public_repos": 268,
+  :
+}
+```
 
 
 ## I - Referências
