@@ -29,7 +29,8 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-(mongodb,-express,-angular,-node.js)-stack-application-crud-tutorial)
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
     + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-handson-on-node-js-selenium-webdriver-chromedriver)
-    + [3.5.18. Hands On Node, Express and Redis](#3518-hands-on-node--express-and-redis)
+    + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-node--express-and-redis)
+    + [3.5.19. Hands On Node, Express, Redis and Node-Fetch](#3519-hands-on-node--express--redis-and-node-fetch)
 
 
 
@@ -903,7 +904,7 @@ $ npm install chromedriver --save
 
 * Create/Edit `index.js`
 
-### 3.5.18. Hands on Node.js Cucumber Selenium 
+### 3.5.18. Hands on Node.js Cucumber Selenium
 
 * [Selenium cucumber javascript combined](https://www.youtube.com/watch?v=C7cSKtnovEo)
 * [How to - Cucumber & Selenium with Node JS](https://www.youtube.com/watch?v=bsGr6xjZ0mY)
@@ -981,7 +982,7 @@ Before - Autenticar credenciais acessar o sistema
 ```
 
 
-### 3.5.18. Hands On Node, Express and Redis
+### 3.5.19. Hands On Node, Express, Redis and Node-Fetch
 
 * [Redis Caching in Node.js](https://www.youtube.com/watch?v=oaJq1mQ3dFI)
 
@@ -1004,7 +1005,7 @@ $ npm install redis --save
 ```bash
 $ cat package.json
 {
-  "name": "express-redis",
+  "name": "express-redis-node-fetch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
