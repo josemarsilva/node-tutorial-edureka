@@ -1,7 +1,6 @@
 ## 1. Introdução
 
-Este repositório contém os artefatos do projeto / laboratório   **node-tutorial-edureka**.  Este projeto / laboratório consiste em:
-* Tutorial Node JS Full Course - Leran Nde.js in 7 hours | Node.js Tutorial for Beginners | Edureka
+Este repositório contém os artefatos do projeto / laboratório   **study-node**.  Este projeto / laboratório consiste em diversos tutoriais de estudo de Node JS
 
 ##### Table of Contents  
 - [1. Introdução](#1-introdução)
@@ -30,8 +29,9 @@ Este repositório contém os artefatos do projeto / laboratório   **node-tutori
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
     + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-handson-on-node-js-selenium-webdriver-chromedriver)
     + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-node--express-and-redis)
-    + [3.5.19. Hands On Node, Express, Redis and Node-Fetch](#3519-hands-on-node--express--redis-and-node-fetch)
-
+    + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
+    + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
+ 
 
 
 ## 2. Documentação
@@ -304,7 +304,7 @@ $ cd node-express-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 $ npm install express --save
 ```
 
@@ -348,7 +348,7 @@ $ cd node-express-generator-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 $ sudo npm install express-generator -g
 ```
 
@@ -410,7 +410,7 @@ $ cd node-restfull-api-express-generator-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 ```
 
 * Install dependencies
@@ -448,7 +448,7 @@ $ cd node-fast-xml-parser
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 $ npm install fast-xml-parser --save
 ```
 
@@ -480,7 +480,7 @@ $ npm install fast-xml-parser --save
 ```bash
 $ mkdir node-express-jade-nano-coachdb
 $ cd node-express-jade-nano-coachdb
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 ```
 
 * Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
@@ -574,7 +574,7 @@ $ cd node-docker-express-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 ```
 
 * Install dependencies
@@ -640,7 +640,7 @@ $ cd node-express-mongodb-angular-tutorial
   * List sub-folder `ls -la ./node_modules` where news modules are installed
 
 ```bash
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 ```
 
 * Install dependencies
@@ -897,7 +897,7 @@ $ mkdir node-selenium-webdriver
 $ mkdir chromedriver
 $ echo chromedriver >> .gitignore
 $ cd node-selenium-webdriver
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 $ npm install selenium-webdriver --save
 $ npm install chromedriver --save
 ```
@@ -919,7 +919,7 @@ $ npm install chromedriver --save
 ```bash
 $ mkdir node-cucumber-selenium
 $ cd node-cucumber-selenium
-$ npm init -y # a lot of <enter>
+$ npm init -y # or a lot of <enter> later
 $ npm install @cucumber/cucumber --save
 $ npm install chai --save
 $ npm install pretty-format --save
@@ -982,16 +982,100 @@ Before - Autenticar credenciais acessar o sistema
 ```
 
 
-### 3.5.19. Hands On Node, Express, Redis and Node-Fetch
+### 3.5.19. Hands On Node, Express, Redis e Cache
+
+* [CACHE com NodeJS e Redis NA PRÁTICA](https://www.youtube.com/watch?v=wVHBQILmd_8)
+* [Redis - Official Documentation](https://redis.io/)
+
+* Create a new Node.js project folder and initialize project
+
+```bash
+$ mkdir node-express-redis-cache
+$ cd node-express-redis-cache
+$ npm init -y # or a lot of <enter> later
+```
+
+* Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
+
+```bash
+$ npm install express --save
+$ npm install redis --save
+```
+
+* Install, Configure and Run pre-requisites
+  * Run Docker Container Redis
+
+```bash
+$ docker run --name redis -p 6379:6379 -d redis
+```
+
+* Install, Configure and Run pre-requisites
+  * Download and install `https://redis.com/pt/redis-enterprise/redisinsight/` Windwos Client UI for Redis - enables you connect Redis server and see all keys
+
+* Edit `package.json` and configure package `"main": "server.js"`
+
+```bash
+$ cat package.json
+{
+  "name": "express-redis-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "redis": "^4.6.7"
+  }
+}
+```
+
+* Create/Edit `server.js`
+  * Criar api que responda `/products` com uma lista de todos os produtos Ex: `[ Produto 1, Produto 2, Produto 3]`
+  * Criar api que responda `/products-throttling` com uma lista de todos os produtos Ex: `[ Produto 1, Produto 2, Produto 3]` e fique variando de forma randômica o tempo de resposta de 0 até 5 segundos
+  * Criar api que responda `/product-set` com o set na chave `key` da configuração default do Redis, com o valor `value-<n>` onde `n` incrementa-se sequencialmente a cada execução
+  * Criar api que responda `/product-get` que retorne a tupla (chave, valor) da configuração default do Redis da chave `key`
+  * Criar api que responda `/product-del` com o delete da chave `key` da configuração default do Redis
+  * Criar api que responda `/product-set-key-value-expiration/:key/:value/:expiration` com o set na chave `key` da configuração default do Redis, com o valor `value`, com as opção de expiração de `expiration` segundos
+
+
+  * Criar api que responda `/product-get-cache-throttling/:key` que retorne a tupla (chave, valor) da configuração default do Redis da chave `key`e fique variando de forma randômica o tempo de resposta de 0 até 5 segundos, porém utilizando o artifício cache com expiração de `60 segundos` para tornar mais rápido o acesso de informação que pode variar pouco
+
+
+```bash
+$ node index.js
+```
+
+* Open application on your browser, request url, enter and observe results in tool **redisinsight**:
+  * `http://localhost:3000`
+  * `http://localhost:3000/products`
+  * `http://localhost:3000/products-throttling`
+  * `http://localhost:3000/product-set`
+  * `http://localhost:3000/product-get`
+  * `http://localhost:3000/product-del`
+  * `http://localhost:3000/product-set-key-value-expiration/key-ex/value-ex/30`
+  * `http://localhost:3000/product-get-key/key-ex`
+  * `http://localhost:3000/product-del-key/key-ex`
+  * `http://localhost:3000/product-set-key-value-expiration/key-cache/value-cache/30`
+  * `http://localhost:3000/product-get-cache/key-cache`
+  * `http://localhost:3000/product-del-key/key-cache`
+
+
+
+### 3.5.20. Hands On Node, Express, Redis and Node-Fetch
 
 * [Redis Caching in Node.js](https://www.youtube.com/watch?v=oaJq1mQ3dFI)
 
 * Create a new Node.js project folder and initialize project
 
 ```bash
-$ mkdir node-express-redis
-$ cd node-express-redis
-$ npm init -y # a lot of <enter>
+$ mkdir node-express-redis-node-fetch
+$ cd node-express-redis-node-fetch
+$ npm init -y # or a lot of <enter> later
 ```
 
 * Install dependencies and observe the results in file `package.json` and sub-folder `.\node_modules`
@@ -1041,6 +1125,7 @@ $ node index.js
   :
 }
 ```
+
 
 
 ## I - Referências
