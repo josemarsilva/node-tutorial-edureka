@@ -31,6 +31,7 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-node--express-and-redis)
     + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
+    + [3.5.21. Curso Angular - Loiane Groner](#3521-curso-angular-loiane-groner)
  
 
 
@@ -1125,6 +1126,218 @@ $ node index.js
   :
 }
 ```
+
+
+### 3.5.21. Curso Angular Loiane Groner
+
+* [Curso Angular 2](https://loiane.training/curso/angular)
+* [Official Documentation](https://angular.io/)
+
+#### a. Introdução
+
+* **Template** encapsula (formulário, botões, data-grid, menu, etc), 
+* **Metadados**: processamento das classes
+* **Data Binding**: Dados a ser mostrado na tela
+  * Componente raiz (root) contém todos os demais componentes da aplicação
+  * Principal objetivo do componente é mostrar dados e pode ser integrado com __Backend__ Node JS
+* **Serviços**: Não é boa prática escrever código de lógica de negócio no componente, elas devem ser escritad nos serviços que podem ser injetados em outras classes
+* **Roteamento**: É comum ter várias páginas na aplicação, mas o angular trabalha com Single Page Application. O responsável pela navegação entre diferentes telas é o __Router__
+* **Diretivas**: Responsável por modificar elementos DOM e/ou seu comportamento. Ex: quando um campo ganha o foco, ele pode mudar de tamanho
+* A aplicação pode ser dividida em módulos: Ex: Cliente, Produto e Venda
+
+```txt
++-----------+ +-----------+                                         +-----------+
+|   Module  | |   Module  |                +-----------+            | Directive |
+| Component | | Service   |                | Template  | < - - - - -|-   { }    |
++-----------+ +-----------+           +--> |    < >    | ---+       +-----------+
+                                      |    +-----------+    |
++-----------+ +-----------+           |                     |
+|   Module  | |   Module  |  Property |      Metadata       | Event
+|   Value   | |  Function |  Binding  |                     | Binding
++-----------+ +-----------+           |    +-----------+    |
+                                      |    | Component |    |
++----------------------+              +--> |    < >    | <--+
+|     Injector         |                   +-----------+
+|    +------------+    |
+|    | SerViCe(1) |    |
+|    +------------+    |
+| +------+    +------+ |
+| |SVC(2)| .. |SVC(n)| |
+| +------+    +------+ |
++----------------------+
+```
+* TypeScript é um superconjunto de JavaScript
+* Um script Typescript pode ser compilado para Javascript com comando `tsc nomearquivo.ts`
+* Um transpiler, Ex: [Babel](https://bablejs.io/),  resolve a conversão de padrão ES6 para JavaScript puro: Ex:  `let variavel`
+
+* Create a new Node.js project folder and initialize project
+
+```bash
+$ mkdir node-angular2
+$ cd node-angular2
+$ npm init -y # or a lot of <enter> later
+$ npm install -g typescript
+$ npm install -g @angular/cli
+```
+
+* Check installed packages
+
+```bash
+$ ng version  
+    _                      _                 ____ _     ___ 
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | | 
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | | 
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 16.2.0
+Node: 18.10.0      
+Package Manager: npm 8.19.2
+OS: linux x64
+
+Angular: undefined
+```
+
+##### a.1. Typescript
+
+* [Curso Angular #04: Introdução ao TypeScript para Angular](https://www.youtube.com/watch?v=cNJVzgUH0gA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
+* Criar uma pasta `hello-world-typescript` para construir e testar um programa Typescript:
+  * Nesta pasta, crie o arquivo Typescript `main.js` com a declaração simples de variável `var minhaVar = 'minha variavel';`
+  * Compile o arquivo Typescript `main.ts` com o comando `tsc main.ts` gerando um arquivo Javascript `main.js`
+  * Observe e analise o conteúdo do arquivo Javascript gerado
+  * Edite o arquivo `main.ts` e crie uma função simples e repita o comando de compilação
+  * Compile o arquivo Typescript `main.ts` com o comando `tsc main.ts` gerando um arquivo Javascript `main.js`
+  * Observe e analise o conteúdo do arquivo Javascript gerado: as linhas sobressalentes são removidas
+  * Edite o arquivo `main.ts` e crie uma variável com o `let num = 2` e uma constante `const PI = 3.14;` que é padrão ES6
+  * Compile o arquivo Typescript `main.ts` com o comando `tsc main.ts` gerando um arquivo Javascript `main.js`
+  * Observe e analise o conteúdo do arquivo Javascript gerado: let e const são substituídos por var
+  * Para mais informações osbre ECMAScript6 - https://es6-features.org/
+  
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ mkdir hello-world-typescript
+$ cd hello-world-typescript
+$ tsc main.ts
+$
+```
+
+* Criar o projeto com Angular CLI com instalação das bibliotecas e dependências
+  * Nomenclatura do projeto precisa iniciar com uma letra. Ex: `prj-angular-2`
+  * Responder `y` para confirmar a criação
+  * Observar a estrutura de pastas e arquivos [Curso Angular #21: Angular CLI: Estrutura do projeto](https://www.youtube.com/watch?v=ICvq9YeDCh0): 
+    * `./node-angular-2/index.html`: página principal e inicial do projeto
+    * `./node-angular-2/package.json`: arquivos Typescripts iniciais, arquivos .CSS e arquivos de testes unitários (.spec.ts) com ferramentas Jasmine, Protractor e Karma
+    * `./node-angular-2/node_modules`: instala as dependências dos módulos do `npm install`
+    * `./node-angular-2/.gitignore`: arquivo de configuração do Github
+
+    * `./node-angular-2/config`: diretório que contém configuração para deploy/build e teste
+    * `./node-angular-2/dist`: diretório onde é gerado o build da aplicação (.gitignore)
+    * `./node-angular-2/e2e`: diretório que contém os scripts para testes end-to-end
+    * `./node-angular-2/node_modules`: dretório que contém os pacotes npm da app (package.json) (.gitignore)
+    * `./node-angular-2/public`: diretório genérico que contém um arquivo .npmignore
+    * `./node-angular-2/src`: diretório do código fonte da aplicação. Contém código typescript/javascript, CSS, imagem e templates HTML
+    * `./node-angular-2/angular-cli.json`: arquivo que contém informações sobre o projeto e build de produção, como nome do projeto, config de onde encontrar os arquivos fontes da app, config de testes, etc.
+    * `./node-angular-2/tslint.json`: arquivos que contém configurações para fazer lint da app
+
+
+#### b. Componentes e Templates
+
+##### b.1. New Component
+
+* [Curso Angular #03: Hello, World! Criando primeiro projeto e o primeiro Componente](https://www.youtube.com/watch?v=wBrIT2Z8t5I&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=4)
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng new prj-angular-2
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+  :          :
+CREATE prj-angular-2/angular.json (2735 bytes)
+CREATE prj-angular-2/package.json (1044 bytes)
+CREATE prj-angular-2/tsconfig.json (901 bytes)
+CREATE prj-angular-2/tsconfig.app.json (263 bytes)      
+CREATE prj-angular-2/tsconfig.spec.json (273 bytes)     
+  :          :
+CREATE prj-angular-2/src/main.ts (214 bytes)
+CREATE prj-angular-2/src/favicon.ico (948 bytes)
+CREATE prj-angular-2/src/index.html (297 bytes)
+CREATE prj-angular-2/src/styles.css (80 bytes)
+CREATE prj-angular-2/src/app/app-routing.module.ts (245 bytes)
+CREATE prj-angular-2/src/app/app.module.ts (393 bytes)
+CREATE prj-angular-2/src/app/app.component.css (0 bytes)
+CREATE prj-angular-2/src/app/app.component.html (23115 bytes)
+CREATE prj-angular-2/src/app/app.component.spec.ts (1012 bytes)
+CREATE prj-angular-2/src/app/app.component.ts (217 bytes)
+  :          :
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+```
+
+* Executar o projeto ou seja servir o códgio ao Browser com `ng serve`
+  * Observar o resultado no browser no endereço informado `http://localhost:4200`
+
+```bash
+$ pwd 
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng serve
+  :
+✔ Browser application bundle generation complete.
+  :
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   2.33 MB |
+polyfills.js          | polyfills     | 333.19 kB |
+styles.css, styles.js | styles        | 230.46 kB |
+main.js               | main          |  48.12 kB |
+runtime.js            | runtime       |   6.52 kB |
+                      | Initial Total |   2.94 MB
+  :
+Build at: 2023-08-21T13:34:44.586Z - Hash: 65af89eece8bad60 - Time: 49978ms
+  :
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+  :
+✔ Compiled successfully.
+```
+
+* Open `http://localhost:4200/`
+
+```browser
++----------------------------------+
+| http://localhost:4200            |
++----------------------------------+
+|   prj-angular-2 app is running ! |
+|              :                   |
++----------------------------------+
+```
+
+
+##### b.2. Modules
+
+* **Modules**: arquivo que vai ajudar a organizar as aplicações em pastas. Com os módulos você pode escolher o que vai expor para fora do diretório
+* Quando o projeto é criado pelo CLI ele já módulo default chamado `AppModule`. Exemplo: `./node-angular2/prj-angular2/src/app/app.module.ts`. Observar `... export class AppModule { } ...`
+* Dentro do móduo temos: 
+  * `... export class AppModule { } ...`: export da classe seguindo convenção de nomenclatura segundo ECMAN Script 2015
+  * Import da biblioteca de Decorator `import { NgModule } from '@angular/core';` e  `... @NgModule({ ...` definição do Decorator da classe que representa o módulo. A maioria dos decorators fazem parte deste pacote
+  * `... import { BrowserModule } from '@angular/platform-browser'; ...`: Prepara a aplicação para ser executada em um browser
+
+##### b.3. Metadata
+
+* **Metadata**: Declaração dos componentes, diretivas e pipes que serão usados no módulo
+  * `... declarations: [ ...` e `... AppComponent ... `: neste caso está sendo declarado apenas o AppComponents
+
+
+
+#### c. Data Binding
+#### d. Diretiva
+#### e. Serviços
+#### f. Formulários
+#### g. Roteamento
+#### h. Integração com servidor
+#### i. CRUD Metres-Detalhe
 
 
 
