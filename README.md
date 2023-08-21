@@ -32,8 +32,15 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
     + [3.5.21. Curso Angular - Loiane Groner](#3521-curso-angular-loiane-groner)
+      - [3.5.21.1 Introdução](#35211-introdução) 
+      - [3.5.21.2 Typescript](#35212-typescript) 
+      - [3.5.21.3 Components and Templates](#35213-components-and-templates) 
+        * [3.5.21.3.1 New Angular Project](#352131-new-angular-project) 
+        * [3.5.21.3.2 Manual New Component on existing Angular project](#352132-manual-new-component-on-existing-angular-project) 
+        * [3.5.21.3.3 CLI New Component on existing Angular project](#352133-cli-new-component-on-existing-angular-project) 
+        * [3.5.21.3.4 Create New Modules](#352134-create-new-modules) 
+        * [3.5.21.3.5 Create New Templates](#352135-create-new-template) 
  
-
 
 ## 2. Documentação
 
@@ -1133,7 +1140,7 @@ $ node index.js
 * [Curso Angular 2](https://loiane.training/curso/angular)
 * [Official Documentation](https://angular.io/)
 
-#### a. Introdução
+#### 3.5.21.1. Introdução
 
 * **Template** encapsula (formulário, botões, data-grid, menu, etc), 
 * **Metadados**: processamento das classes
@@ -1200,7 +1207,7 @@ OS: linux x64
 Angular: undefined
 ```
 
-##### a.1. Typescript
+##### 3.5.21.2 Typescript
 
 * [Curso Angular #04: Introdução ao TypeScript para Angular](https://www.youtube.com/watch?v=cNJVzgUH0gA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
 * Criar uma pasta `hello-world-typescript` para construir e testar um programa Typescript:
@@ -1224,31 +1231,15 @@ $ cd hello-world-typescript
 $ tsc main.ts
 $
 ```
+#### 3.5.21.3. Components and Templates
+
+##### 3.5.21.3.1. New Angular Project
+
+* [Curso Angular #03: Hello, World! Criando primeiro projeto e o primeiro Componente](https://www.youtube.com/watch?v=wBrIT2Z8t5I&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=4)
 
 * Criar o projeto com Angular CLI com instalação das bibliotecas e dependências
   * Nomenclatura do projeto precisa iniciar com uma letra. Ex: `prj-angular-2`
   * Responder `y` para confirmar a criação
-  * Observar a estrutura de pastas e arquivos [Curso Angular #21: Angular CLI: Estrutura do projeto](https://www.youtube.com/watch?v=ICvq9YeDCh0): 
-    * `./node-angular-2/index.html`: página principal e inicial do projeto
-    * `./node-angular-2/package.json`: arquivos Typescripts iniciais, arquivos .CSS e arquivos de testes unitários (.spec.ts) com ferramentas Jasmine, Protractor e Karma
-    * `./node-angular-2/node_modules`: instala as dependências dos módulos do `npm install`
-    * `./node-angular-2/.gitignore`: arquivo de configuração do Github
-
-    * `./node-angular-2/config`: diretório que contém configuração para deploy/build e teste
-    * `./node-angular-2/dist`: diretório onde é gerado o build da aplicação (.gitignore)
-    * `./node-angular-2/e2e`: diretório que contém os scripts para testes end-to-end
-    * `./node-angular-2/node_modules`: dretório que contém os pacotes npm da app (package.json) (.gitignore)
-    * `./node-angular-2/public`: diretório genérico que contém um arquivo .npmignore
-    * `./node-angular-2/src`: diretório do código fonte da aplicação. Contém código typescript/javascript, CSS, imagem e templates HTML
-    * `./node-angular-2/angular-cli.json`: arquivo que contém informações sobre o projeto e build de produção, como nome do projeto, config de onde encontrar os arquivos fontes da app, config de testes, etc.
-    * `./node-angular-2/tslint.json`: arquivos que contém configurações para fazer lint da app
-
-
-#### b. Componentes e Templates
-
-##### b.1. New Component
-
-* [Curso Angular #03: Hello, World! Criando primeiro projeto e o primeiro Componente](https://www.youtube.com/watch?v=wBrIT2Z8t5I&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=4)
 
 ```bash
 $ pwd
@@ -1277,6 +1268,22 @@ CREATE prj-angular-2/src/app/app.component.ts (217 bytes)
 ✔ Packages installed successfully.
     Directory is already under version control. Skipping initialization of git.
 ```
+
+* Observar a estrutura de pastas e arquivos [Curso Angular #21: Angular CLI: Estrutura do projeto](https://www.youtube.com/watch?v=ICvq9YeDCh0): 
+  * `./node-angular-2/index.html`: página principal e inicial do projeto
+  * `./node-angular-2/package.json`: arquivos Typescripts iniciais, arquivos .CSS e arquivos de testes unitários (.spec.ts) com ferramentas Jasmine, Protractor e Karma
+  * `./node-angular-2/node_modules`: instala as dependências dos módulos do `npm install`
+  * `./node-angular-2/.gitignore`: arquivo de configuração do Github
+
+  * `./node-angular-2/config`: diretório que contém configuração para deploy/build e teste
+  * `./node-angular-2/dist`: diretório onde é gerado o build da aplicação (.gitignore)
+  * `./node-angular-2/e2e`: diretório que contém os scripts para testes end-to-end
+  * `./node-angular-2/node_modules`: dretório que contém os pacotes npm da app (package.json) (.gitignore)
+  * `./node-angular-2/public`: diretório genérico que contém um arquivo .npmignore
+  * `./node-angular-2/src`: diretório do código fonte da aplicação. Contém código typescript/javascript, CSS, imagem e templates HTML
+  * `./node-angular-2/angular-cli.json`: arquivo que contém informações sobre o projeto e build de produção, como nome do projeto, config de onde encontrar os arquivos fontes da app, config de testes, etc.
+  * `./node-angular-2/tslint.json`: arquivos que contém configurações para fazer lint da app
+
 
 * Executar o projeto ou seja servir o códgio ao Browser com `ng serve`
   * Observar o resultado no browser no endereço informado `http://localhost:4200`
@@ -1311,29 +1318,422 @@ Build at: 2023-08-21T13:34:44.586Z - Hash: 65af89eece8bad60 - Time: 49978ms
 +----------------------------------+
 |   prj-angular-2 app is running ! |
 |              :                   |
+|   Here area some links ...       |
+|              :                   |
 +----------------------------------+
 ```
 
+* Editar os arquivos abaixo e observar o resultado no browser
+  * `./prj-angular-2/src/app/app.component.ts`: Componente principal da aplicação. Os projetos Angular são baseados em Componentes
+    * Editar o arquivo `./prj-angular-2/src/app/app.component.ts`: Este arquivo define o módulo da aplicação, substituir o trecho:
+      * de: `... title = 'prj-angular-2'; ...`
+      * para: `... title = 'Josemar/prj-angular-2'; ...`
+  * `./prj-angular-2/src/app/app.component.html`: O arquivo que está sendo mostrado na url principal de entrada
+    * Editar o arquivo `./prj-angular-2/src/app/app.component.html` substituir o trecho:
+      * de: `<p>Here are some links to help you get started:</p>`
+      * para:  `<p>Hello Josemar !!! Here are some links to help you get started:</p>`
+  * Interpolação é a definição da variável no arquivo `app.component.ts` que é apresentada no arquivo `app.component.html`
 
-##### b.2. Modules
 
-* **Modules**: arquivo que vai ajudar a organizar as aplicações em pastas. Com os módulos você pode escolher o que vai expor para fora do diretório
+##### 3.5.21.3.2. Manual New Component on existing Angular Project
+
+* Criar o arquivo do primeiro componente manual `./src/app/meu-primeiro.component.ts` e crie o conteúdo de uma classe `... @Component()  .. class MeuPrimeiroComponent {} ... `. Observe que a nomenclatura de padrão de nome de arquivos (separados por hifen) e nomenclatura de nome de classes.
+* Criar o conteúdo do template com o uso de **inline template literal** isto é a crase. Recomendado quando código até 3 linhas
+* selector: nome da tag HTML
+* template: `
+<p>Meu primeiro component com Angular 2!</p>
+`
+
+```meu-primeiro.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'meu-primeiro-component'
+    template: `
+        <p>Meu primeiro component com Angular 2!</p>
+    `
+})
+
+export class MeuPrimeiroComponent { }
+
+```
+
+* Editar o arquivo `./src/app/app.module.ts` e declarar o `MeuPrimeiroComponent` para que ele torne-se visível para os demais módulos
+
+```./src/app/app.module.ts
+:
+import { MeuPrimeiroComponent } from './meu-primeiro-component';
+:
+@ngModule({
+  declarations: [
+    AppComponent,
+    MeuPrimeiroComponent
+  ]
+})
+:
+```
+
+* Editar o arquivo `./src/app/app.component.html` e usar o componente `MeuPrimeiroComponent`
+
+```./src/app/app.component.html
+  :
+  <h2>Resources</h2>
+  <p>Hello Josemar Silva !!! Here are some links to help you get started:</p>
+  <meu-primeiro-component></meu-primeiro-component>
+  :
+```
+
+* Run application and test results
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|              :                              |
++---------------------------------------------+
+```
+
+##### 3.5.21.3.3. CLI New Component on existing Angular Project
+
+* Create new Component using CLI
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng g component meu-segundo
+CREATE src/app/meu-segundo/meu-segundo.component.css (0 bytes)
+CREATE src/app/meu-segundo/meu-segundo.component.html (26 bytes)
+CREATE src/app/meu-segundo/meu-segundo.component.spec.ts (588 bytes)
+CREATE src/app/meu-segundo/meu-segundo.component.ts (221 bytes)
+UPDATE src/app/app.module.ts (585 bytes)
+```
+
+* Observe new folder `src/app/meu-segundo/` and files:
+  * `meu-segundo.component.html`: HTML da págia `... <p>meu-segundo works!</p> ...`
+  * `meu-segundo.component.ts`: Segundo componente
+  * `meu-segundo.component.spec.ts`: Script Teste Unitário
+* Observe `./src/app/app.module.ts` was updated and new component was added:
+
+```app.module.ts
+  :
+import { MeuSegundoComponent } from './meu-segundo/meu-segundo.component';
+  :
+@NgModule({
+  declarations: [
+    AppComponent,
+    MeuPrimeiroComponent,
+    MeuSegundoComponent
+  ],
+  :
+```
+
+* Editar component HTML  `./src/app/app.component.html` e usar o componente `MeuSegundoComponent`
+
+* Run application and test results
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|      meu-segundo works!                     |
+|              :                              |
++---------------------------------------------+
+```
+
+
+##### 3.5.21.3.4. Create New Modules
+
+* [Curso Angular #05: Módulos (ngModule)](https://www.youtube.com/watch?v=36kd3uR-hG8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
+* **Modules**: arquivo que vai ajudar a organizar e modularizar as aplicações em pastas. Com os módulos você pode escolher o que vai expor para fora do diretório.
 * Quando o projeto é criado pelo CLI ele já módulo default chamado `AppModule`. Exemplo: `./node-angular2/prj-angular2/src/app/app.module.ts`. Observar `... export class AppModule { } ...`
 * Dentro do móduo temos: 
-  * `... export class AppModule { } ...`: export da classe seguindo convenção de nomenclatura segundo ECMAN Script 2015
+  * `... export class AppModule { } ...`: export da classe seguindo convenção de nomenclatura segundo ECMA Script 2015
   * Import da biblioteca de Decorator `import { NgModule } from '@angular/core';` e  `... @NgModule({ ...` definição do Decorator da classe que representa o módulo. A maioria dos decorators fazem parte deste pacote
   * `... import { BrowserModule } from '@angular/platform-browser'; ...`: Prepara a aplicação para ser executada em um browser
+  * `... import { FormsModule } from '@angular/forms'; ... `: Quando formos utilizar "two way data bind" 
+  * `... import { HttpModule }  from '@angular/forms';`: 
 
-##### b.3. Metadata
-
-* **Metadata**: Declaração dos componentes, diretivas e pipes que serão usados no módulo
+* Os **Metadatas** encontrados no arquivo de componentes `./src/app/app.modules.ts`
+* **Metadata** - **declarations**: Declaração dos componentes, diretivas e pipes que serão usados no módulo
   * `... declarations: [ ...` e `... AppComponent ... `: neste caso está sendo declarado apenas o AppComponents
+* **Metadata** - **imports**: Outros módulos que queremos utilizar dentro deste módulo
+  * `... imports: [ ...`: 
+* **Metadata** - **providers**: Os serviços que ficarão disponíveis para toda aplicação. Ex: serviço de autenticação, login, guarda de rotas
+  * `... providers[] ...`
+* **Metadata** - **bootstrap**: Encontrado somente no módulo raiz, Componente que deve ser iniciado quando executamos a aplicação. O componente que vai servir como container do projeto. Trabalhamos com uma aplicação SPA (Single Page Applications ).
+
+* Generate / Create New Modules using CLI
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng generate module cursos
+CREATE src/app/cursos/cursos.module.ts (192 bytes)
+```
+
+* Observe results:
+  * New Folder `./src/app/cursos/` and New File `./src/app/cursos/cursos.module.ts`
+  * File contents of feature module created  `./src/app/cursos/cursos.module.ts`
+  * Difference for Angular 2, CommonModule contains imports
+
+```./src/app/cursos/cursos.module.ts
+  :
+import { CommonModule } from '@angular/common';
+  :
+  imports: [
+    CommonModule
+  ]
+  :
+```
+
+* Generate / Create New Component Curso inside new module Cursos using CLI
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng generate component cursos
+CREATE src/app/cursos/cursos.component.css (0 bytes)
+CREATE src/app/cursos/cursos.component.html (21 bytes)
+CREATE src/app/cursos/cursos.component.spec.ts (559 bytes)
+CREATE src/app/cursos/cursos.component.ts (202 bytes)
+UPDATE src/app/cursos/cursos.module.ts (269 bytes)
+```
+
+* Observe `./src/app/cursos/cursos.module.ts`
+
+```./src/app/cursos/cursos.module.ts
+  :
+import { CursosComponent } from './cursos.component';
+  :
+@NgModule({
+  declarations: [
+    CursosComponent
+  ],
+  imports: [
+    CommonModule
+  ]
+})
+export class CursosModule { }
+  :
+```
+
+* Observe `./src/app/cursos/cursos.component.html`
+
+```./src/app/cursos/cursos.component.html
+<p>cursos works!</p>
+```
+
+* Observe `./src/app/cursos/cursos.component.ts`
+
+```./src/app/cursos/cursos.component.ts
+:
+@Component({
+  selector: 'app-cursos',
+  templateUrl: './cursos.component.html',
+  styleUrls: ['./cursos.component.css']
+})
+:
+export class CursosComponent {
+:
+```
+
+* Observe `./src/app/app.module.ts` and remove automatically added component configuration from root module:
+
+```app.module.ts
+  :
+import { MeuSegundoComponent } from './meu-segundo/meu-segundo.component';
+  :
+@NgModule({
+  declarations: [
+    AppComponent,
+    MeuPrimeiroComponent,
+    MeuSegundoComponent
+  ],
+  :
+```
+
+* Editar component HTML  `./src/app/app.component.html` e usar o componente `... <app-cursos></app-cursos> ...`
+
+* Run application and test results
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|      meu-segundo works!                     |
+|        cursos works!                        |
+|              :                              |
++---------------------------------------------+
+```
+
+* Generate / Create New Component CursoDetalhe inside new module Cursos using CLI
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng generate component cursos/curso-detalhe
+```
+
+* Observe new component `CursoDetalheComponent` was generated in folder `./curso-detalhe` on file `./src/app/cursos/curso-detalhe/curso-detalhe.component.ts`
+
+```
+  :
+@Component({
+  selector: 'app-curso-detalhe',
+  templateUrl: './curso-detalhe.component.html',
+  styleUrls: ['./curso-detalhe.component.css']
+})
+export class CursoDetalheComponent {
+  :
+```
+
+* Observe new component `CursoDetalheComponent` was automatically added to `./src/app/cursos/cursos.module.ts`
+
+```./src/app/cursos/cursos.module.ts
+  :
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+  :
+@NgModule({
+  declarations: [
+    CursosComponent,
+    CursoDetalheComponent
+  ],
+  :
+```
+
+* Edit `./src/app/cursos/cursos.component.html` and include references to selector from  `CursoDetalheComponent`
+  * Apesar de ser possível adicionar o seletor do componente `CursoDetalheComponent` dentro do component HTML `cursos.component.html`, ele é componente privado interno do componente `CursosModule` e não poderia ser referenciado no HTML da raiz `./src/app/app.component.html` porque `CursoDetalheComponent` não foi exportado e importado em `CursosModule`
+
+```./src/app/cursos/cursos.component.html
+<p>cursos works!</p>
+
+<app-curso-detalhe></app-curso-detalhe>
+```
+
+
+* Run application and test results
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|      meu-segundo works!                     |
+|        cursos works!                        |
+|      curso-detalhe works!                   |
+|              :                              |
++---------------------------------------------+
+```
+
+##### 3.5.21.3.5. Create New Template
+
+* Edit `./src/app/cursos/cursos.component.ts` e crie as propriedades: a) nomePortal: string; b) cursos: string array
+* Edit `./src/app/cursos/cursos.component.html` e faça com que o HTML mostre o nome do portal e a lista de cursos, lembrando que ambas as informações agora são atributos de propriedade do componente cursos
+  * **interpolation** é o mecanismo que faz com que o HTML mostre o conteúdo da propriedade da classe CursosComponent
+
+```./src/app/cursos/cursos.component.html
+    :
+    Lista de cursos do portal {{ nomePortal }}
+    :
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>
+    :
+```
+
+* Run application and test results
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|      meu-segundo works!                     |
+|        cursos works!                        |
+|      curso-detalhe works!                   |
+|         * Java                              |
+|         * Ext JS                            |
+|         * Angular                           |
+|              :                              |
++---------------------------------------------+
+```
+
+
+#### 3.5.21.4. Services and Dependencies Injection
+
+* [Curso Angular #07: Introdução aos Serviços e Injeção de Dependência (DI)](https://www.youtube.com/watch?v=v0qEUq4YwpU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=8)
+* Segregação de funções entre classes:
+
+```txt
++-----------+     +-----------+     +-----------+
+| Component | <-> |  Service  | <-> |  Backend  |
++-----------+     +-----------+     +-----------+
+```
+
+##### 3.5.21.4.1. CLI Generate Services
+
+* Generate Service Class inside folder = "cursos" with name "cursos"
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng generate service cursos/cursos # folder/servicename
+CREATE src/app/cursos/cursos.service.spec.ts (357 bytes)
+CREATE src/app/cursos/cursos.service.ts (135 bytes)
+```
+
+* Observe results in `./src/app/cursos/cursos.service.ts`
+* Edit `./src/app/cursos/cursos.component.ts` change initialization of array in property declaration from a
 
 
 
-#### c. Data Binding
-#### d. Diretiva
-#### e. Serviços
+
+#### d. Data Binding
+#### e. Directive
 #### f. Formulários
 #### g. Roteamento
 #### h. Integração com servidor
