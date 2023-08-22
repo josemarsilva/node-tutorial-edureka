@@ -65,6 +65,12 @@ De uma forma geral, vamos tentar <ins>definir</ins> e <ins>caracterizar</ins> al
 
 #### 3.1.2. Ferramental de apoio
 
+* Plugins do VSCode:
+  * "Angular Snippets (Version 16)" - 5 star - John Papa
+  * "Auto Import" - 4.5 stars - steoates
+  * "HTML Boileplate" - 5 stars - sidthesloth
+  * "vscode-icons" - 5 stars - VSCode Icons Teamn
+  * "Ionic 2 Commands with Snippets" - 3.5 stars - Thavarajan
 * Ferramenta: [Draw.IO](https://app.diagrams.net/) (only for diagrams design and documentation)
 
 
@@ -1717,6 +1723,7 @@ $ ng serve
 ##### 3.5.21.4.1. CLI Generate Services
 
 * Generate Service Class inside folder = "cursos" with name "cursos"
+* Observe results in `./src/app/cursos/cursos.service.ts`
 
 ```bash
 $ pwd
@@ -1726,8 +1733,41 @@ CREATE src/app/cursos/cursos.service.spec.ts (357 bytes)
 CREATE src/app/cursos/cursos.service.ts (135 bytes)
 ```
 
-* Observe results in `./src/app/cursos/cursos.service.ts`
-* Edit `./src/app/cursos/cursos.component.ts` change initialization of array in property declaration from a
+* Edit Component `./src/app/cursos/cursos.component.ts`
+  * change initialization of array in property declaration, remove `cursos: string[] = ['Java', 'Ext JS', 'Angular'];` by constructor dependency of service and initialization
+  * add constructor dependency `constructor(private cursosService: CursosService) {`
+  * initialize property `this.cursos = this.cursosService.getCursos();`
+* Edit Service `/src/app/cursos/cursos.service.ts`
+  * define `getCursos() { ...`
+* Edit Module `/src/app/cursos/cursos.module.ts`
+  * add import `import { CursosService } from './cursos.service';`
+  * add providers `providers: [ CursosService ]`
+
+* Run application and test results
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-angular-2
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|    Josemar/prj-angular-2 app is running!    |
+|              :                              |
+| Hello Josemar Silva !!! Here are some links |
+|    Meu primeiro component com Angular 2!    |
+|      meu-segundo works!                     |
+|        cursos works!                        |
+|      curso-detalhe works!                   |
+|         * Java                              |
+|         * Ext JS                            |
+|         * Angular                           |
+|              :                              |
++---------------------------------------------+
+```
 
 
 
