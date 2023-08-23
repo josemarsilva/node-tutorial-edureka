@@ -32,14 +32,16 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
     + [3.5.21. Curso Angular - Loiane Groner](#3521-curso-angular-loiane-groner)
-      - [3.5.21.1 Introdução](#35211-introdução) 
-      - [3.5.21.2 Typescript](#35212-typescript) 
-      - [3.5.21.3 Components and Templates](#35213-components-and-templates) 
-        * [3.5.21.3.1 New Angular Project](#352131-new-angular-project) 
-        * [3.5.21.3.2 Manual New Component on existing Angular project](#352132-manual-new-component-on-existing-angular-project) 
-        * [3.5.21.3.3 CLI New Component on existing Angular project](#352133-cli-new-component-on-existing-angular-project) 
-        * [3.5.21.3.4 Create New Modules](#352134-create-new-modules) 
-        * [3.5.21.3.5 Create New Templates](#352135-create-new-template) 
+      - [3.5.21.1. Introdução](#35211-introdução) 
+      - [3.5.21.2. Typescript](#35212-typescript) 
+      - [3.5.21.3. Components and Templates](#35213-components-and-templates) 
+        * [3.5.21.3.1. New Angular Project](#352131-new-angular-project) 
+        * [3.5.21.3.2. Manual New Component on existing Angular project](#352132-manual-new-component-on-existing-angular-project) 
+        * [3.5.21.3.3. CLI New Component on existing Angular project](#352133-cli-new-component-on-existing-angular-project) 
+        * [3.5.21.3.4. Create New Modules](#352134-create-new-modules) 
+        * [3.5.21.3.5. Create New Template](#352135-create-new-template) 
+        * [3.5.21.3.6. ](#352136-cli-generate-services) 
+      - [3.5.21.4. ](#35214-) 
  
 
 ## 2. Documentação
@@ -1213,7 +1215,7 @@ OS: linux x64
 Angular: undefined
 ```
 
-##### 3.5.21.2 Typescript
+#### 3.5.21.2 Typescript
 
 * [Curso Angular #04: Introdução ao TypeScript para Angular](https://www.youtube.com/watch?v=cNJVzgUH0gA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
 * Criar uma pasta `hello-world-typescript` para construir e testar um programa Typescript:
@@ -1237,6 +1239,7 @@ $ cd hello-world-typescript
 $ tsc main.ts
 $
 ```
+
 #### 3.5.21.3. Components and Templates
 
 ##### 3.5.21.3.1. New Angular Project
@@ -1379,7 +1382,7 @@ import { MeuPrimeiroComponent } from './meu-primeiro-component';
 :
 ```
 
-* Editar o arquivo `./src/app/app.component.html` e usar o componente `MeuPrimeiroComponent`
+* Editar template no arquivo `./src/app/app.component.html` e usar o componente `MeuPrimeiroComponent`
 
 ```./src/app/app.component.html
   :
@@ -1437,7 +1440,7 @@ import { MeuSegundoComponent } from './meu-segundo/meu-segundo.component';
   :
 ```
 
-* Editar component HTML  `./src/app/app.component.html` e usar o componente `MeuSegundoComponent`
+* Editar template HTML  `./src/app/app.component.html` e usar o componente `MeuSegundoComponent`
 
 * Run application and test results
 
@@ -1572,7 +1575,7 @@ import { MeuSegundoComponent } from './meu-segundo/meu-segundo.component';
   :
 ```
 
-* Editar component HTML  `./src/app/app.component.html` e usar o componente `... <app-cursos></app-cursos> ...`
+* Editar template HTML  `./src/app/app.component.html` e usar o componente `... <app-cursos></app-cursos> ...`
 
 * Run application and test results
 
@@ -1708,9 +1711,6 @@ $ ng serve
 +---------------------------------------------+
 ```
 
-
-#### 3.5.21.4. Services and Dependencies Injection
-
 * [Curso Angular #07: Introdução aos Serviços e Injeção de Dependência (DI)](https://www.youtube.com/watch?v=v0qEUq4YwpU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=8)
 * Segregação de funções entre classes:
 
@@ -1720,7 +1720,7 @@ $ ng serve
 +-----------+     +-----------+     +-----------+
 ```
 
-##### 3.5.21.4.1. CLI Generate Services
+##### 3.5.21.3.6. CLI Generate Services
 
 * Generate Service Class inside folder = "cursos" with name "cursos"
 * Observe results in `./src/app/cursos/cursos.service.ts`
@@ -1769,15 +1769,309 @@ $ ng serve
 +---------------------------------------------+
 ```
 
+#### 3.5.21.4. Data Binding
+
+* [Curso Angular #09: Property Binding e Interpolação](https://www.youtube.com/watch?v=rlVxG2lG1Tk&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=10)
+
+* Angular has 4 differents ways to construct _data binding_, that is associate informations from components, class, templates, etc.
+
+* Create New Project for Data Binding 
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng new prj-data-binding  
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? CSS
+CREATE prj-data-binding/README.md (1068 bytes)
+CREATE prj-data-binding/.editorconfig (274 bytes)
+CREATE prj-data-binding/.gitignore (548 bytes)
+CREATE prj-data-binding/angular.json (2750 bytes)
+CREATE prj-data-binding/package.json (1047 bytes)
+CREATE prj-data-binding/tsconfig.json (901 bytes)
+CREATE prj-data-binding/tsconfig.app.json (263 bytes)
+CREATE prj-data-binding/tsconfig.spec.json (273 bytes)
+CREATE prj-data-binding/.vscode/extensions.json (130 bytes)
+CREATE prj-data-binding/.vscode/launch.json (470 bytes)
+CREATE prj-data-binding/.vscode/tasks.json (938 bytes)
+CREATE prj-data-binding/src/main.ts (214 bytes)
+CREATE prj-data-binding/src/favicon.ico (948 bytes)
+CREATE prj-data-binding/src/index.html (300 bytes)
+CREATE prj-data-binding/src/styles.css (80 bytes)
+CREATE prj-data-binding/src/app/app.module.ts (314 bytes)
+CREATE prj-data-binding/src/app/app.component.css (0 bytes)
+CREATE prj-data-binding/src/app/app.component.html (23083 bytes)
+CREATE prj-data-binding/src/app/app.component.spec.ts (922 bytes)
+CREATE prj-data-binding/src/app/app.component.ts (220 bytes)
+CREATE prj-data-binding/src/assets/.gitkeep (0 bytes)
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+|      prj-data-binding app is running!       |
+|           Resources                         |
+|              :                              |
++---------------------------------------------+
+```
+
+* Create New Component to use Data Binding
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng generate component data-binding
+CREATE src/app/data-binding/data-binding.component.css (0 bytes)
+CREATE src/app/data-binding/data-binding.component.html (27 bytes)
+CREATE src/app/data-binding/data-binding.component.spec.ts (595 bytes)
+CREATE src/app/data-binding/data-binding.component.ts (225 bytes)
+UPDATE src/app/app.module.ts (418 bytes)
+```
+
+#### 3.5.21.4.1. Data Binding - Intepolation
+Obter o valor de um atributo ou método no Template
+
+* Configure the use of Data Binding Interpolation
+* Observe `.\node-angular2\data-bingind\src\app\data-binding\data-binding.component.ts`
+  * define `selector: 'app-data-binding` that can be used on templates: 
+  * define `./data-binding.component.html` that points to a HTML template file contents is `data-binding works!`
+* Edit Template `.\node-angular2\prj-data-binding\src\app\app.component.html`
+  * replace all contents by:
+
+```.\node-angular2\prj-data-binding\src\app\app.component.html
+<app-data-binding></app-data-binding>
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++---------------------------------------------+
+| http://localhost:4200                       |
++---------------------------------------------+
+| data-binding works!                         |
++---------------------------------------------+
+```
+
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+export class DataBindingComponent {
+  :
+  url:string = 'http://loiane.com';
+  cursoAngular: boolean = true;
+  getValor() { 
+    return 1
+  }
+  :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * replace all contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+<section>
+    <article>
+      <h3>Interpolation</h3>
+      <p>String renderizada com interpolação {{ url }} </p>
+      <p>Resultado de expressão com interpolação: 1 + 1 = {{ 1 + 1 }} </p>
+      <p>Resultado da chamada de função getValor():  {{ getValor() }} </p>
+      <p>Resultado de expressões lógicas: {{ cursoAngular && getValor() }} </p>
+    </article>
+</section>
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++--------------------------------------------------------+
+| http://localhost:4200                                  |
++--------------------------------------------------------+
+| Interpolation                                          |
+| String renderizada com interpolação http://loiane.com  |
+| Resultado de expressão com interpolação: 1 + 1 = 2     |
+| Resultado da chamada de função getValor(): 1           |
+| Resultado de expressões lógicas: 1                     |
++--------------------------------------------------------+
+```
+
+
+#### 3.5.21.4.2. Data Binding - Property binding
+Obter um valor ou atributo do Componente para o template
+
+* Usa-se colchetes `<img [src]="urlImage"/>`
+* Formato padrão é através de bind + nomePropriedade:  `<img bind-src="urlImage"/>`
+* Quando não existe uma propriedade no elemento, usa-se `[attr.colspan]`
+* Configure the use of Data Binding Property binding
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+export class DataBindingComponent {
+  :
+  urlImagem:string = 'http://lorempixel.com/400/200/nature/'
+  :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+    <article>
+        <h3>Property Binding</h3>
+        <img src="{{ urlImage  }}">
+        <img [src]="urlImage">
+        <img bind-src="urlImage">
+    </article>
+     :
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++--------------------------------------------------------+
+| http://localhost:4200                                  |
++--------------------------------------------------------+
+|    :                                                   |
+| image-1 image-2 image-3                                |
++--------------------------------------------------------+
+```
+
+
+#### 3.5.21.4.3. Data Binding - Class Binding and Style Binding
+
+Obter um valor ou atributo do Componente para o template usando CSS
+
+* [Curso Angular #10: Class e Style binding](https://www.youtube.com/watch?v=NxtlQSpSgx8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G)
+
+* Bootstrap Official Documentation
+  * https://getbootstrap.com/docs/5.3/components/alerts/
+  * Observe there are `<div>` classes and `roles`
+* Instalar pacote ng2-bootstrap
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ npm install ng2-bootstrap bootstrap --save
+  :
+$ cat package.json | grep bootstrap
+    "bootstrap": "^5.3.1",
+    "ng2-bootstrap": "^1.6.3",
+```
+
+* Edit Style  `.\node-angular2\prj-data-binding\src\styles.css` (opção 1)
+  * add import css
+
+```.\node-angular2\prj-data-binding\src\styles.css
+@import ./node_modules/bootstrap/dist/css/bootstrap.min.css
+```
+
+* Edit Style  `.\node-angular2\prj-data-binding\angular.json` (opção 2)
+  * add import css
+
+```.\node-angular2\prj-data-binding\angular.json
+  :
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+  :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * define variable to listen to change of select option on HTML
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+    <article>
+        <h3>Class Binding & Style Binding</h3>
+    </article>
+     :
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++--------------------------------------------------------+
+| http://localhost:4200                                  |
++--------------------------------------------------------+
+|    :                                                   |
+|                       +-------------------+            |
+| Class & Style Binding | alert-primary     |            |
+|                       +-------------------+            |
+|                       |   alert-secondary |            |
+|                       |   alert-success   |            |
+|                       |   alert-danger    |            |
+|                       |   alert-warning   |            |
+|                       |   alert-info      |            |
+|                       |   alert-light     |            |
+|                       |   alert-dark      |            |
+|                       +-------------------+            |
+|    :                                                   |
++--------------------------------------------------------+
+```
 
 
 
-#### d. Data Binding
-#### e. Directive
-#### f. Formulários
-#### g. Roteamento
-#### h. Integração com servidor
-#### i. CRUD Metres-Detalhe
+#### 3.5.21.4.4. Data Binding - Event handler
+Escutar eventos do Template (view HTML) e executar a lógica de programação no componente
+
+#### 3.5.21.4.5. Data Binding - Two Way Data binding
+Manter o sincronismo ao mesmo tempo o componente quanto o template
+
+
+
+
+#### 3.5.21.5. Directive
+#### 3.5.21.6. Formulários
+#### 3.5.21.7. Roteamento
+#### 3.5.21.8. Integração com servidor
+#### 3.5.21.9. CRUD Metres-Detalhe
 
 
 
