@@ -41,7 +41,11 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.3.4. Create New Modules](#352134-create-new-modules) 
         * [3.5.21.3.5. Create New Template](#352135-create-new-template) 
         * [3.5.21.3.6. ](#352136-cli-generate-services) 
-      - [3.5.21.4. ](#35214-) 
+      - [3.5.21.4. Data Binding](#35214-data-binding) 
+        * [3.5.21.4.1. Data Binding - Interpolation](#352141-data-binding---intepolation) 
+        * [3.5.21.4.2. Data Binding - Property Binding](#352142-data-binding---property-binding) 
+        * [3.5.21.4.1. Data Binding - Class Binding and Style Binding](#352143-data-binding---class-binding-and-style-binding) 
+        * [3.5.21.4.1. Data Binding - Event Binding](#352144-data-binding---event-binding) 
  
 
 ## 2. Documentação
@@ -2058,13 +2062,200 @@ $ ng serve
 
 
 
-#### 3.5.21.4.4. Data Binding - Event handler
+#### 3.5.21.4.4. Data Binding - Event Binding
 Escutar eventos do Template (view HTML) e executar a lógica de programação no componente
 
-#### 3.5.21.4.5. Data Binding - Two Way Data binding
+* [Curso Angular #11: Event binding](https://www.youtube.com/watch?v=WF28rLBangw&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=12)
+* [Official Documentation - Web Events](https://developer.mozilla.org/en-US/docs/Web/Events)
+* Captura de eventos permite capturar os caracteres digitados em um campo, clique de um botão, passagem do mouse sobre um objeto, etc
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.css`
+  * add css
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.css
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+```
+
+
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * define variable to listen to change of select option on HTML
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+<!-- 
+<section>
+    <article>
+      <h3>Interpolation</h3>
+      <p>String renderizada com interpolação {{ url }} </p>
+      <p>Resultado de expressão com interpolação: 1 + 1 = {{ 1 + 1 }} </p>
+      <p>Resultado da chamada de função getValor():  {{ getValor() }} </p>
+      <p>Resultado de expressões lógicas: {{ cursoAngular && getValor() }} </p>
+    </article>
+
+    <article>
+        <h3>Property Binding</h3>
+        <p>Show 3x image {{ urlImage  }}</p>
+        <img src="{{ urlImage  }}">
+        <br>
+        <img [src]="urlImage">
+        <br>
+        <img bind-src="urlImage">
+    </article>
+
+</section>
+
+<section>
+
+    <article>
+        <h3>Class Binding & Style Binding</h3>
+        <div>
+            Selecione uma classe:
+            <select #classe (change)="0">
+                <option value="alert-primary">alert-primary</option>"
+                <option value="alert-secondary">alert-secondary</option>"
+                <option value="alert-success">alert-success</option>"
+                <option value="alert-danger">alert-danger</option>"
+                <option value="alert-warning">alert-warning</option>"
+                <option value="alert-info">alert-info</option>"
+                <option value="alert-light">alert-light</option>"
+                <option value="alert-dark">alert-dark</option>"
+            </select>
+
+            <br> <br>
+
+            <div class="alert alert-success" role="alert">
+                Texto colorido fixo alert-success
+            </div>
+
+            <br> <br>
+
+            <div class="alert {{ classe.value }}" role="alert">
+                Texto colorido conforme o combobox
+            </div>
+
+            <br> <br>
+
+            <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">alert-primary</div>
+            <div class="alert" role="alert" [class.alert-secondary]="classe.value == 'alert-secondary'">alert-secondary</div>
+            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">alert-success</div>
+            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">alert-danger</div>
+            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">alert-warning</div>
+            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">alert-info</div>
+            <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'">alert-light</div>
+            <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">alert-dark</div>
+
+            <br><br>
+
+            <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+                Este texto aparece somente em caso o combobox escolhido seja alert-danger
+            </div>
+            
+            <br><br>
+
+        </div>
+
+    </article>
+
+</section>
+ -->
+
+<section>
+    <article>
+      <h3>Event Binding</h3>
+      <div>
+        <button (click)="botaoClicado()"
+            class="btn btn-primary">
+            Me clique!
+        </button>
+
+        <br><br>
+
+        <input type="text"
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="salvarValor(campoInput.value)"
+            (blur)="salvarValor(campoInput.value)"
+            #campoInput
+            />>
+        
+        <p> Valor atual: {{ valorAtual }} </p>
+        <p> Valor salvo: {{ valorSalvo }} </p>
+
+        <br>
+        <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >
+            Passe o mouse sobre mim</span>
+
+      </div>
+    </article>
+</section>
+     :
+```
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+export class DataBindingComponent {
+  :
+  valorAtual: string = '';
+  valorSalvo: string = '';
+  isMouseOver: boolean = false;
+  :
+  botaoClicado() {
+    alert('Botao clicado!');
+  }
+
+  onKeyUp(evento: KeyboardEvent){
+    this.valorAtual = (<HTMLInputElement>evento.target).value;
+  }
+
+  salvarValor(valor:string){
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut(){
+    this.isMouseOver = !this.isMouseOver;
+  }
+  :
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++--------------------------------------------------------+
+| http://localhost:4200                                  |
++--------------------------------------------------------+
+| Event Binding                                          |
+| +------------+                                         |
+| | Me clique! |                                         |
+| +------------+                                         |
+|     :                                                  |
++--------------------------------------------------------+
+```
+
+
+#### 3.5.21.4.5. Data Binding - Two-Way Data binding
 Manter o sincronismo ao mesmo tempo o componente quanto o template
 
+* Template value updates Component value and vice-versa
+* Use Events Binding + Property Bind
 
+* [Curso Angular #12: Two-way data binding](https://www.youtube.com/watch?v=7PI-2pvLTu8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=13)
 
 
 #### 3.5.21.5. Directive
