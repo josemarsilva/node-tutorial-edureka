@@ -15,6 +15,16 @@ export class DataBindingComponent {
   valorSalvo: string = '';
   isMouseOver: boolean = false;
 
+  nome: string = 'abc';
+
+  pessoa: any = {
+    nome: 'fulano',
+    idade: 20
+  }
+
+  nomeDataBinding: string = 'nomeDataBinding';
+  nomeDataBinding2: string = 'nomeDataBinding2';
+
   getValor() { 
     return 1
   }
@@ -33,6 +43,10 @@ export class DataBindingComponent {
 
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onMudouValor(evento:any){
+    console.log(evento.novoValor);
   }
 
 }

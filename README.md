@@ -2087,83 +2087,6 @@ Escutar eventos do Template (view HTML) e executar a lógica de programação no
 
 ```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
      :
-<!-- 
-<section>
-    <article>
-      <h3>Interpolation</h3>
-      <p>String renderizada com interpolação {{ url }} </p>
-      <p>Resultado de expressão com interpolação: 1 + 1 = {{ 1 + 1 }} </p>
-      <p>Resultado da chamada de função getValor():  {{ getValor() }} </p>
-      <p>Resultado de expressões lógicas: {{ cursoAngular && getValor() }} </p>
-    </article>
-
-    <article>
-        <h3>Property Binding</h3>
-        <p>Show 3x image {{ urlImage  }}</p>
-        <img src="{{ urlImage  }}">
-        <br>
-        <img [src]="urlImage">
-        <br>
-        <img bind-src="urlImage">
-    </article>
-
-</section>
-
-<section>
-
-    <article>
-        <h3>Class Binding & Style Binding</h3>
-        <div>
-            Selecione uma classe:
-            <select #classe (change)="0">
-                <option value="alert-primary">alert-primary</option>"
-                <option value="alert-secondary">alert-secondary</option>"
-                <option value="alert-success">alert-success</option>"
-                <option value="alert-danger">alert-danger</option>"
-                <option value="alert-warning">alert-warning</option>"
-                <option value="alert-info">alert-info</option>"
-                <option value="alert-light">alert-light</option>"
-                <option value="alert-dark">alert-dark</option>"
-            </select>
-
-            <br> <br>
-
-            <div class="alert alert-success" role="alert">
-                Texto colorido fixo alert-success
-            </div>
-
-            <br> <br>
-
-            <div class="alert {{ classe.value }}" role="alert">
-                Texto colorido conforme o combobox
-            </div>
-
-            <br> <br>
-
-            <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">alert-primary</div>
-            <div class="alert" role="alert" [class.alert-secondary]="classe.value == 'alert-secondary'">alert-secondary</div>
-            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">alert-success</div>
-            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">alert-danger</div>
-            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">alert-warning</div>
-            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">alert-info</div>
-            <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'">alert-light</div>
-            <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">alert-dark</div>
-
-            <br><br>
-
-            <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
-                Este texto aparece somente em caso o combobox escolhido seja alert-danger
-            </div>
-            
-            <br><br>
-
-        </div>
-
-    </article>
-
-</section>
- -->
-
 <section>
     <article>
       <h3>Event Binding</h3>
@@ -2256,6 +2179,272 @@ Manter o sincronismo ao mesmo tempo o componente quanto o template
 * Use Events Binding + Property Bind
 
 * [Curso Angular #12: Two-way data binding](https://www.youtube.com/watch?v=7PI-2pvLTu8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=13)
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\app.module.ts`
+  * **Import** `FormsModule` required to use ngModule
+
+```.\node-angular2\prj-data-binding\src\app\app.module.ts
+     :
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+     :
+  imports: [
+    BrowserModule, 
+    FormsModule
+  ],
+     :
+```
+
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * define variable to listen to change of select option on HTML
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+ <section>
+    <article>
+      <h3>Two-way data binding</h3>
+      <div>
+        <input type="text"
+            [ngModel]="nome"
+            (ngModelChange)="nome = $event"
+        />
+        <input type="text" [(ngModel)]="nome">
+        <br>
+        <p>Você digitou {{ nome }}</p>
+      </div>
+      <div>
+        <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade</p>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+      </div>
+    </article>
+</section>
+     :
+```
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+export class DataBindingComponent {
+  :
+nome: string = 'abc';
+
+  pessoa: any = {
+    nome: 'fulano',
+    idade: 20
+  }
+  :
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+|Two-way data binding                                         |
+| [ abc             ] [ abc             ]                     |
+| Você digitou abc                                            |
+| [ ciclano         ] [ 3             ]                       |
+| Meu nome é ciclano e tenho 3 anos de idade                  |
++-------------------------------------------------------------+
+```
+
+#### 3.5.21.4.6. Reutilizando Componentes com Input Propoerties
+Expor a propriedade de um componente para outro componente
+
+* [Curso Angular #13: Reusando Componentes com Input properties](https://www.youtube.com/watch?v=G2cBpYZ0fzk)
+
+* Create New Component to use Data Binding
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng generate component input-property
+CREATE src/app/input-property/input-property.component.css (0 bytes)
+CREATE src/app/input-property/input-property.component.html (29 bytes)
+CREATE src/app/input-property/input-property.component.spec.ts (609 bytes)
+CREATE src/app/input-property/input-property.component.ts (233 bytes)
+UPDATE src/app/app.module.ts (594 bytes)
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * use selector `app-input-property`
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+<section class="input-output-propoerties">
+    <article>
+        <h3>Input/Output Properties</h3>
+        <app-input-property [nomeDataBinding]="nomeDataBinding" [aliasDataBinding2]="nomeDataBinding2"></app-input-property>
+    </article>
+</section>
+     :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\input-property\input-property.component.html`
+  * use input properties using interpolation
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\input-property\input-property.component.html
+     :
+<p>input-property works!</p>
+<p>nomeDataBinding: {{ nomeDataBinding }}</p>
+<p>nomeDataBinding2: {{ nomeDataBinding2 }}</p>
+     :
+```
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+  * Create properties: 
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+export class DataBindingComponent {
+  :
+  nomeDataBinding: string = 'nomeDataBinding';
+  nomeDataBinding2: string = 'nomeDataBinding2';
+  :
+```
+
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\input-property\input-property.component.ts`
+  * add import `import ... Input`
+  * add @Input() decorator on properties declarations `@Input() nomeDataBinding: string = '';`
+  * Create properties: 
+
+```.\node-angular2\prj-data-binding\src\app\input-property\input-property.component.ts
+  :
+import { Component, Input } from '@angular/core';
+  :
+export class InputPropertyComponent {
+  :
+  @Input() nomeDataBinding: string = '';
+  @Input('aliasDataBinding2') nomeDataBinding2: string = '';
+  :
+```
+
+#### 3.5.21.4.7. Emitindo Eventos com Output properties
+Emitir eventos customizados através do com Output properties. O exercício será criar um número com dois botões, sendo um para incrementar o valor e outro para decrementar o valor
+
+* [Curso Angular #14: Emitindo Eventos com Output properties](https://www.youtube.com/watch?v=Lbwk8oDJrCU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=15)
+
+* Create New Component to use Data Binding
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng generate component output-property
+CREATE src/app/output-property/output-property.component.css (0 bytes)
+CREATE src/app/output-property/output-property.component.html (30 bytes)
+CREATE src/app/output-property/output-property.component.spec.ts (616 bytes)
+CREATE src/app/output-property/output-property.component.ts (237 bytes)
+UPDATE src/app/app.module.ts (710 bytes)
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html`
+  * use selector `app-input-property`
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.html
+     :
+ <section class="output-propoerties">
+    <article>
+        <h3>Output Properties</h3>
+        <app-output-property 
+            (mudouValor)="onMudouValor($event)">
+        </app-output-property>
+    </article>
+</section>
+     :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\output-property\output-property.component.html`
+  * use output properties readonly and listen to events
+  * add contents by:
+
+```.\node-angular2\prj-data-binding\src\app\input-property\input-property.component.html
+     :
+<p>output-property works!</p>
+
+<div>
+    <button class="btn btn-primary" (click)="decrementa()">-</button>
+    <input type="text" [value]="valor" readonly>
+    <button class="btn btn-primary" (click)="incrementa()">+</button>
+</div>
+     :
+```
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts`
+  * Create properties: 
+
+```.node-angular2\prj-data-binding\src\app\data-binding\data-binding.component.ts
+  :
+  onMudouValor(){
+    console.log(evento);
+  }
+  :
+```
+
+
+* Edit Component `.\node-angular2\prj-data-binding\src\app\output-property\output-property.component.ts`
+  * import ` Input, Output, EventEmitter`
+  * add property declaration `@Input() valor: number = 0`
+  * define methods `incrementa()` e `decrementa()`
+
+```.\node-angular2\prj-data-binding\src\app\output-property\output-property.component.ts
+  :
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+  :
+  @Input() valor:number = 0;
+  @Output() mudouValor = new EventEmitter();
+
+  incrementa(){
+    this.valor++;
+    this.mudouValor.emit({novoValor: this.valor});
+  }
+
+  decrementa(){
+    this.valor--;
+    this.mudouValor.emit({novoValor: this.valor});
+  }
+
+  :
+```
+
+* Run project and observe result on browser
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+|  Input/Output Properties                                    |
+|    input-property works!                                    |
+|    nomeDataBinding: nomeDataBinding                         |
+|    nomeDataBinding2: nomeDataBinding2                       |
+|  Output Properties                                          |
+|    output-property works!                                   |
+|     [-] [ 10 ] [+]                                          |
++-------------------------------------------------------------+
+```
 
 
 #### 3.5.21.5. Directive

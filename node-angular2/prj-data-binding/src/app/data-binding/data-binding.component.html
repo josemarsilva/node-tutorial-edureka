@@ -73,7 +73,6 @@
     </article>
 
 </section>
- -->
 
 <section>
     <article>
@@ -108,3 +107,45 @@
     </article>
 </section>
 
+
+ <section>
+    <article>
+      <h3>Two-way data binding</h3>
+      <div>
+        <input type="text"
+            [ngModel]="nome"
+            (ngModelChange)="nome = $event"
+        />
+
+        <input type="text" [(ngModel)]="nome">
+
+        <br>
+        <p>Você digitou {{ nome }}</p>
+
+      </div>
+
+      <div>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+        <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade</p>
+      </div>
+
+    </article>
+</section>
+
+-->
+
+<section class="input-propoerties">
+    <article>
+        <h3>Input/Output Properties</h3>
+        <app-input-property [nomeDataBinding]="nomeDataBinding" [aliasDataBinding2]="nomeDataBinding2"></app-input-property>
+    </article>
+</section>
+
+ <section class="output-propoerties">
+    <article>
+        <h3>Output Properties</h3>
+        <app-output-property (mudouValor)="onMudouValor($event)">
+        </app-output-property>
+    </article>
+</section>
