@@ -44,9 +44,12 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
       - [3.5.21.4. Data Binding](#35214-data-binding) 
         * [3.5.21.4.1. Data Binding - Interpolation](#352141-data-binding---intepolation) 
         * [3.5.21.4.2. Data Binding - Property Binding](#352142-data-binding---property-binding) 
-        * [3.5.21.4.1. Data Binding - Class Binding and Style Binding](#352143-data-binding---class-binding-and-style-binding) 
-        * [3.5.21.4.1. Data Binding - Event Binding](#352144-data-binding---event-binding) 
- 
+        * [3.5.21.4.3. Data Binding - Class Binding and Style Binding](#352143-data-binding---class-binding-and-style-binding) 
+        * [3.5.21.4.4. Data Binding - Event Binding](#352144-data-binding---event-binding) 
+        * [3.5.21.4.5. Data Binding - Two-Way Data binding](#352145-data-binding---two-way-data-binding)
+        * [3.5.21.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352146-reutilizando-componentes-com-input-propoerties)
+        * [3.5.21.4.7. Data Binding - Emitindo Eventos com Output properties](#352147-emitindo-eventos-com-output-properties)
+        * [3.5.21.4.8. Data Binding - Component Life Cycle](#352148-component-life-cycle)
 
 ## 2. Documentação
 
@@ -1818,6 +1821,7 @@ CREATE prj-data-binding/src/assets/.gitkeep (0 bytes)
 $ cd prj-data-binding
 $ pwd
 /mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ npm install --save
 $ ng serve
 ```
 
@@ -2443,6 +2447,214 @@ $ ng serve
 |  Output Properties                                          |
 |    output-property works!                                   |
 |     [-] [ 10 ] [+]                                          |
++-------------------------------------------------------------+
+```
+
+
+#### 3.5.21.4.8. Component Life Cycle
+Ciclo de vida de um componente
+
+* [Curso Angular #15: Ciclo de vida do Componente](https://www.youtube.com/watch?v=4Z543sAKmBA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=16)
+
+* O Angular possui eventos que são disparados automaticamentes:
+  * **ngOnChanges**: before ngOnInit when property-bindign is updated
+  * **ngOnInit**: when Component is initialized
+  * **ngDoCheck**: each cycle of changes verify
+  * **ngAfterContentInit**: after insert external content into view
+  * **ngAfterContentChecked**: each content insert verify
+  * **ngAfterViewChecked**: each content / child content is verify
+  * **ngOnDestroy**: before directive of component destroy
+
+
+* Create New Component to test Life Cycle
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng generate component life-cycle
+CREATE src/app/life-cycle/life-cycle.component.css (0 bytes)
+CREATE src/app/life-cycle/life-cycle.component.html (25 bytes)
+CREATE src/app/life-cycle/life-cycle.component.spec.ts (581 bytes)
+CREATE src/app/life-cycle/life-cycle.component.ts (217 bytes)
+UPDATE src/app/app.module.ts (806 bytes)
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\app.component.html`
+  * Edit Template class: add reference **selector** `app-life-cycle`
+  * Edit Template class: use **property bind** `valorInicial` with local variable `valor`
+  * Edit Template class: use **event bind** (click)="mudarValor()"
+  * Edit Template class: use **event bind** (click)="deletarValor()"
+  * Edit Template class: use **directive ngIf** 
+  * replace all by
+
+```.\node-angular2\prj-data-binding\src\app\app.component.html
+     :
+<!-- <app-data-binding></app-data-binding> -->
+<app-life-cycle [valorInicial]="valor" *ngIf="!deletarCiclo"></app-life-cycle>
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Deletar Ciclo</button>
+     :
+```
+
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\app.component.ts`
+  * Edit Component class: define and initialize variable `valor: number = 5`
+
+```.\node-angular2\prj-data-binding\src\app\app.component.ts
+    :
+export class AppComponent {
+  title = 'prj-data-binding';
+  valor: number = 5;
+  deletarCiclo: boolean = false;
+
+  mudarValor() {
+    this.valor++;
+  }
+
+  destruirCiclo(){
+    this.deletarCiclo = true;
+  }
+    :
+```
+
+* Edit Template `.node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.ts`
+  * Edit class LifeCycleComponent and add log on each hooks`ngOnChanges()`, `ngOnInit()`, `ngDoCheck()`, `ngAfterContentInit()`, `ngAfterContentChecked()`, `ngAfterViewChecked()`, `ngOnDestroy()`
+  * Import `Input` library and expose variable `valorInicial`
+
+
+```.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.ts
+     :
+export class LifeCycleComponent {
+
+  @Input() valorInicial: number = 10;
+
+  constructor(){
+    this.log('constructor()');
+  }
+
+  ngOnInit() {
+    this.log('ngOnInit()');
+  }
+
+  ngOnChanges(){
+    this.log('ngOnChanges()');
+  }
+  
+  ngDoCheck(){
+    this.log('ngDoCheck()');
+  }
+  
+  ngAfterContentInit(){
+    this.log('ngAfterContentInit()');
+  }
+  
+  ngAfterContentChecked(){
+    this.log('ngAfterContentChecked()');
+  }
+  
+  ngAfterViewChecked(){
+    this.log('ngAfterViewChecked()');
+  }
+  
+  ngOnDestroy(){
+    this.log('ngOnDestroy()');
+  }
+
+  private log(hook: string) {
+    console.log(hook);
+  }
+     :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.html`
+  * Edit Template class add interpolation show variable valorInicial
+
+```.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.html
+    :
+<p>life-cycle works!</p>
+
+<p>valor: {{ valorInicial }}</p>
+    :
+```
+
+* Run project and observe result on browser and development tools
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+* Enter project url
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| life-cycle works!                                           |
+| valor: 5                                                    |
+| +-------------+    +---------------+                        |
+| | Mudar Valor |    | Deletar Ciclo |                        |
+| +-------------+    +---------------+                        |
++-------------------------------------------------------------+
+```
+
+* Observe browser development tools - Log
+
+```browser-devtools
++---------+---------------------------------------------------+
+| Console |                                                   |
++---------+---------------------------------------------------+
+|      :                                                      |
+| constructor()                                               |
+| life-cycle.component.ts:43 ngOnInit()                       |
+| life-cycle.component.ts:43 ngDoCheck()                      |
+| life-cycle.component.ts:43 ngAfterContentInit()             |
+| life-cycle.component.ts:43 ngAfterContentChecked()          |
+| life-cycle.component.ts:43 ngAfterViewChecked()             |
+| core.mjs:26021 Angular is running in development mode.      |
+| life-cycle.component.ts:43 ngDoCheck()                      |
+| life-cycle.component.ts:43 ngAfterContentChecked()          |
+| life-cycle.component.ts:43 ngAfterViewChecked()             |
+|      :                                                      |
++-------------------------------------------------------------+
+```
+
+* Clear log's and click button `Mudar Valor`
+
+```browser-devtools
++---------+---------------------------------------------------+
+| Console |                                                   |
++---------+---------------------------------------------------+
+|      :                                                      |
+| life-cycle.component.ts:43 ngOnChanges()                    |
+| life-cycle.component.ts:43 ngOnDoCheck()                    |
+| life-cycle.component.ts:43 ngAfterContentChecked()          |
+| life-cycle.component.ts:43 ngAfterViewChecked()             |
+|      :                                                      |
++-------------------------------------------------------------+
+```
+
+* Clear log's and click button `Deletar Ciclo`
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| +-------------+    +---------------+                        |
+| | Mudar Valor |    | Deletar Ciclo |                        |
+| +-------------+    +---------------+                        |
++-------------------------------------------------------------+
+```
+
+```browser-devtools
++---------+---------------------------------------------------+
+| Console |                                                   |
++---------+---------------------------------------------------+
+|      :                                                      |
+| life-cycle.component.ts:43 ngOnDestroy()                    |
+|      :                                                      |
 +-------------------------------------------------------------+
 ```
 
