@@ -2497,7 +2497,7 @@ UPDATE src/app/app.module.ts (806 bytes)
 ```
 
 
-* Edit Template `.\node-angular2\prj-data-binding\src\app\app.component.ts`
+* Edit Component class `.\node-angular2\prj-data-binding\src\app\app.component.ts`
   * Edit Component class: define and initialize variable `valor: number = 5`
 
 ```.\node-angular2\prj-data-binding\src\app\app.component.ts
@@ -2517,8 +2517,8 @@ export class AppComponent {
     :
 ```
 
-* Edit Template `.node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.ts`
-  * Edit class LifeCycleComponent and add log on each hooks`ngOnChanges()`, `ngOnInit()`, `ngDoCheck()`, `ngAfterContentInit()`, `ngAfterContentChecked()`, `ngAfterViewChecked()`, `ngOnDestroy()`
+* Edit Component class `.node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.ts`
+  * Edit Component class LifeCycleComponent: add log on each hooks`ngOnChanges()`, `ngOnInit()`, `ngDoCheck()`, `ngAfterContentInit()`, `ngAfterContentChecked()`, `ngAfterViewChecked()`, `ngOnDestroy()`
   * Import `Input` library and expose variable `valorInicial`
 
 
@@ -2566,7 +2566,7 @@ export class LifeCycleComponent {
      :
 ```
 
-* Edit Template `.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.html`
+* Edit Template class `.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.html`
   * Edit Template class add interpolation show variable valorInicial
 
 ```.\node-angular2\prj-data-binding\src\app\life-cycle\life-cycle.component.html
@@ -2659,14 +2659,119 @@ $ ng serve
 ```
 
 
-#### 3.5.21.5. Directive
-#### 3.5.21.6. Formulários
-#### 3.5.21.7. Roteamento
-#### 3.5.21.8. Integração com servidor
-#### 3.5.21.9. CRUD Metres-Detalhe
+#### 3.5.21.4.9. DOM access and Template ViewChild
+How to access DOM and Template with decorator ViewChild
+
+* [Curso Angular #16: Acesso ao DOM e ao Template com ViewChild](https://www.youtube.com/watch?v=WO3LdMeh8WU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=17)
+
+* Create New Component to use Data Binding
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng generate component dom-access-with-viewchild
+  :
+```
+
+* Edit Template `.\node-angular2\prj-data-binding\src\app\app.component.html`
+  * Edit Template class: add reference **selector** `dom-access-with-viewchild`
+  * replace all by
+
+```.\node-angular2\prj-data-binding\src\app\app.component.html
+     :
+<!-- <app-data-binding></app-data-binding> -->
+
+<!-- 
+<app-life-cycle [valorInicial]="valor" *ngIf="!deletarCiclo"></app-life-cycle>
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Deletar Ciclo</button>
+ -->
+
+ <app-dom-access-with-viewchild [valor]="valor"></app-dom-access-with-viewchild>
+     :
+```
+
+* Edit Component class `.\node-angular2\prj-data-binding\src\app\dom-access-with-viewchild\dom-access-with-viewchild.component.ts`
+  * Edit Component class import `Input` and `ViewChild`
+  * Edit Component class decorator `@Input()` to bind component variable `valor`
+  * Edit Component class decorator `@ViewChild()` to bind component variable `campoValorInput` to template variable `campoInput`
+  * Edit Component class implement function to capture and log value of initialization and changes on variable `valor` using Life Cycle `ngAfterViewInit()` and `ngOnChanges()`
+
+```.\node-angular2\prj-data-binding\src\app\dom-access-with-viewchild\dom-access-with-viewchild.component.ts
+    :
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+    :
+export class DomAccessWithViewchildComponent {
+  @Input() valor:number = 0;
+  @ViewChild('campoInput') campoValorInput!: ElementRef;
+    :
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit()');
+    console.log(this.campoValorInput.nativeElement);
+  }
+    :
+```
+
+
+* Edit Template class `.\node-angular2\prj-data-binding\src\app\dom-access-with-viewchild\dom-access-with-viewchild.component.html`
+  * Edit Template class: add input text
+
+```.\node-angular2\prj-data-binding\src\app\dom-access-with-viewchild\dom-access-with-viewchild.component.html
+    :
+<p>dom-access-with-viewchild works!</p>
+<input type="text" [value]="valor" #campoInput>
+    :
+```
+
+* Run project and observe result on browser and development tools
+
+```bash
+$ cd prj-data-binding
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-data-binding
+$ ng serve
+```
+
+* Enter project url
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| dom-access-with-viewchild works!                            |
+| [  5  ]
++-------------------------------------------------------------+
+```
+
+* Observe browser development tools - Log
+
+```browser-devtools
++---------+---------------------------------------------------+
+| Console |                                                   |
++---------+---------------------------------------------------+
+|      :                                                      |
+| ngAfterViewInit()                                           |
+| input                                                       |
+|      :                                                      |
+| value: "5"                                                  |
+|      :                                                      |
++-------------------------------------------------------------+
+```
+
+#### 3.5.21.5. Directives
+#### 3.5.21.6. Services
+#### 3.5.21.7. Pipes
+#### 3.5.21.8. Roteamento
+#### 3.5.21.9. Forms (Template Driven)
+#### 3.5.21.10. Forms Reactive (Data-Driven)
+#### 3.5.21.11. HTTP
+#### 3.5.21.12. Debug
+#### 3.5.21.13. Build & Deploy
+
+
 
 
 
 ## I - Referências
 
-* [Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&list=PLORrDfZD1hkGDVKuuxZPq6770NpM5Y6kK)
+* https://loiane.training/curso/angular

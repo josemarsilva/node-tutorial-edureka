@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { DomAccessWithViewchildComponent } from './dom-access-with-viewchild/dom-access-with-viewchild.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
     DataBindingComponent,
     InputPropertyComponent,
     OutputPropertyComponent,
-    LifeCycleComponent
+    LifeCycleComponent,
+    DomAccessWithViewchildComponent
   ],
   imports: [
     BrowserModule,
