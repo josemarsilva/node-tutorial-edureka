@@ -59,7 +59,7 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352155-angular-cli---using-pre-processors-sass-less-and-stylus)
         * [3.5.21.5.6. Angular CLI - Using lint, test and e2e](#352156-angular-cli---using-lint-test-e2e)
         * [3.5.21.5.7. Angular CLI - Project folder strucuture](#352157-angular-cli---project-folders-structure)
-      - [3.5.21.6. Build Deploy and Production](#35216-) 
+      - [3.5.21.6. Build Deploy and Production](#35216-build-deploy-and-production) 
 
 
 ## 2. Documentação
@@ -2896,7 +2896,7 @@ $ ng set defaults.styleExt stylus
 
 ```bash
 $ pwd
-/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng lint
   :
 Would you like to add ESLint now? Yes
@@ -2907,7 +2907,7 @@ Would you like to add ESLint now? Yes
 
 ```bash
 $ pwd
-/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng generate component test-lint
   :
 ```
@@ -2919,7 +2919,7 @@ $ ng generate component test-lint
 
 ```bash
 $ pwd
-/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng lint
   :
 /mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives/src/app/test-lint/test-lint.component.ts
@@ -2933,7 +2933,7 @@ $ ng lint
 
 ```bash
 $ pwd
-/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ export CHROME_BIN='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 $ ng test
   :
@@ -2952,7 +2952,7 @@ $ ng test
 
 ```bash
 $ pwd
-/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ export CHROME_BIN='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 $ ng e2e
 ```
@@ -2977,6 +2977,246 @@ How to build a Deploy package and run Production
 
 * [Curso Angular #22: Angular CLI: Gerando build de produção](https://www.youtube.com/watch?v=U0zHj14mNrI&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=23)
 
+* Step-1: Build **Development** `ng build` (default)
+  * **Development** code is not obfuscated and not minified and can be used for debug proposals
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng build
+      :
+✔ Browser application bundle generation complete.
+✔ Copying assets complete.
+✔ Index html generation complete.
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.cfe7cc91c77d7b55.js      | main          | 125.69 kB |                37.56 kB
+polyfills.7c71b41b0c13f5f4.js | polyfills     |  33.02 kB |                10.64 kB
+runtime.e8f73fdad719f0ee.js   | runtime       | 906 bytes |               519 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+                              | Initial Total | 159.60 kB |                48.71 kB
+Build at: 2023-08-29T12:26:31.205Z - Hash: 4e315ba1fd46bb2b - Time: 53346ms
+      :
+$ ls -laR ./dist
+      :
+./dist/prj-directives:
+      :
+-rwxrwxrwx 1 josemarsilva josemarsilva    575 Aug 29 09:26 index.html
+-rwxrwxrwx 1 josemarsilva josemarsilva 128707 Aug 29 09:26 main.cfe7cc91c77d7b55.js
+-rwxrwxrwx 1 josemarsilva josemarsilva  33817 Aug 29 09:26 polyfills.7c71b41b0c13f5f4.js
+-rwxrwxrwx 1 josemarsilva josemarsilva    906 Aug 29 09:26 runtime.e8f73fdad719f0ee.js
+-rwxrwxrwx 1 josemarsilva josemarsilva      0 Aug 29 09:26 styles.ef46db3751d8e999.css      :
+      :
+```
+
+* Step-2: Build **Production** `ng build --configuration production` 
+  * **Production** code is obfuscated and minified and can't be used for debug proposals
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ rm -rf ./dist/
+$ cat angular.json | jq '.projects."prj-directives".architect.build.configurations'
+      :
+{
+  "production": {
+    "budgets": [
+      :
+    "outputHashing": "all"
+  },
+  "development": {
+    "buildOptimizer": false,
+    "optimization": false,
+    "vendorChunk": true,
+    "extractLicenses": false,
+    "sourceMap": true,
+    "namedChunks": true
+  }
+      :
+$ ng build --configuration production
+      :
+✔ Browser application bundle generation complete.
+✔ Copying assets complete.
+✔ Index html generation complete.
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.cfe7cc91c77d7b55.js      | main          | 125.69 kB |                37.56 kB
+polyfills.7c71b41b0c13f5f4.js | polyfills     |  33.02 kB |                10.64 kB
+runtime.e8f73fdad719f0ee.js   | runtime       | 906 bytes |               519 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+                              | Initial Total | 159.60 kB |                48.71 kB
+Build at: 2023-08-29T13:03:35.830Z - Hash: 4e315ba1fd46bb2b - Time: 8739ms
+      :
+$ ls -laR ./dist
+      :
+./dist/prj-directives:
+      :
+-rwxrwxrwx 1 josemarsilva josemarsilva  12269 Aug 29 10:03 3rdpartylicenses.txt
+-rwxrwxrwx 1 josemarsilva josemarsilva    948 Aug 29 10:03 favicon.ico
+-rwxrwxrwx 1 josemarsilva josemarsilva    575 Aug 29 10:03 index.html
+-rwxrwxrwx 1 josemarsilva josemarsilva 128707 Aug 29 10:03 main.cfe7cc91c77d7b55.js
+-rwxrwxrwx 1 josemarsilva josemarsilva  33817 Aug 29 10:03 polyfills.7c71b41b0c13f5f4.js
+-rwxrwxrwx 1 josemarsilva josemarsilva    906 Aug 29 10:03 runtime.e8f73fdad719f0ee.js
+-rwxrwxrwx 1 josemarsilva josemarsilva      0 Aug 29 10:03 styles.ef46db3751d8e999.css
+      :
+```
+
+* Step-3: Test deployment running `http-server` to serve your application to browser
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ cd dist
+$ http-server
+Starting up http-server, serving ./
+Available on:
+  http://127.0.0.1:8080
+  http://172.24.139.148:8080
+Hit CTRL-C to stop the server
+```
+
+
+#### 3.5.21.7. Install libraries: Bootstrap
+How to install libraries: Bootstrap
+
+* [Curso Angular #118: Instalando Bootstrap](https://www.youtube.com/watch?v=Vgj9N_Lw-r4)
+* [How to Add Bootstrap to an Angular CLI project](https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/)
+
+* Step-1: Create New project to test Bootstrap
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng new prj-bootstrap
+      :
+```
+
+* Step-2: Instal NPM - Node Package Module - Bootstrap
+
+```bash
+$ cd prj-bootstrap
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-bootstrap
+$ npm install bootstrap --save
+      :
+$ cat package.json | grep 'bootstrap'
+      :
+    "bootstrap": "^5.3.1"
+      :
+```
+
+* Step-3: Find out where is bootstrap min css file
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-bootstrap
+$ find . -name bootstrap.min.css
+./node_modules/bootstrap/dist/css/bootstrap.min.css
+```
+
+* Step-4: Importing the CSS - Option 1: Configure `angular.json`
+  * Edit `.\node-angular2\prj-bootstrap\angular.json`
+
+```.\node-angular2\prj-bootstrap\angular.json
+        :
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+        :
+```
+
+* Step-5: Importing the CSS - Option 2: Configure `styles.scss`
+  * Edit `.\node-angular2\prj-bootstrap\src\styles.css`
+  * `~` is the same as `./node_modules/`
+
+```.\node-angular2\prj-bootstrap\src\styles.css
+        :
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+        :
+```
+
+* Step-6: Bootstrap JavaScript Components with ngx-bootstrap
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-bootstrap
+$ npm install ngx-bootstrap --save
+        :
+```
+
+* Step-7: Option: Install Bootstrap and ngx-bootstrap at same time
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-bootstrap
+$ npm install bootstrap ngx-bootstrap --save
+        :
+```
+
+* Step-8: Adding the required Bootstrap modules in app.module.ts
+  * Edit `.\node-angular2\prj-bootstrap\src\app\app.module.ts` and import Bootstrap, For example, suppose we want to use the Dropdown, Tooltip and Modal components:
+
+```node-angular2\prj-bootstrap\src\app\app.module.ts
+    :
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+    :
+@NgModule({
+    :
+  imports: [
+    BrowserModule,
+    BsDropdownModule,
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
+  ],
+    :
+```
+
+* Step-9: Edit HTML file
+  * Edit `.\node-angular2\prj-bootstrap\src\app\app.component.html`
+
+```.\node-angular2\prj-bootstrap\src\app\app.component.html
+<h1>prj-bootstrap app is running!</h1>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand">
+            <img src="assets/img/ngx-bootstrap.svg" class="logo">
+          </a>
+          <span class="navbar-brand">Angular + Bootstrap</span>
+      </div>
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="#">
+            Link <span class="sr-only">(current)</span>
+          </a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown" dropdown> <!-- {1} -->
+              <a dropdownToggle role="button"> <!-- {2} -->
+                Dropdown <span class="caret"></span></a>
+              <ul *dropdownMenu class="dropdown-menu"> <!-- {3} -->
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+</nav>
+```
+
+* Step-10: Start application and Test on browser
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-bootstrap
+$ ng serve
+```
 
 
 #### 3.5.21.7. Directives
