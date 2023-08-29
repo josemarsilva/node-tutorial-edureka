@@ -50,6 +50,10 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352146-reutilizando-componentes-com-input-propoerties)
         * [3.5.21.4.7. Data Binding - Emitindo Eventos com Output properties](#352147-emitindo-eventos-com-output-properties)
         * [3.5.21.4.8. Data Binding - Component Life Cycle](#352148-component-life-cycle)
+        * [3.5.21.4.9. Data Binding - DOM access and Template ViewChild](#352149-dom-access-and-template-viewchild)
+      - [3.5.21.5. Angular CLI](#35215-angular-cli) 
+        * [3.5.21.5.1. Angular CLI - Install](#352151-angular-cli---install)
+        * [3.5.21.5.2. Angular CLI - Create Project](#352152-angular-cli---create-project)
 
 ## 2. Documentação
 
@@ -2739,7 +2743,7 @@ $ ng serve
 | http://localhost:4200                                       |
 +-------------------------------------------------------------+
 | dom-access-with-viewchild works!                            |
-| [  5  ]
+| [  5  ]                                                     |
 +-------------------------------------------------------------+
 ```
 
@@ -2758,15 +2762,199 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-#### 3.5.21.5. Directives
-#### 3.5.21.6. Services
-#### 3.5.21.7. Pipes
-#### 3.5.21.8. Roteamento
-#### 3.5.21.9. Forms (Template Driven)
-#### 3.5.21.10. Forms Reactive (Data-Driven)
-#### 3.5.21.11. HTTP
-#### 3.5.21.12. Debug
-#### 3.5.21.13. Build & Deploy
+#### 3.5.21.5. Angular CLI
+How to install, create project, ng new, ng init, ng serve
+
+* [Curso Angular #17: Angular CLI: Instalação e criação de projetos: ng new e ng serve](https://www.youtube.com/watch?v=RlfOhrhPh_Y&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=18)
+
+#### 3.5.21.5.1. Angular CLI - Install
+
+* Pre-requisites: Node ( version >4 ) and NPM - Node Package Manager
+* Install globally `npm install -g @angular/cli`
+* Official Documentation - https://github.com/angular/angular-cli
+
+```bash
+$ node -v
+v18.16.0
+$ npm install -g @angular/cli
+```
+
+#### 3.5.21.5.2. Angular CLI - Create Project
+
+* Option 1: Create New with `ng new <project-name>`
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng new prj-directives
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? (Use arrow keys)
+  :
+CREATE prj-directives/README.md (1067 bytes)
+  :
+CREATE prj-directives/src/main.ts (214 bytes)
+  :
+⠋ Installing packages (npm)...
+✔ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+  :
+```
+
+* Option 2: Init a project on a existing directory `ng init`
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ mkdir prj-directives
+$ cd prj-directives
+$ ng init
+```
+
+
+#### 3.5.21.5.3. Angular CLI - Start project
+
+```bash
+$ cd prj-directives
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng serve
+    :
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+    :
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| prj-directives app is running!                              |
+|           :                                                 |
++-------------------------------------------------------------+
+```
+
+
+#### 3.5.21.5.4. Angular CLI - Directive ng-if
+
+* Step-1: Use CLI to generate component `directive-ng-if`
+* Step-2: Use CLI to generate service `directive-ng-if`
+
+```bash
+$ cd prj-directives
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ng-if
+  :
+$ ng generate service directive-ng-if/directive-ng-if
+  :
+```
+
+
+#### 3.5.21.5.5. Angular CLI - Using pre-processors: sass, less and stylus
+
+* [Curso Angular #19: Angular CLI: Usando pré-processadores (Sass, Less, Stylus)](https://www.youtube.com/watch?v=Z0umP8p2aW8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=20)
+
+* Step-1: Sintax generate new project
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng new prj-pre-processor-sass --style=sass
+  :
+$ ng new prj-pre-processor-less --style=less
+  :
+$ ng new prj-pre-processor-stylus --style=stylus
+  :
+```
+
+* Step-2: Sintax modify existing process
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-pre-processor-sass
+$ ng set defaults.styleExt scss
+  :
+$ ng set defaults.styleExt less
+  :
+$ ng set defaults.styleExt stylus
+  :
+```
+
+#### 3.5.21.5.6. Angular CLI - Using lint, test e2e
+
+* [Curso Angular #20: Angular CLI: ng lint, ng test, ng e2e](https://www.youtube.com/watch?v=TZDWgAfYYqo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=21)
+* [ng lint](https://angular.io/cli/lint)
+* [ng test](https://angular.io/cli/test)
+* [ng e2e](https://angular.io/cli/e2e)
+
+* Step-1: Using lint - Check code using style guide
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng lint
+  :
+Would you like to add ESLint now? Yes
+  :
+```
+
+* Step-2: Create a new component and violate a best practice
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng generate component test-lint
+  :
+```
+
+* Step-3: Edit `.\node-angular2\prj-directives\src\app\test-lint\test-lint.component.ts`
+  * Create a new variable using spaces between columns that is not a Best Practice `minhaVariavel : string;`
+
+* Step-4: Run lint and observe message of not a Best Practice
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng lint
+  :
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives/src/app/test-lint/test-lint.component.ts
+  9:3  error  Type string trivially inferred from a string literal, remove type annotation  @typescript-eslint/no-inferrable-types
+  :
+```
+
+* Step-5: Explore Jasmine Unit Test `.\node-angular2\prj-directives\src\app\app.component.spec.ts`
+  * Observe `.. it( ... should have as title 'prj-directives' ...`
+
+```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ ng test
+  :
+✔ Browser application bundle generation complete.
+28 08 2023 21:08:02.098:WARN [karma]: No captured browser, open http://localhost:9876/
+28 08 2023 21:08:02.304:INFO [karma-server]: Karma v6.4.2 server started at http://localhost:9876/
+28 08 2023 21:08:02.305:INFO [launcher]: Launching browsers Chrome with concurrency unlimited
+28 08 2023 21:08:02.338:INFO [launcher]: Starting browser Chrome
+28 08 2023 21:08:02.340:ERROR [launcher]: No binary for Chrome browser on your platform.
+  Please, set "CHROME_BIN" env variable.
+  :
+```
+
+* Step-6: Explore Protractor Integration Test `.\node-angular2\prj-directives\src\app\app.component.spec.ts`
+  * Observe `.. it( ... should have as title 'prj-directives' ...`
+
+```bash
+
+
+
+#### 3.5.21.6. Directives
+#### 3.5.21.7. Services
+#### 3.5.21.8. Pipes
+#### 3.5.21.9. Roteamento
+#### 3.5.21.10. Forms (Template Driven)
+#### 3.5.21.11. Forms Reactive (Data-Driven)
+#### 3.5.21.12. HTTP
+#### 3.5.21.13. Debug
+#### 3.5.21.14. Build & Deploy
 
 
 
