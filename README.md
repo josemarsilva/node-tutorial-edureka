@@ -54,6 +54,13 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
       - [3.5.21.5. Angular CLI](#35215-angular-cli) 
         * [3.5.21.5.1. Angular CLI - Install](#352151-angular-cli---install)
         * [3.5.21.5.2. Angular CLI - Create Project](#352152-angular-cli---create-project)
+        * [3.5.21.5.3. Angular CLI - Start Project](#352153-angular-cli---start-project)
+        * [3.5.21.5.4. Angular CLI - Directive ng-if](#352154-angular-cli---directive-ng-if)
+        * [3.5.21.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352155-angular-cli---using-pre-processors-sass-less-and-stylus)
+        * [3.5.21.5.6. Angular CLI - Using lint, test and e2e](#352156-angular-cli---using-lint-test-e2e)
+        * [3.5.21.5.7. Angular CLI - Project folder strucuture](#352157-angular-cli---project-folders-structure)
+      - [3.5.21.6. Build Deploy and Production](#35216-) 
+
 
 ## 2. Documentação
 
@@ -2832,7 +2839,6 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-
 #### 3.5.21.5.4. Angular CLI - Directive ng-if
 
 * Step-1: Use CLI to generate component `directive-ng-if`
@@ -2923,10 +2929,12 @@ $ ng lint
 
 * Step-5: Explore Jasmine Unit Test `.\node-angular2\prj-directives\src\app\app.component.spec.ts`
   * Observe `.. it( ... should have as title 'prj-directives' ...`
+  * SET CHROME_BIN variable
 
 ```bash
 $ pwd
 /mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ export CHROME_BIN='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
 $ ng test
   :
 ✔ Browser application bundle generation complete.
@@ -2943,18 +2951,42 @@ $ ng test
   * Observe `.. it( ... should have as title 'prj-directives' ...`
 
 ```bash
+$ pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2
+$ export CHROME_BIN='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+$ ng e2e
+```
+
+
+#### 3.5.21.5.7. Angular CLI - Project folders structure
+
+* [Curso Angular #21: Angular CLI: Estrutura do projeto](https://www.youtube.com/watch?v=ICvq9YeDCh0&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=22)
+
+* Why use Angular CLI?
+  * Creates project structure
+  * Generates initial HTML, Typscript, CSS and Unit test files
+  * Creates package.json
+  * Install NPM - Node Package Management dependencies
+  * Configures Karma to execute Unit Test
+  * Configures Protractor to execute end-to-end tests
+  * Initializes Git repository
+  * Creates commands to build and deploy application in production
+
+#### 3.5.21.6. Build Deploy and Production
+How to build a Deploy package and run Production
+
+* [Curso Angular #22: Angular CLI: Gerando build de produção](https://www.youtube.com/watch?v=U0zHj14mNrI&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=23)
 
 
 
-#### 3.5.21.6. Directives
-#### 3.5.21.7. Services
-#### 3.5.21.8. Pipes
-#### 3.5.21.9. Roteamento
-#### 3.5.21.10. Forms (Template Driven)
-#### 3.5.21.11. Forms Reactive (Data-Driven)
-#### 3.5.21.12. HTTP
-#### 3.5.21.13. Debug
-#### 3.5.21.14. Build & Deploy
+#### 3.5.21.7. Directives
+#### 3.5.21.8. Services
+#### 3.5.21.9. Pipes
+#### 3.5.21.10. Roteamento
+#### 3.5.21.11. Forms (Template Driven)
+#### 3.5.21.12. Forms Reactive (Data-Driven)
+#### 3.5.21.13. HTTP
+#### 3.5.21.14. Debug
 
 
 
