@@ -60,6 +60,9 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.5.6. Angular CLI - Using lint, test and e2e](#352156-angular-cli---using-lint-test-e2e)
         * [3.5.21.5.7. Angular CLI - Project folder strucuture](#352157-angular-cli---project-folders-structure)
       - [3.5.21.6. Build Deploy and Production](#35216-build-deploy-and-production) 
+      - [3.5.21.7. Install libraries - Bootstrap](#35217-install-libraries-bootstrap) 
+      - [3.5.21.8. Directives](#35218-directives) 
+        * [3.5.21.8.1. Directives - Introduction](#352181)
 
 
 ## 2. Documentação
@@ -2972,6 +2975,7 @@ $ ng e2e
   * Initializes Git repository
   * Creates commands to build and deploy application in production
 
+
 #### 3.5.21.6. Build Deploy and Production
 How to build a Deploy package and run Production
 
@@ -3219,14 +3223,14 @@ $ ng serve
 ```
 
 
-#### 3.5.21.7. Directives
-#### 3.5.21.8. Services
-#### 3.5.21.9. Pipes
-#### 3.5.21.10. Roteamento
-#### 3.5.21.11. Forms (Template Driven)
-#### 3.5.21.12. Forms Reactive (Data-Driven)
-#### 3.5.21.13. HTTP
-#### 3.5.21.14. Debug
+#### 3.5.21.8. Directives
+#### 3.5.21.9. Services
+#### 3.5.21.10. Pipes
+#### 3.5.21.11. Roteamento
+#### 3.5.21.12. Forms (Template Driven)
+#### 3.5.21.13. Forms Reactive (Data-Driven)
+#### 3.5.21.14. HTTP
+#### 3.5.21.15. Debug
 
 
 
