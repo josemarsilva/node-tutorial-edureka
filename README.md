@@ -3224,6 +3224,90 @@ $ ng serve
 
 
 #### 3.5.21.8. Directives
+
+* Type of directives:
+  * **Structural**: Used to modify DOM HTML
+  * **Attributes**: Interacts with elements (modify class or styles)
+
+#### 3.5.21.8.1. Directives - *ngIf
+
+* [Curso Angular 2 #25: Diretivas: ngIf](https://www.youtube.com/watch?v=7zJNIp44B60&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=26)
+* *ngIf vs hidden: 
+  * *ngIf recomendado para elementos grandes
+  * hidden recomendado para árvores de elementos pequenas (menos custoso ponderar segurança)
+
+* Step-01: Create component to test `*ngIf`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ngif
+```
+
+* Step-02: Edit main app Template
+  * Edit `.\src\app\app.component.html` use component `app-directive-ngif`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<app-directive-ngif></app-directive-ngif>
+  :
+````
+
+* Step-03: Edit Component
+  * Edit `.\src\app\directive-ngif\directive-ngif.component.ts`
+  * Create variable property string cursos[]
+
+```.\src\app\directive-ngif\directive-ngif.component.ts
+  :
+export class DirectiveNgifComponent {
+
+  cursos: string[] = ["Angular 2"];
+  
+  mostrarCursos: boolean = false;
+
+
+  onMostrarCursos() {
+    this.mostrarCursos = !this.mostrarCursos;
+  }
+  :
+```
+
+* Step-04: Edit Template
+  * Edit `.\src\app\directive-ngif\directive-ngif.component.html`
+
+```directive-ngif.component.html
+<h3>*ngIf - expression</h3>
+
+<div *ngIf="cursos.length > 0">
+    <p>*ngIf="cursos.length > 0"</p>
+    <p>Lista de cursos: {{ cursos }}</p>
+</div>
+<div *ngIf="cursos.length == 0">
+    <p>*ngIf="cursos.length == 0"</p>
+    Não há cursos para serem listados
+</div>
+
+
+<h3>*ngIf - boolean</h3>
+
+<div *ngIf="mostrarCursos">
+    <p>*ngIf="mostrarCursos"</p>
+    <p>Lista de cursos: {{ cursos }}</p>
+</div>
+<div *ngIf="!mostrarCursos">
+    <p>*ngIf="!mostrarCursos"</p>
+    Não há cursos para serem listados
+</div>
+
+
+<h3>*ngIf - toggle mostrarCursos</h3>
+
+<button (click)="onMostrarCursos()">Mostrar/Esconder cursos</button>
+
+
+```
+
+
 #### 3.5.21.9. Services
 #### 3.5.21.10. Pipes
 #### 3.5.21.11. Roteamento
