@@ -3245,7 +3245,7 @@ $ ng generate component directive-ngif
 ```
 
 * Step-02: Edit main app Template
-  * Edit `.\src\app\app.component.html` use component `app-directive-ngif`
+  * Edit `.\src\app\app.component.html` use selector component `app-directive-ngif`
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
   :
@@ -3287,7 +3287,6 @@ export class DirectiveNgifComponent {
     Não há cursos para serem listados
 </div>
 
-
 <h3>*ngIf - boolean</h3>
 
 <div *ngIf="mostrarCursos">
@@ -3299,13 +3298,126 @@ export class DirectiveNgifComponent {
     Não há cursos para serem listados
 </div>
 
-
 <h3>*ngIf - toggle mostrarCursos</h3>
 
 <button (click)="onMostrarCursos()">Mostrar/Esconder cursos</button>
-
-
 ```
+
+#### 3.5.21.8.2. Directives - *ngSwitch, *ngSwitchCase and *ngSwitchDefault
+
+* [Curso Angular #26: Diretivas: ngSwitch, ngSwitchCase e ngSwitchDefault](https://www.youtube.com/watch?v=uToE2t9RHME&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=27)
+* [Bootstrap - Official Documentation - version 5.3, component NavBar](https://getbootstrap.com/docs/5.3/components/navbar/)
+* [npm ngx-bootstrap-navbar - Official Documentation](https://www.npmjs.com/package/ngx-bootstrap-navbar)
+* [Starter Project - Angular - NavBar](https://stackblitz.com/edit/ngx-bootstrap-rc8ab4?file=app%2Fapp.component.html)
+
+* Step-01: Create component to test `*ngSwitch`, `*ngSwitchCase` and `*ngSwitchDefault`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ngswitch
+  :
+```
+
+* Step-02: Edit main app Template
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngswitch`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<app-directive-ngswitch></app-directive-ngswitch>
+  :
+````
+
+* Step-03: Install Bootstrap
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ npm install bootstrap --save
+  :
+```
+
+* Step-04: Edit `angular.json` add Bootstrap Style `./node_modules/bootstrap/dist/css/bootstrap.min.css`
+  * `cat angular.json | jq '.projects."prj-directives".architect.build.options.styles'`
+  * Edit `.\prj-directives\angular.json`
+
+```.\src\app\app.module.ts
+    :
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+    :
+```
+
+* Step-05: Edit Template
+  * Edit `.\src\app\directive-ngswitch\directive-ngswitch.component.html`
+
+```.\src\app\directive-ngswitch\directive-ngswitch.component.html
+  :
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="aba = 'home'">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="aba = 'features'">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="aba = 'pricing'">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true" (click)="aba = 'disable'">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba" >
+    <p *ngSwitchCase="'home'">Modo <b>home</b> ativado</p>
+    <p *ngSwitchCase="'features'">Modo <b>features</b> ativado</p>
+    <p *ngSwitchCase="'pricing'">Modo <b>pricing</b> ativado</p>
+    <p *ngSwitchDefault>Modo <b>default</b> ativado</p>
+</div>
+  :
+```
+
+* Step-06: Edit Component
+  * Edit `.\src\app\directive-ngswitch\directive-ngswitch.component.ts`
+  * Create a variable 
+
+```.\src\app\directive-ngswitch\directive-ngswitch.component.ts
+  :
+export class DirectiveNgswitchComponent {
+  aba: string = 'home'; // ['home', 'features', 'pricing']
+  :
+```
+
+* Step-07: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| NavBar | Home | Features | Pricing | Disabled               |
+|                                                             |
+|    Modo home ativado                                        |
+|           :                                                 |
++-------------------------------------------------------------+
+```
+
 
 
 #### 3.5.21.9. Services
