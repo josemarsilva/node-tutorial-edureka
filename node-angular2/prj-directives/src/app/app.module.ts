@@ -6,6 +6,8 @@ import { DirectiveNgIfComponent } from './directive-ng-if/directive-ng-if.compon
 import { TestLintComponent } from './test-lint/test-lint.component';
 import { DirectiveNgifComponent } from './directive-ngif/directive-ngif.component';
 import { DirectiveNgswitchComponent } from './directive-ngswitch/directive-ngswitch.component';
+import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.component';
+import { DirectiveNgclassComponent } from './directive-ngclass/directive-ngclass.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { DirectiveNgswitchComponent } from './directive-ngswitch/directive-ngswi
     DirectiveNgIfComponent,
     TestLintComponent,
     DirectiveNgifComponent,
-    DirectiveNgswitchComponent
+    DirectiveNgswitchComponent,
+    DirectiveNgforComponent,
+    DirectiveNgclassComponent
   ],
   imports: [
     BrowserModule

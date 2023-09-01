@@ -62,7 +62,10 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
       - [3.5.21.6. Build Deploy and Production](#35216-build-deploy-and-production) 
       - [3.5.21.7. Install libraries - Bootstrap](#35217-install-libraries-bootstrap) 
       - [3.5.21.8. Directives](#35218-directives) 
-        * [3.5.21.8.1. Directives - Introduction](#352181)
+        * [3.5.21.8.1. Directives - `*ngIf`](#352181-directives---ngif)
+        * [3.5.21.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352182-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
+        * [3.5.21.8.3. Directives - `*ngFor`](#352183-directives---ngfor)
+        * [3.5.21.8.4. Directives - `*ngClass`](#352184-directives---ngclass)
 
 
 ## 2. Documentação
@@ -3232,6 +3235,7 @@ $ ng serve
 #### 3.5.21.8.1. Directives - *ngIf
 
 * [Curso Angular 2 #25: Diretivas: ngIf](https://www.youtube.com/watch?v=7zJNIp44B60&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=26)
+* [Curso Angular 2 #28: Diretivas: sobre o * e template](https://www.youtube.com/watch?v=e-OGZocglTA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=29)
 * *ngIf vs hidden: 
   * *ngIf recomendado para elementos grandes
   * hidden recomendado para árvores de elementos pequenas (menos custoso ponderar segurança)
@@ -3417,6 +3421,184 @@ $ ng serve
 |           :                                                 |
 +-------------------------------------------------------------+
 ```
+
+
+#### 3.5.21.8.3. Directives - *ngFor
+
+* [Curso Angular 2 #27: Diretivas: ngFor](https://www.youtube.com/watch?v=seEbP5FGcvo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=28)
+
+* Step-01: Create component to test `*ngFor`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ngfor
+  :
+```
+
+* Step-02: Edit main app Template
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngfor`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<app-directive-ngfor></app-directive-ngfor>
+  :
+````
+
+* Step-03: Edit Component
+  * Edit `.\src\app\directive-ngswitch\directive-ngfor.component.ts`
+  * Create a variable 
+
+```.\src\app\directive-ngswitch\directive-ngfor.component.ts
+  :
+export class DirectiveNgforComponent {
+  cursos: string[] = ["Angular 2", "Java", "Node JS"];
+  :
+```
+
+* Step-04: Edit Template
+  * Edit `.\src\app\directive-ngswitch\directive-ngfor.component.html`
+  * Implement For loop printing cursos[] on `<ul><li> cursos[i] </li></ul>`
+
+```.\src\app\directive-ngswitch\directive-ngfor.component.html
+  :
+  :
+```
+
+* Step-05: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| directive-ngfor                                             |
+| 1: Angular 2                                                |
+| 2: Java                                                     |
+| 3: Node JS                                                  |
++-------------------------------------------------------------+
+```
+
+#### 3.5.21.8.4. Directives - *ngClass
+
+* [Curso Angular #29: Diretivas: ngClass](https://www.youtube.com/watch?v=DCFJZzFwDKs&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=30)
+* [Bootstrap Icons - Official Documentation](https://icons.getbootstrap.com/)
+
+* Step-01: Create component to test `*ngClass`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ngclass
+  :
+```
+
+* Step-02: Edit main app Template
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<app-directive-ngclass></app-directive-ngclass>
+  :
+````
+
+* Step-03: Install Bootstrap
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ npm install bootstrap --save
+  :
+$ npm install bootstrap-icons --save
+  :
+```
+
+* Step-04: Edit `angular.json` add Bootstrap CSS icons `./node_modules/bootstrap/dist/css/bootstrap.min.css`
+  * `cat angular.json | jq '.projects."prj-directives".architect.build.options.styles'`
+  * Edit `.\prj-directives\angular.json`
+
+```.\prj-directives\angular.json
+    :
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+              "src/styles.css"
+            ],
+    :
+```
+
+* Step-05: Edit Template
+  * Edit `.\src\app\directive-ngswitch\directive-ngclass.component.html`
+  * Show Icon Favorite using property flag on component
+  * Implement toggle favorite icon
+
+```.\src\app\directive-ngswitch\directive-ngclass.component.html
+  :
+<h3>directive-ngclass</h3>
+
+<h5>Using class as property binding </h5>
+
+Favorite icons toggle (click) 
+    <i class="bi" 
+        [class.bi-bookmark-star]="!meuFavorito"
+        [class.bi-bookmark-star-fill]="meuFavorito"
+        (click)="onClick()"
+    ></i>
+
+<h5>Using class as ngClass</h5>
+
+Favorite icons toggle (click) 
+<i class="bi" 
+    [ngClass]="{
+        'bi-bookmark-star': !meuFavorito,
+        'bi-bookmark-star-fill': meuFavorito
+    }"
+    (click)="onClick()"
+></i>
+  :
+```
+
+* Step-06: Edit Component
+  * Edit `.\src\app\directive-ngswitch\directive-ngclass.ts`
+  * Create a variable 
+
+```.\src\app\directive-ngswitch\directive-ngclass.component.ts
+  :
+export class DirectiveNgclassComponent {
+  meuFavorito: boolean = false;
+
+  onClick() {
+    this.meuFavorito = !this.meuFavorito;
+  }
+  :
+```
+
+* Step-07: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++-------------------------------------------------------------+
+| http://localhost:4200                                       |
++-------------------------------------------------------------+
+| directive-ngclass                                           |
+|   Using class as property binding                           |
+|     Favorite icons toggle (click)                           |
+|   Using class as ngClass                                    |
+|     Favorite icons toggle (click)                           |
++-------------------------------------------------------------+
+```
+
 
 
 

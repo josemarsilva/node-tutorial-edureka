@@ -1,0 +1,21 @@
+<h3>directive-ngclass</h3>
+
+<h5>Using class as property binding </h5>
+
+Favorite icons toggle (click) 
+    <i class="bi" 
+        [class.bi-bookmark-star]="!meuFavorito"
+        [class.bi-bookmark-star-fill]="meuFavorito"
+        (click)="onClick()"
+    ></i>
+
+<h5>Using class as ngClass</h5>
+
+Favorite icons toggle (click) 
+<i class="bi" 
+    [ngClass]="{
+        'bi-bookmark-star': !meuFavorito,
+        'bi-bookmark-star-fill': meuFavorito
+    }"
+    (click)="onClick()"
+></i>
