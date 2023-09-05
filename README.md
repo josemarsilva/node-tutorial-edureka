@@ -67,6 +67,8 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.8.3. Directives - `*ngFor`](#352183-directives---ngfor)
         * [3.5.21.8.4. Directives - `*ngClass`](#352184-directives---ngclass)
         * [3.5.21.8.5. Directives - `*ngStyle`](#352185-directives---ngstyle)
+        * [3.5.21.8.6. Directives - Elvis operator](#352186-directives---elvis-operator)
+        * [3.5.21.8.7. Directives - `ng-content`](#352187-directives---ng-content)
 
 
 ## 2. Documentação
@@ -3800,18 +3802,19 @@ $ ng serve
 #### 3.5.21.8.7. Directives - ng-content
 
 * [Curso Angular #32: ng-content](https://www.youtube.com/watch?v=fud-ezN6RJo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=33)
+* [Bootstrap - Official Documentation](https://getbootstrap.com/)
 
 * Step-01: Create component to test `ng-content`
 
 ```bash
 $  pwd
 /mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
-$ ng generate component elvis-operator
+$ ng generate component ng-content
   :
 ```
 
 * Step-02: Edit main app Template and configure use of selector
-  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
+  * Edit `.\src\app\app.component.html` use component selector ``
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
   :
@@ -3820,40 +3823,37 @@ $ ng generate component elvis-operator
 <!-- <app-directive-ngfor></app-directive-ngfor> -->
 <!-- <app-directive-ngclass></app-directive-ngclass> -->
 <!-- <app-directive-ngstyle></app-directive-ngstyle> -->
-<app-elvis-operator></app-elvis-operator>
+<!-- <app-elvis-operator></app-elvis-operator> -->
+<app-ng-content>
+    <div class="titulo">Conteúdo do Titulo do Painel</div>
+    <div class="corpo">Conteúdo do Corpo do Painel</div>
+</app-ng-content>
   :
 ````
 
 
 * Step-03: Edit Template
-  * Edit `.\src\app\elvis-operator\elvis-operator.component.html`
-  * Use interpolation to show object `tarefa`
-  * But only shows responsible if not null
+  * Edit `.\src\app\ng-content\ng-content.component.html`
 
-```.\src\app\elvis-operator\elvis-operator.component.html
+```.\src\app\ng-content\ng-content.component.html
   :
-<h3>elvis-operator works!</h3>
-<p> Descrição: {{ tarefa.descricao }} </p>
-<!-- Error if tarefa.responsavel is null </p> -->
-<!-- <p> Responsável: {{ tarefa.responsavel.nome }} </p> -->
-<h5>Using ternary operator</h5>
-<p> Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
-<h5>Using elvis operator</h5>
-<p> Responsável: {{ tarefa.responsavel?.nome }} </p>
+<h3>ng-content works!</h3>
+<div class="panel-head">
+    <p>Panel Head</p>
+    <ng-content selector=".titulo"></ng-content>
+</div>
+<div class="panel-body">
+    <p>Panel Body</p>
+    <ng-content selector=".corpo"></ng-content>
+</div>
   :
 ```
 
 * Step-06: Edit Component
-  * Edit `.\src\app\elvis-operator\elvis-operator.component.ts`
-  * Create variable object task: any
+  * Edit `.\src\app\ng-content\ng-content.component.ts`
 
-```.\src\app\elvis-operator\elvis-operator.component.ts
+```.\src\app\ng-content\ng-content.component.ts
   :
-export class ElvisOperatorComponent {
-  tarefa: any = {
-    descricao: 'Descrição da tarefa',
-    responsavel: null
-  }
   :
 ```
 
@@ -3867,12 +3867,11 @@ $ ng serve
 +---------------------------------------------------------------+
 | http://localhost:4200                                         |
 +---------------------------------------------------------------+
-| elvis-operator works!                                         |
-|   Descrição: Descrição da tarefa                              |
-|     Using ternary operator                                    |
-|       Responsável:                                            |
-|     Using elvis operator                                      |
-|       Responsável:                                            |
+| ng-content works!                                             |
+|   Panel Head                                                  |
+|   Panel Body                                                  |
+|     Conteúdo do Titulo do Painel                              |
+|     Conteúdo do Corpo do Painel                               |
 +---------------------------------------------------------------+
 ```
 
