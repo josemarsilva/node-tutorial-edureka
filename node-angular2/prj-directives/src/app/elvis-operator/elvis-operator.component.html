@@ -1,0 +1,14 @@
+<h3>elvis-operator works!</h3>
+
+<p> Descrição: {{ tarefa.descricao }} </p>
+
+<!-- Error if tarefa.responsavel is null </p> -->
+<!-- <p> Responsável: {{ tarefa.responsavel.nome }} </p> -->
+
+<h5>Using ternary operator</h5>
+
+<p> Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
+
+<h5>Using elvis operator</h5>
+
+<p> Responsável: {{ tarefa.responsavel?.nome }} </p>

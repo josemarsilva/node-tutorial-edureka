@@ -66,6 +66,7 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352182-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
         * [3.5.21.8.3. Directives - `*ngFor`](#352183-directives---ngfor)
         * [3.5.21.8.4. Directives - `*ngClass`](#352184-directives---ngclass)
+        * [3.5.21.8.5. Directives - `*ngStyle`](#352185-directives---ngstyle)
 
 
 ## 2. Documentação
@@ -3248,7 +3249,7 @@ $  pwd
 $ ng generate component directive-ngif
 ```
 
-* Step-02: Edit main app Template
+* Step-02: Edit main app Template and configure use of selector
   * Edit `.\src\app\app.component.html` use selector component `app-directive-ngif`
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
@@ -3323,7 +3324,7 @@ $ ng generate component directive-ngswitch
   :
 ```
 
-* Step-02: Edit main app Template
+* Step-02: Edit main app Template and configure use of selector
   * Edit `.\src\app\app.component.html` use component selector `app-directive-ngswitch`
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
@@ -3436,7 +3437,7 @@ $ ng generate component directive-ngfor
   :
 ```
 
-* Step-02: Edit main app Template
+* Step-02: Edit main app Template and configure use of selector
   * Edit `.\src\app\app.component.html` use component selector `app-directive-ngfor`
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
@@ -3498,7 +3499,7 @@ $ ng generate component directive-ngclass
   :
 ```
 
-* Step-02: Edit main app Template
+* Step-02: Edit main app Template and configure use of selector
   * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
 
 ```.\node-angular2\prj-directives\src\app\app.component.html
@@ -3599,6 +3600,281 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
+
+#### 3.5.21.8.5. Directives - *ngStyle
+
+* [Curso Angular #30: Diretivas: ngStyle](https://www.youtube.com/watch?v=WBf5sgByOY4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=31)
+* [Bootstrap Icons - Official Documentation](https://icons.getbootstrap.com/)
+
+* Step-01: Create component to test `*ngStyle`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component directive-ngstyle
+  :
+```
+
+* Step-02: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<app-directive-ngstyle></app-directive-ngstyle>
+  :
+````
+
+
+* Step-03: Edit Template
+  * Edit `.\src\app\directive-ngswitch\directive-ngstyle.component.html`
+  * Implement **property bind** to make ativo
+  * Implement **Two way data bind** to change size
+  * Implement **ngStyle** to change style (require FormsModule)
+
+```.\src\app\directive-ngstyle\directive-ngstyle.component.html
+  :
+<h3>directive-ngstyle works!</h3>
+<h5>Property Bind and Two Way data Bind to change active and size</h5>
+<button
+    [style.backgroundColor]="ativo ? 'blue' : 'gray'"
+    [style.color]="ativo ? 'white' : 'black'"
+    [style.fontWeigth]="ativo ? 'bold' : 'normal'"
+    [style.fontSize]="tamanhoFonte + 'px'"
+    (click)="mudarAtivo()"
+> Mudar atributo 'ativo'
+</button>
+<br>
+<input type="text" [(ngModel)]="tamanhoFonte">
+<h5>Styles com diretiva ngStyle</h5>
+<button
+    [ngStyle]="{
+        'backgroundColor': (ativo ? 'blue' : 'gray'),
+        'color': (ativo ? 'white' : 'black'),
+        'fontWeigth': (ativo ? 'bold' : 'normal'),
+        'fontSize': tamanhoFonte + 'px'
+    }"
+    (click)="mudarAtivo()"
+> Mudar atributo 'ativo'
+</button>
+  :
+```
+
+* Step-06: Edit Component
+  * Edit `.\src\app\directive-ngswitch\directive-ngclass.ts`
+  * Create a variable and method to toggle active
+
+```.\src\app\directive-ngstyle\directive-ngstyle.component.ts
+  :
+export class DirectiveNgstyleComponent {
+  ativo: boolean = false;
+  tamanhoFonte: number = 10;
+  mudarAtivo() {
+    this.ativo = !this.ativo;
+  }
+  :
+```
+
+* Step-07: Edit Application Module
+  * Edit `.\src\app\app.module.ts`
+  * Import ngModule
+
+```.\src\app\app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+    :
+import { FormsModule } from '@angular/forms';
+    :
+@NgModule({
+    :
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+    :
+```
+
+
+* Step-08: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------+
+| http://localhost:4200                                         |
++---------------------------------------------------------------+
+| directive-ngstyle works!                                      |
+| Property Bind and Two Way data Bind to change active and size |
+|   Mudar atributo 'ativo'                                      |
+|   [ 20 ]                                                      |
+| Styles com diretiva ngStyle                                   |
+|   Mudar atributo 'ativo'                                      |
++---------------------------------------------------------------+
+```
+
+
+#### 3.5.21.8.6. Directives - Elvis Operator
+
+* [Curso Angular #31: Operador Elvis ("?")](https://www.youtube.com/watch?v=z2GUOnkGCdc&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=32)
+
+* Step-01: Create component to test `Elvis Operator`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component elvis-operator
+  :
+```
+
+* Step-02: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<app-elvis-operator></app-elvis-operator>
+  :
+````
+
+
+* Step-03: Edit Template
+  * Edit `.\src\app\elvis-operator\elvis-operator.component.html`
+  * Use interpolation to show object `tarefa`
+  * But only shows responsible if not null
+
+```.\src\app\elvis-operator\elvis-operator.component.html
+  :
+<h3>elvis-operator works!</h3>
+<p> Descrição: {{ tarefa.descricao }} </p>
+<!-- Error if tarefa.responsavel is null </p> -->
+<!-- <p> Responsável: {{ tarefa.responsavel.nome }} </p> -->
+<h5>Using ternary operator</h5>
+<p> Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
+<h5>Using elvis operator</h5>
+<p> Responsável: {{ tarefa.responsavel?.nome }} </p>
+  :
+```
+
+* Step-06: Edit Component
+  * Edit `.\src\app\elvis-operator\elvis-operator.component.ts`
+  * Create variable object task: any
+
+```.\src\app\elvis-operator\elvis-operator.component.ts
+  :
+export class ElvisOperatorComponent {
+  tarefa: any = {
+    descricao: 'Descrição da tarefa',
+    responsavel: null
+  }
+  :
+```
+
+* Step-07: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------+
+| http://localhost:4200                                         |
++---------------------------------------------------------------+
+| elvis-operator works!                                         |
+|   Descrição: Descrição da tarefa                              |
+|     Using ternary operator                                    |
+|       Responsável:                                            |
+|     Using elvis operator                                      |
+|       Responsável:                                            |
++---------------------------------------------------------------+
+```
+
+#### 3.5.21.8.7. Directives - ng-content
+
+* [Curso Angular #32: ng-content](https://www.youtube.com/watch?v=fud-ezN6RJo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=33)
+
+* Step-01: Create component to test `ng-content`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component elvis-operator
+  :
+```
+
+* Step-02: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `app-directive-ngclass`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<app-elvis-operator></app-elvis-operator>
+  :
+````
+
+
+* Step-03: Edit Template
+  * Edit `.\src\app\elvis-operator\elvis-operator.component.html`
+  * Use interpolation to show object `tarefa`
+  * But only shows responsible if not null
+
+```.\src\app\elvis-operator\elvis-operator.component.html
+  :
+<h3>elvis-operator works!</h3>
+<p> Descrição: {{ tarefa.descricao }} </p>
+<!-- Error if tarefa.responsavel is null </p> -->
+<!-- <p> Responsável: {{ tarefa.responsavel.nome }} </p> -->
+<h5>Using ternary operator</h5>
+<p> Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }} </p>
+<h5>Using elvis operator</h5>
+<p> Responsável: {{ tarefa.responsavel?.nome }} </p>
+  :
+```
+
+* Step-06: Edit Component
+  * Edit `.\src\app\elvis-operator\elvis-operator.component.ts`
+  * Create variable object task: any
+
+```.\src\app\elvis-operator\elvis-operator.component.ts
+  :
+export class ElvisOperatorComponent {
+  tarefa: any = {
+    descricao: 'Descrição da tarefa',
+    responsavel: null
+  }
+  :
+```
+
+* Step-07: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------+
+| http://localhost:4200                                         |
++---------------------------------------------------------------+
+| elvis-operator works!                                         |
+|   Descrição: Descrição da tarefa                              |
+|     Using ternary operator                                    |
+|       Responsável:                                            |
+|     Using elvis operator                                      |
+|       Responsável:                                            |
++---------------------------------------------------------------+
+```
 
 
 

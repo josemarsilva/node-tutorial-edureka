@@ -8,6 +8,10 @@ import { DirectiveNgifComponent } from './directive-ngif/directive-ngif.componen
 import { DirectiveNgswitchComponent } from './directive-ngswitch/directive-ngswitch.component';
 import { DirectiveNgforComponent } from './directive-ngfor/directive-ngfor.component';
 import { DirectiveNgclassComponent } from './directive-ngclass/directive-ngclass.component';
+import { DirectiveNgstyleComponent } from './directive-ngstyle/directive-ngstyle.component';
+import { FormsModule } from '@angular/forms';
+import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +21,14 @@ import { DirectiveNgclassComponent } from './directive-ngclass/directive-ngclass
     DirectiveNgifComponent,
     DirectiveNgswitchComponent,
     DirectiveNgforComponent,
-    DirectiveNgclassComponent
+    DirectiveNgclassComponent,
+    DirectiveNgstyleComponent,
+    ElvisOperatorComponent,
+    NgContentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
