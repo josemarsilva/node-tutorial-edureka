@@ -31,7 +31,7 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-nodejs-cucumber-selenium)
     + [3.5.19. Hands On Node, Express, Redis e Cache ![star.jpg](./doc/images/star.jpg) ](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
-    + [3.5.21. Curso Angular - Loiane Groner](#3521-curso-angular-loiane-groner)
+    + [3.5.21. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3521-curso-angular-loiane-groner)
       - [3.5.21.1. Introdução](#35211-introdução) 
       - [3.5.21.2. Typescript](#35212-typescript) 
       - [3.5.21.3. Components and Templates](#35213-components-and-templates) 
@@ -1184,7 +1184,10 @@ $ node index.js
   * Principal objetivo do componente é mostrar dados e pode ser integrado com __Backend__ Node JS
 * **Serviços**: Não é boa prática escrever código de lógica de negócio no componente, elas devem ser escritad nos serviços que podem ser injetados em outras classes
 * **Roteamento**: É comum ter várias páginas na aplicação, mas o angular trabalha com Single Page Application. O responsável pela navegação entre diferentes telas é o __Router__
-* **Diretivas**: Responsável por modificar elementos DOM e/ou seu comportamento. Ex: quando um campo ganha o foco, ele pode mudar de tamanho
+* **Diretivas**: Responsável por modificar elementos DOM e/ou seu comportamento. Ex: quando um campo ganha o foco, ele pode mudar de tamanho.
+  * Diretiva é como se fosse um componente sem template. Há 2 tipos de diretivas:
+    * **Diretivas Estruturais**: Ex: ngFor, ngIf, ngSwitch
+    * **Diretivas de Atributos**: Ex: ngClass, ngStyle
 * A aplicação pode ser dividida em módulos: Ex: Cliente, Produto e Venda
 
 ```txt
@@ -3872,6 +3875,119 @@ $ ng serve
 |   Panel Body                                                  |
 |     Conteúdo do Titulo do Painel                              |
 |     Conteúdo do Corpo do Painel                               |
++---------------------------------------------------------------+
+```
+
+
+#### 3.5.21.8.8. Directives - Custom attribue directive
+
+* [Curso Angular 2 #33: Custom attribue directive](https://www.youtube.com/watch?v=8fUa4HPOua4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=34)
+* [Bootstrap - Official Documentation](https://getbootstrap.com/)
+* Directive works as a Component without Template
+* Lets create a directive to change element background collor
+* Usually directive is shared with all application
+
+* Step-01: Create Directive to test `custom-attr-directive` using `shared` folder
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate directive shared/custom-attr-directive
+CREATE src/app/shared/custom-attr-directive.directive.spec.ts (278 bytes)
+CREATE src/app/shared/custom-attr-directive.directive.ts (167 bytes)
+UPDATE src/app/app.module.ts (1518 bytes)
+  :
+```
+
+* Step-02: Create Component to test `custom-attr-directive`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component custom-attr-directive
+  :
+```
+
+* Step-03: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `app-custom-attr-directive`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<!-- <app-elvis-operator></app-elvis-operator> -->
+<!-- 
+<app-ng-content>
+    <div class="titulo">Conteúdo do Titulo do Painel</div>
+    <div class="corpo">Conteúdo do Corpo do Painel</div>
+</app-ng-content>
+ -->
+<app-custom-attr-directive></app-custom-attr-directive>
+  :
+````
+
+
+* Step-04: Edit Template
+  * Edit `.\src\app\custom-attr-directive\custom-attr-directive.component.html`
+  * Use selector `app-custom-attr-directive` for custom directive created in file `./shared/custom-attr-directive`
+
+```.\src\app\custom-attr-directive\custom-attr-directive.component.html
+  :
+<h3>custom-attr-directive works</h3>
+<p style="background-color: yellow;">
+    Texto com fundo amarelo: com style manual
+</p>
+<br>
+<p app-custom-attr-directive>
+    Texto com fundo amarelo: com app-custom-attr-directive
+</p>
+  :
+```
+
+* Step-05: Edit Directive Custom Attribute
+  * Edit `.\src\app\shared\custom-attr-directive.directive.ts`
+  * Import `ElementRef` and add to `constructor()` to access DOM object properties
+
+```.\src\app\shared\custom-attr-directive.directive.ts
+  :
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appCustomAttrDirective]'
+})
+export class CustomAttrDirectiveDirective {
+
+  constructor(
+    private _elementRef: ElementRef,
+    private _renderer: Renderer2) { 
+    // console.log(this._elementRef);
+    // this._elementRef.nativeElement.backgroundColor = 'yellow'; // DO NOT USE ElementRef - security issue XXS atach
+    this._renderer.setStyle(
+      this._elementRef.nativeElement, 
+      'background-color',
+      'yellow');
+  }
+
+}
+  :
+```
+
+* Step-07: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------+
+| http://localhost:4200                                         |
++---------------------------------------------------------------+
+| custom-attr-directive works                                   |
+|   Texto com fundo amarelo: com style manual                   |
+|   Texto com fundo amarelo: com app-custom-attr-directive      |
 +---------------------------------------------------------------+
 ```
 

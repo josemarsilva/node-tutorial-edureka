@@ -12,6 +12,8 @@ import { DirectiveNgstyleComponent } from './directive-ngstyle/directive-ngstyle
 import { FormsModule } from '@angular/forms';
 import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
+import { CustomAttrDirectiveDirective } from './shared/custom-attr-directive.directive';
+import { CustomAttrDirectiveComponent } from './custom-attr-directive/custom-attr-directive.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NgContentComponent } from './ng-content/ng-content.component';
     DirectiveNgclassComponent,
     DirectiveNgstyleComponent,
     ElvisOperatorComponent,
-    NgContentComponent
+    NgContentComponent,
+    CustomAttrDirectiveDirective,
+    CustomAttrDirectiveComponent
   ],
   imports: [
     BrowserModule,
