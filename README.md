@@ -26,51 +26,54 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
     + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-nodejs-and-docker)
     + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-mongodb-express-angular-nodejs-stack-application-crud-tutorial)
+      - [3.5.15.1. Part I - Node, Express, MongoDb ![star.jpg](./doc/images/star.jpg)](#35151-part-i---node-express-mongodb)
+      - [3.5.15.1. Part II - Angular](#35152-part-ii---angular) 
     + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
     + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-hands-on-nodejs-selenium-webdriver-chromedriver)
     + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-nodejs-cucumber-selenium)
-    + [3.5.19. Hands On Node, Express, Redis e Cache ![star.jpg](./doc/images/star.jpg) ](#3519-hands-on-node-express-redis-e-cache)
+    + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
-    + [3.5.21. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3521-curso-angular-loiane-groner)
-      - [3.5.21.1. Introdução](#35211-introdução) 
-      - [3.5.21.2. Typescript](#35212-typescript) 
-      - [3.5.21.3. Components and Templates](#35213-components-and-templates) 
-        * [3.5.21.3.1. New Angular Project](#352131-new-angular-project) 
-        * [3.5.21.3.2. Manual New Component on existing Angular project](#352132-manual-new-component-on-existing-angular-project) 
-        * [3.5.21.3.3. CLI New Component on existing Angular project](#352133-cli-new-component-on-existing-angular-project) 
-        * [3.5.21.3.4. Create New Modules](#352134-create-new-modules) 
-        * [3.5.21.3.5. Create New Template](#352135-create-new-template) 
-        * [3.5.21.3.6. ](#352136-cli-generate-services) 
-      - [3.5.21.4. Data Binding](#35214-data-binding) 
-        * [3.5.21.4.1. Data Binding - Interpolation](#352141-data-binding---intepolation) 
-        * [3.5.21.4.2. Data Binding - Property Binding](#352142-data-binding---property-binding) 
-        * [3.5.21.4.3. Data Binding - Class Binding and Style Binding](#352143-data-binding---class-binding-and-style-binding) 
-        * [3.5.21.4.4. Data Binding - Event Binding](#352144-data-binding---event-binding) 
-        * [3.5.21.4.5. Data Binding - Two-Way Data binding](#352145-data-binding---two-way-data-binding)
-        * [3.5.21.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352146-reutilizando-componentes-com-input-propoerties)
-        * [3.5.21.4.7. Data Binding - Emitindo Eventos com Output properties](#352147-emitindo-eventos-com-output-properties)
-        * [3.5.21.4.8. Data Binding - Component Life Cycle](#352148-component-life-cycle)
-        * [3.5.21.4.9. Data Binding - DOM access and Template ViewChild](#352149-dom-access-and-template-viewchild)
-      - [3.5.21.5. Angular CLI](#35215-angular-cli) 
-        * [3.5.21.5.1. Angular CLI - Install](#352151-angular-cli---install)
-        * [3.5.21.5.2. Angular CLI - Create Project](#352152-angular-cli---create-project)
-        * [3.5.21.5.3. Angular CLI - Start Project](#352153-angular-cli---start-project)
-        * [3.5.21.5.4. Angular CLI - Directive ng-if](#352154-angular-cli---directive-ng-if)
-        * [3.5.21.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352155-angular-cli---using-pre-processors-sass-less-and-stylus)
-        * [3.5.21.5.6. Angular CLI - Using lint, test and e2e](#352156-angular-cli---using-lint-test-e2e)
-        * [3.5.21.5.7. Angular CLI - Project folder strucuture](#352157-angular-cli---project-folders-structure)
-      - [3.5.21.6. Build Deploy and Production](#35216-build-deploy-and-production) 
-      - [3.5.21.7. Install libraries - Bootstrap](#35217-install-libraries-bootstrap) 
-      - [3.5.21.8. Directives](#35218-directives) 
-        * [3.5.21.8.1. Directives - `*ngIf`](#352181-directives---ngif)
-        * [3.5.21.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352182-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
-        * [3.5.21.8.3. Directives - `*ngFor`](#352183-directives---ngfor)
-        * [3.5.21.8.4. Directives - `*ngClass`](#352184-directives---ngclass)
-        * [3.5.21.8.5. Directives - `*ngStyle`](#352185-directives---ngstyle)
-        * [3.5.21.8.6. Directives - Elvis operator](#352186-directives---elvis-operator)
-        * [3.5.21.8.7. Directives - `ng-content`](#352187-directives---ng-content)
-        * [3.5.21.8.8. Directives - custom attributes directive](#352188-directives---custom-attribue-directive)
-        * [3.5.21.8.9. Directives - HostListener and HostingBinding](#352189-directives---hostlistener-and-hostbinding)
+    + [3.5.21. Hands On Node, Express, swagger-jsdoc, swagger-ui-express ![star.jpg](./doc/images/star.jpg)](#3521-hands-on-node-express-swagger-jsdoc-swagger-ui-express)
+    + [3.5.22. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3522-curso-angular-loiane-groner)
+      - [3.5.22.1. Introdução](#35221-introdução) 
+      - [3.5.22.2. Typescript](#35222-typescript) 
+      - [3.5.22.3. Components and Templates](#35223-components-and-templates) 
+        * [3.5.22.3.1. New Angular Project](#352231-new-angular-project) 
+        * [3.5.22.3.2. Manual New Component on existing Angular project](#352232-manual-new-component-on-existing-angular-project) 
+        * [3.5.22.3.3. CLI New Component on existing Angular project](#352233-cli-new-component-on-existing-angular-project) 
+        * [3.5.22.3.4. Create New Modules](#352234-create-new-modules) 
+        * [3.5.22.3.5. Create New Template](#352235-create-new-template) 
+        * [3.5.22.3.6. ](#352236-cli-generate-services) 
+      - [3.5.22.4. Data Binding](#35224-data-binding) 
+        * [3.5.22.4.1. Data Binding - Interpolation](#352241-data-binding---intepolation) 
+        * [3.5.22.4.2. Data Binding - Property Binding](#352242-data-binding---property-binding) 
+        * [3.5.22.4.3. Data Binding - Class Binding and Style Binding](#352243-data-binding---class-binding-and-style-binding) 
+        * [3.5.22.4.4. Data Binding - Event Binding](#352244-data-binding---event-binding) 
+        * [3.5.22.4.5. Data Binding - Two-Way Data binding](#352245-data-binding---two-way-data-binding)
+        * [3.5.22.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352246-reutilizando-componentes-com-input-propoerties)
+        * [3.5.22.4.7. Data Binding - Emitindo Eventos com Output properties](#352247-emitindo-eventos-com-output-properties)
+        * [3.5.22.4.8. Data Binding - Component Life Cycle](#352248-component-life-cycle)
+        * [3.5.22.4.9. Data Binding - DOM access and Template ViewChild](#352249-dom-access-and-template-viewchild)
+      - [3.5.22.5. Angular CLI](#35225-angular-cli) 
+        * [3.5.22.5.1. Angular CLI - Install](#352251-angular-cli---install)
+        * [3.5.22.5.2. Angular CLI - Create Project](#352252-angular-cli---create-project)
+        * [3.5.22.5.3. Angular CLI - Start Project](#352253-angular-cli---start-project)
+        * [3.5.22.5.4. Angular CLI - Directive ng-if](#352254-angular-cli---directive-ng-if)
+        * [3.5.22.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352255-angular-cli---using-pre-processors-sass-less-and-stylus)
+        * [3.5.22.5.6. Angular CLI - Using lint, test and e2e](#352256-angular-cli---using-lint-test-e2e)
+        * [3.5.22.5.7. Angular CLI - Project folder strucuture](#352257-angular-cli---project-folders-structure)
+      - [3.5.22.6. Build Deploy and Production](#35226-build-deploy-and-production) 
+      - [3.5.22.7. Install libraries - Bootstrap](#35227-install-libraries-bootstrap) 
+      - [3.5.22.8. Directives](#35228-directives) 
+        * [3.5.22.8.1. Directives - `*ngIf`](#352281-directives---ngif)
+        * [3.5.22.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352282-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
+        * [3.5.22.8.3. Directives - `*ngFor`](#352283-directives---ngfor)
+        * [3.5.22.8.4. Directives - `*ngClass`](#352284-directives---ngclass)
+        * [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
+        * [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
+        * [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
+        * [3.5.22.8.8. Directives - custom attributes directive](#352288-directives---custom-attribue-directive)
+        * [3.5.22.8.9. Directives - HostListener and HostingBinding](#352289-directives---hostlistener-and-hostbinding)
 
 ## 2. Documentação
 
@@ -664,7 +667,7 @@ $ docker run -d -p 3000:3000 node-docker-express-tutorial
 
 ### 3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial
 
-#### a. API
+#### 3.5.15.1. Part I - Node, Express, MongoDb
 
 * [Hands on Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=17918s)
 
@@ -785,7 +788,7 @@ Connected to database mongodb @ localhost:27017`
 {"msg":"Contact deleted successfully"}
 ```
 
-#### b. Angular
+#### 3.5.15.2. Part II - Angular
 
 * [What is Angular | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=18073s)
 * [Hands on Angular and Express and MongoDB | Node JS Full Course - Learn Node.js in 7 Hours | Node.js Tutorial for Beginners | Edureka](https://www.youtube.com/watch?v=JnvKXcSI7yk&t=20520s)
@@ -1171,12 +1174,129 @@ $ node index.js
 ```
 
 
-### 3.5.21. Curso Angular Loiane Groner
+#### 3.5.21. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express
+
+* Build API CURD application with documentation
+* [Nodejs - Criando documentação com Swagger - Code/drops #85](https://www.youtube.com/watch?v=WhFx2heoFrA&list=PL85ITvJ7FLohhULgUFkYBf2xcXCG6yfVV&index=27)
+* Use only Node JS and build another with TypeScript
+
+##### 3.5.21.1. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-express-swagger-jsdoc-ui
+$ cd node-express-swagger-jsdoc-ui
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init -y # or a lot of <enter> later
+```
+
+* Install dependencies
+
+```bash
+npm uninstall typescript @types/express @types/node ts-node
+
+$ npm install express body-parser --save
+$ npm install swagger-jsdoc swagger-ui-express --save
+```
+
+* Edit file `./src/index.ts`
+
+```./src/index.ts
+const express = require('express');
+const bodyParser = require('body-parser');
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUIExpress = require('swagger-ui-express');
+  :
+```
+
+* Run application `node index.ts`
+
+* Test application
+  * GET `http://localhost:3000` using browser or curl
+  * GET `http://localhost:3000/api-docs` using browser or curl
+  * Get `http://localhost:3000/v1/api/items` using browser or curl
+
+
+##### 3.5.22.2. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express, typescript
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-express-swagger-jsdoc-ui-typescript
+$ cd node-express-swagger-jsdoc-ui-typescript
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init -y # or a lot of <enter> later
+```
+
+* Install dependencies
+
+```bash
+$ npm install express body-parser --save
+$ npm install --save-dev typescript ts-node @types/express @types/node
+$ npm install @types/express --save
+$ npm install --save-dev @types/swagger-jsdoc @types/swagger-ui-express
+```
+
+* Configure Typescript
+
+```tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
+```
+
+* Create sub-folders structures and files
+
+```
+mkdir src
+touch src/index.ts
+```
+
+* Edit file `./src/index.ts`
+
+```./src/index.ts
+import express from 'express';
+import { Request, Response } from 'express';
+import bodyParser from 'body-parser';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUIExpress from 'swagger-ui-express';
+  :
+```
+
+* Run application `npx nodemon src/index.ts`
+
+* Test application
+  * GET `http://localhost:3000` using browser or curl
+  * GET `http://localhost:3000/api-docs` using browser or curl
+  * Get `http://localhost:3000/v1/api/items` using browser or curl
+
+
+### 3.5.22. Curso Angular Loiane Groner
 
 * [Curso Angular 2](https://loiane.training/curso/angular)
 * [Official Documentation](https://angular.io/)
 
-#### 3.5.21.1. Introdução
+#### 3.5.22.1. Introdução
 
 * **Template** encapsula (formulário, botões, data-grid, menu, etc), 
 * **Metadados**: processamento das classes
@@ -1246,7 +1366,7 @@ OS: linux x64
 Angular: undefined
 ```
 
-#### 3.5.21.2 Typescript
+#### 3.5.22.2 Typescript
 
 * [Curso Angular #04: Introdução ao TypeScript para Angular](https://www.youtube.com/watch?v=cNJVzgUH0gA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
 * Criar uma pasta `hello-world-typescript` para construir e testar um programa Typescript:
@@ -1268,12 +1388,11 @@ $ pwd
 $ mkdir hello-world-typescript
 $ cd hello-world-typescript
 $ tsc main.ts
-$
 ```
 
-#### 3.5.21.3. Components and Templates
+#### 3.5.22.3. Components and Templates
 
-##### 3.5.21.3.1. New Angular Project
+##### 3.5.22.3.1. New Angular Project
 
 * [Curso Angular #03: Hello, World! Criando primeiro projeto e o primeiro Componente](https://www.youtube.com/watch?v=wBrIT2Z8t5I&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=4)
 
@@ -1375,7 +1494,7 @@ Build at: 2023-08-21T13:34:44.586Z - Hash: 65af89eece8bad60 - Time: 49978ms
   * Interpolação é a definição da variável no arquivo `app.component.ts` que é apresentada no arquivo `app.component.html`
 
 
-##### 3.5.21.3.2. Manual New Component on existing Angular Project
+##### 3.5.22.3.2. Manual New Component on existing Angular Project
 
 * Criar o arquivo do primeiro componente manual `./src/app/meu-primeiro.component.ts` e crie o conteúdo de uma classe `... @Component()  .. class MeuPrimeiroComponent {} ... `. Observe que a nomenclatura de padrão de nome de arquivos (separados por hifen) e nomenclatura de nome de classes.
 * Criar o conteúdo do template com o uso de **inline template literal** isto é a crase. Recomendado quando código até 3 linhas
@@ -1437,7 +1556,7 @@ import { MeuPrimeiroComponent } from './meu-primeiro-component';
 +---------------------------------------------+
 ```
 
-##### 3.5.21.3.3. CLI New Component on existing Angular Project
+##### 3.5.22.3.3. CLI New Component on existing Angular Project
 
 * Create new Component using CLI
 
@@ -1495,7 +1614,7 @@ $ ng serve
 ```
 
 
-##### 3.5.21.3.4. Create New Modules
+##### 3.5.22.3.4. Create New Modules
 
 * [Curso Angular #05: Módulos (ngModule)](https://www.youtube.com/watch?v=36kd3uR-hG8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=6)
 * **Modules**: arquivo que vai ajudar a organizar e modularizar as aplicações em pastas. Com os módulos você pode escolher o que vai expor para fora do diretório.
@@ -1698,7 +1817,7 @@ $ ng serve
 +---------------------------------------------+
 ```
 
-##### 3.5.21.3.5. Create New Template
+##### 3.5.22.3.5. Create New Template
 
 * Edit `./src/app/cursos/cursos.component.ts` e crie as propriedades: a) nomePortal: string; b) cursos: string array
 * Edit `./src/app/cursos/cursos.component.html` e faça com que o HTML mostre o nome do portal e a lista de cursos, lembrando que ambas as informações agora são atributos de propriedade do componente cursos
@@ -1751,7 +1870,7 @@ $ ng serve
 +-----------+     +-----------+     +-----------+
 ```
 
-##### 3.5.21.3.6. CLI Generate Services
+##### 3.5.22.3.6. CLI Generate Services
 
 * Generate Service Class inside folder = "cursos" with name "cursos"
 * Observe results in `./src/app/cursos/cursos.service.ts`
@@ -1800,7 +1919,7 @@ $ ng serve
 +---------------------------------------------+
 ```
 
-#### 3.5.21.4. Data Binding
+#### 3.5.22.4. Data Binding
 
 * [Curso Angular #09: Property Binding e Interpolação](https://www.youtube.com/watch?v=rlVxG2lG1Tk&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=10)
 
@@ -1873,7 +1992,7 @@ CREATE src/app/data-binding/data-binding.component.ts (225 bytes)
 UPDATE src/app/app.module.ts (418 bytes)
 ```
 
-#### 3.5.21.4.1. Data Binding - Intepolation
+#### 3.5.22.4.1. Data Binding - Intepolation
 Obter o valor de um atributo ou método no Template
 
 * Configure the use of Data Binding Interpolation
@@ -1956,7 +2075,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.4.2. Data Binding - Property binding
+#### 3.5.22.4.2. Data Binding - Property binding
 Obter um valor ou atributo do Componente para o template
 
 * Usa-se colchetes `<img [src]="urlImage"/>`
@@ -2007,7 +2126,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.4.3. Data Binding - Class Binding and Style Binding
+#### 3.5.22.4.3. Data Binding - Class Binding and Style Binding
 
 Obter um valor ou atributo do Componente para o template usando CSS
 
@@ -2090,7 +2209,7 @@ $ ng serve
 
 
 
-#### 3.5.21.4.4. Data Binding - Event Binding
+#### 3.5.22.4.4. Data Binding - Event Binding
 Escutar eventos do Template (view HTML) e executar a lógica de programação no componente
 
 * [Curso Angular #11: Event binding](https://www.youtube.com/watch?v=WF28rLBangw&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=12)
@@ -2200,7 +2319,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.4.5. Data Binding - Two-Way Data binding
+#### 3.5.22.4.5. Data Binding - Two-Way Data binding
 Manter o sincronismo ao mesmo tempo o componente quanto o template
 
 * Template value updates Component value and vice-versa
@@ -2289,7 +2408,7 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-#### 3.5.21.4.6. Reutilizando Componentes com Input Propoerties
+#### 3.5.22.4.6. Reutilizando Componentes com Input Propoerties
 Expor a propriedade de um componente para outro componente
 
 * [Curso Angular #13: Reusando Componentes com Input properties](https://www.youtube.com/watch?v=G2cBpYZ0fzk)
@@ -2363,7 +2482,7 @@ export class InputPropertyComponent {
   :
 ```
 
-#### 3.5.21.4.7. Emitindo Eventos com Output properties
+#### 3.5.22.4.7. Emitindo Eventos com Output properties
 Emitir eventos customizados através do com Output properties. O exercício será criar um número com dois botões, sendo um para incrementar o valor e outro para decrementar o valor
 
 * [Curso Angular #14: Emitindo Eventos com Output properties](https://www.youtube.com/watch?v=Lbwk8oDJrCU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=15)
@@ -2475,7 +2594,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.4.8. Component Life Cycle
+#### 3.5.22.4.8. Component Life Cycle
 Ciclo de vida de um componente
 
 * [Curso Angular #15: Ciclo de vida do Componente](https://www.youtube.com/watch?v=4Z543sAKmBA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=16)
@@ -2683,7 +2802,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.4.9. DOM access and Template ViewChild
+#### 3.5.22.4.9. DOM access and Template ViewChild
 How to access DOM and Template with decorator ViewChild
 
 * [Curso Angular #16: Acesso ao DOM e ao Template com ViewChild](https://www.youtube.com/watch?v=WO3LdMeh8WU&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=17)
@@ -2782,12 +2901,12 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-#### 3.5.21.5. Angular CLI
+#### 3.5.22.5. Angular CLI
 How to install, create project, ng new, ng init, ng serve
 
 * [Curso Angular #17: Angular CLI: Instalação e criação de projetos: ng new e ng serve](https://www.youtube.com/watch?v=RlfOhrhPh_Y&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=18)
 
-#### 3.5.21.5.1. Angular CLI - Install
+#### 3.5.22.5.1. Angular CLI - Install
 
 * Pre-requisites: Node ( version >4 ) and NPM - Node Package Manager
 * Install globally `npm install -g @angular/cli`
@@ -2799,7 +2918,7 @@ v18.16.0
 $ npm install -g @angular/cli
 ```
 
-#### 3.5.21.5.2. Angular CLI - Create Project
+#### 3.5.22.5.2. Angular CLI - Create Project
 
 * Option 1: Create New with `ng new <project-name>`
 
@@ -2831,7 +2950,7 @@ $ ng init
 ```
 
 
-#### 3.5.21.5.3. Angular CLI - Start project
+#### 3.5.22.5.3. Angular CLI - Start project
 
 ```bash
 $ cd prj-directives
@@ -2852,7 +2971,7 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-#### 3.5.21.5.4. Angular CLI - Directive ng-if
+#### 3.5.22.5.4. Angular CLI - Directive ng-if
 
 * Step-1: Use CLI to generate component `directive-ng-if`
 * Step-2: Use CLI to generate service `directive-ng-if`
@@ -2868,7 +2987,7 @@ $ ng generate service directive-ng-if/directive-ng-if
 ```
 
 
-#### 3.5.21.5.5. Angular CLI - Using pre-processors: sass, less and stylus
+#### 3.5.22.5.5. Angular CLI - Using pre-processors: sass, less and stylus
 
 * [Curso Angular #19: Angular CLI: Usando pré-processadores (Sass, Less, Stylus)](https://www.youtube.com/watch?v=Z0umP8p2aW8&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=20)
 
@@ -2898,7 +3017,7 @@ $ ng set defaults.styleExt stylus
   :
 ```
 
-#### 3.5.21.5.6. Angular CLI - Using lint, test e2e
+#### 3.5.22.5.6. Angular CLI - Using lint, test e2e
 
 * [Curso Angular #20: Angular CLI: ng lint, ng test, ng e2e](https://www.youtube.com/watch?v=TZDWgAfYYqo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=21)
 * [ng lint](https://angular.io/cli/lint)
@@ -2971,7 +3090,7 @@ $ ng e2e
 ```
 
 
-#### 3.5.21.5.7. Angular CLI - Project folders structure
+#### 3.5.22.5.7. Angular CLI - Project folders structure
 
 * [Curso Angular #21: Angular CLI: Estrutura do projeto](https://www.youtube.com/watch?v=ICvq9YeDCh0&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=22)
 
@@ -2986,7 +3105,7 @@ $ ng e2e
   * Creates commands to build and deploy application in production
 
 
-#### 3.5.21.6. Build Deploy and Production
+#### 3.5.22.6. Build Deploy and Production
 How to build a Deploy package and run Production
 
 * [Curso Angular #22: Angular CLI: Gerando build de produção](https://www.youtube.com/watch?v=U0zHj14mNrI&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=23)
@@ -3088,7 +3207,7 @@ Hit CTRL-C to stop the server
 ```
 
 
-#### 3.5.21.7. Install libraries: Bootstrap
+#### 3.5.22.7. Install libraries: Bootstrap
 How to install libraries: Bootstrap
 
 * [Curso Angular #118: Instalando Bootstrap](https://www.youtube.com/watch?v=Vgj9N_Lw-r4)
@@ -3233,13 +3352,13 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8. Directives
+#### 3.5.22.8. Directives
 
 * Type of directives:
   * **Structural**: Used to modify DOM HTML
   * **Attributes**: Interacts with elements (modify class or styles)
 
-#### 3.5.21.8.1. Directives - *ngIf
+#### 3.5.22.8.1. Directives - *ngIf
 
 * [Curso Angular 2 #25: Diretivas: ngIf](https://www.youtube.com/watch?v=7zJNIp44B60&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=26)
 * [Curso Angular 2 #28: Diretivas: sobre o * e template](https://www.youtube.com/watch?v=e-OGZocglTA&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=29)
@@ -3314,7 +3433,7 @@ export class DirectiveNgifComponent {
 <button (click)="onMostrarCursos()">Mostrar/Esconder cursos</button>
 ```
 
-#### 3.5.21.8.2. Directives - *ngSwitch, *ngSwitchCase and *ngSwitchDefault
+#### 3.5.22.8.2. Directives - *ngSwitch, *ngSwitchCase and *ngSwitchDefault
 
 * [Curso Angular #26: Diretivas: ngSwitch, ngSwitchCase e ngSwitchDefault](https://www.youtube.com/watch?v=uToE2t9RHME&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=27)
 * [Bootstrap - Official Documentation - version 5.3, component NavBar](https://getbootstrap.com/docs/5.3/components/navbar/)
@@ -3430,7 +3549,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8.3. Directives - *ngFor
+#### 3.5.22.8.3. Directives - *ngFor
 
 * [Curso Angular 2 #27: Diretivas: ngFor](https://www.youtube.com/watch?v=seEbP5FGcvo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=28)
 
@@ -3491,7 +3610,7 @@ $ ng serve
 +-------------------------------------------------------------+
 ```
 
-#### 3.5.21.8.4. Directives - *ngClass
+#### 3.5.22.8.4. Directives - *ngClass
 
 * [Curso Angular #29: Diretivas: ngClass](https://www.youtube.com/watch?v=DCFJZzFwDKs&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=30)
 * [Bootstrap Icons - Official Documentation](https://icons.getbootstrap.com/)
@@ -3607,7 +3726,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8.5. Directives - *ngStyle
+#### 3.5.22.8.5. Directives - *ngStyle
 
 * [Curso Angular #30: Diretivas: ngStyle](https://www.youtube.com/watch?v=WBf5sgByOY4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=31)
 * [Bootstrap Icons - Official Documentation](https://icons.getbootstrap.com/)
@@ -3724,7 +3843,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8.6. Directives - Elvis Operator
+#### 3.5.22.8.6. Directives - Elvis Operator
 
 * [Curso Angular #31: Operador Elvis ("?")](https://www.youtube.com/watch?v=z2GUOnkGCdc&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=32)
 
@@ -3803,7 +3922,7 @@ $ ng serve
 +---------------------------------------------------------------+
 ```
 
-#### 3.5.21.8.7. Directives - ng-content
+#### 3.5.22.8.7. Directives - ng-content
 
 * [Curso Angular #32: ng-content](https://www.youtube.com/watch?v=fud-ezN6RJo&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=33)
 * [Bootstrap - Official Documentation](https://getbootstrap.com/)
@@ -3880,7 +3999,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8.8. Directives - Custom attribue directive
+#### 3.5.22.8.8. Directives - Custom attribue directive
 
 * [Curso Angular 2 #33: Custom attribue directive](https://www.youtube.com/watch?v=8fUa4HPOua4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=34)
 * Directive works as a Component without Template
@@ -3992,7 +4111,7 @@ $ ng serve
 ```
 
 
-#### 3.5.21.8.9. Directives - HostListener and HostBinding
+#### 3.5.22.8.9. Directives - HostListener and HostBinding
 
 * [Curso Angular #34: Diretivas: HostListener e HostBinding](https://www.youtube.com/watch?v=PUxHzEUDVG4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=35)
 * Directive works as a Component without Template
@@ -4098,15 +4217,13 @@ $ ng serve
 
 
 
-#### 3.5.21.9. Services
-#### 3.5.21.10. Pipes
-#### 3.5.21.11. Roteamento
-#### 3.5.21.12. Forms (Template Driven)
-#### 3.5.21.13. Forms Reactive (Data-Driven)
-#### 3.5.21.14. HTTP
-#### 3.5.21.15. Debug
-
-
+#### 3.5.22.9. Services
+#### 3.5.22.10. Pipes
+#### 3.5.22.11. Roteamento
+#### 3.5.22.12. Forms (Template Driven)
+#### 3.5.22.13. Forms Reactive (Data-Driven)
+#### 3.5.22.14. HTTP
+#### 3.5.22.15. Debug
 
 
 
