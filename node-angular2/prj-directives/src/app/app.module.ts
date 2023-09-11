@@ -14,6 +14,8 @@ import { ElvisOperatorComponent } from './elvis-operator/elvis-operator.componen
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { CustomAttrDirectiveDirective } from './shared/custom-attr-directive.directive';
 import { CustomAttrDirectiveComponent } from './custom-attr-directive/custom-attr-directive.component';
+import { HighlightMouseDirectiveDirective } from './shared/highlight-mouse-directive.directive';
+import { HighlightMouseDirectiveComponent } from './highlight-mouse-directive/highlight-mouse-directive.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CustomAttrDirectiveComponent } from './custom-attr-directive/custom-att
     ElvisOperatorComponent,
     NgContentComponent,
     CustomAttrDirectiveDirective,
-    CustomAttrDirectiveComponent
+    CustomAttrDirectiveComponent,
+    HighlightMouseDirectiveDirective,
+    HighlightMouseDirectiveComponent
   ],
   imports: [
     BrowserModule,

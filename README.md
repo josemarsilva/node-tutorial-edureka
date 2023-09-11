@@ -69,7 +69,8 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.21.8.5. Directives - `*ngStyle`](#352185-directives---ngstyle)
         * [3.5.21.8.6. Directives - Elvis operator](#352186-directives---elvis-operator)
         * [3.5.21.8.7. Directives - `ng-content`](#352187-directives---ng-content)
-
+        * [3.5.21.8.8. Directives - custom attributes directive](#352188-directives---custom-attribue-directive)
+        * [3.5.21.8.9. Directives - HostListener and HostingBinding](#352189-directives---hostlistener-and-hostbinding)
 
 ## 2. Documentação
 
@@ -3261,7 +3262,7 @@ $ ng generate component directive-ngif
   :
 <app-directive-ngif></app-directive-ngif>
   :
-````
+```
 
 * Step-03: Edit Component
   * Edit `.\src\app\directive-ngif\directive-ngif.component.ts`
@@ -3337,7 +3338,7 @@ $ ng generate component directive-ngswitch
 <!-- <app-directive-ngif></app-directive-ngif> -->
 <app-directive-ngswitch></app-directive-ngswitch>
   :
-````
+```
 
 * Step-03: Install Bootstrap
 
@@ -3451,7 +3452,7 @@ $ ng generate component directive-ngfor
 <!-- <app-directive-ngswitch></app-directive-ngswitch> -->
 <app-directive-ngfor></app-directive-ngfor>
   :
-````
+```
 
 * Step-03: Edit Component
   * Edit `.\src\app\directive-ngswitch\directive-ngfor.component.ts`
@@ -3514,7 +3515,7 @@ $ ng generate component directive-ngclass
 <!-- <app-directive-ngfor></app-directive-ngfor> -->
 <app-directive-ngclass></app-directive-ngclass>
   :
-````
+```
 
 * Step-03: Install Bootstrap
 
@@ -3631,7 +3632,7 @@ $ ng generate component directive-ngstyle
 <!-- <app-directive-ngclass></app-directive-ngclass> -->
 <app-directive-ngstyle></app-directive-ngstyle>
   :
-````
+```
 
 
 * Step-03: Edit Template
@@ -3748,7 +3749,7 @@ $ ng generate component elvis-operator
 <!-- <app-directive-ngstyle></app-directive-ngstyle> -->
 <app-elvis-operator></app-elvis-operator>
   :
-````
+```
 
 
 * Step-03: Edit Template
@@ -3832,7 +3833,7 @@ $ ng generate component ng-content
     <div class="corpo">Conteúdo do Corpo do Painel</div>
 </app-ng-content>
   :
-````
+```
 
 
 * Step-03: Edit Template
@@ -3882,7 +3883,6 @@ $ ng serve
 #### 3.5.21.8.8. Directives - Custom attribue directive
 
 * [Curso Angular 2 #33: Custom attribue directive](https://www.youtube.com/watch?v=8fUa4HPOua4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=34)
-* [Bootstrap - Official Documentation](https://getbootstrap.com/)
 * Directive works as a Component without Template
 * Lets create a directive to change element background collor
 * Usually directive is shared with all application
@@ -3927,7 +3927,7 @@ $ ng generate component custom-attr-directive
  -->
 <app-custom-attr-directive></app-custom-attr-directive>
   :
-````
+```
 
 
 * Step-04: Edit Template
@@ -3989,6 +3989,111 @@ $ ng serve
 |   Texto com fundo amarelo: com style manual                   |
 |   Texto com fundo amarelo: com app-custom-attr-directive      |
 +---------------------------------------------------------------+
+```
+
+
+#### 3.5.21.8.9. Directives - HostListener and HostBinding
+
+* [Curso Angular #34: Diretivas: HostListener e HostBinding](https://www.youtube.com/watch?v=PUxHzEUDVG4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=35)
+* Directive works as a Component without Template
+* Lets create a directive to test
+* Usually directive is shared with all application
+
+* Step-01: Create Directive to test `highlight-mouse-directive` using `shared` folder
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate directive shared/highlight-mouse-directive
+CREATE src/app/shared/highlight-mouse-directive.directive.spec.ts (294 bytes)
+CREATE src/app/shared/highlight-mouse-directive.directive.ts (175 bytes)
+UPDATE src/app/app.module.ts (1791 bytes)
+  :
+```
+
+* Step-02: Create Component to test `highlight-mouse-directive`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component highlight-mouse-directive
+  :
+```
+
+* Step-03: Edit Directive Custom HostListener
+  * Edit `.\src\app\shared\highlight-mouse-directive.directive.ts`
+  * Import `HostListener, ElementRef, Renderer2`
+  * Notation `@HostListener('mouseenter')` listener event and build a custom function `onMouseOver()`
+  * Implement `constructor()` to capture `ElementRef`
+  * Import `HostBinding`
+  * Notation `@HostBinding('style.backgroundColor')` bind color with parameter `backgroundColor`
+
+```.\src\app\shared\custom-attr-directive.directive.ts
+  :
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-highlight-mouse-directive',
+  templateUrl: './highlight-mouse-directive.component.html',
+  styleUrls: ['./highlight-mouse-directive.component.css']
+})
+export class HighlightMouseDirectiveComponent {
+
+}
+  :
+```
+
+
+* Step-04: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `appHighlightMouseDirective`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<!-- <app-elvis-operator></app-elvis-operator> -->
+<!-- 
+<app-ng-content>
+    <div class="titulo">Conteúdo do Titulo do Painel</div>
+    <div class="corpo">Conteúdo do Corpo do Painel</div>
+</app-ng-content>
+ -->
+<!-- <app-custom-attr-directive></app-custom-attr-directive> -->
+<app-highlight-mouse-directive></app-highlight-mouse-directive>
+  :
+```
+
+
+* Step-05: Edit Template
+  * Edit `.\src\app\highlight-mouse-directive\highlight-mouse-directive.component.html`
+  * Use selector `app-highlight-mouse-directive` for custom directive created in file `./shared\highlight-mouse-directive.directive.ts`
+
+```.\src\app\highlight-mouse-directive\highlight-mouse-directive.component.html
+  :
+<h3>highlight-mouse-directive</h3>
+<p app-highlight-mouse-directive>
+    Texto com highlight using @HostListener('mouseenter') e @HostListener('mouseleave')
+</p>
+  :
+```
+
+
+* Step-06: Run application and observe results
+
+```bash
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------------------------------+
+| http://localhost:4200                                                                 |
++---------------------------------------------------------------------------------------+
+| highlight-mouse-directive                                                             |
+|   Texto com highlight using @HostListener('mouseenter') e @HostListener('mouseleave') |
++---------------------------------------------------------------------------------------+
 ```
 
 
