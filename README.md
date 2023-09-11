@@ -34,6 +34,8 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
     + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
     + [3.5.21. Hands On Node, Express, swagger-jsdoc, swagger-ui-express ![star.jpg](./doc/images/star.jpg)](#3521-hands-on-node-express-swagger-jsdoc-swagger-ui-express)
+      - [3.5.21.1. Hands On Node, Express, swagger-jsdoc, swagger-ui-express](#35211-hands-on-node-express-swagger-jsdoc-swagger-ui-express) 
+      - [3.5.21.2. Hands On Node, Express, swagger-jsdoc, swagger-ui-express, TypeScript](#35212-hands-on-node-express-swagger-jsdoc-swagger-ui-express-typescript) 
     + [3.5.22. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3522-curso-angular-loiane-groner)
       - [3.5.22.1. Introdução](#35221-introdução) 
       - [3.5.22.2. Typescript](#35222-typescript) 
@@ -1224,7 +1226,7 @@ const swaggerUIExpress = require('swagger-ui-express');
   * Get `http://localhost:3000/v1/api/items` using browser or curl
 
 
-##### 3.5.22.2. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express, typescript
+##### 3.5.21.2. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express, typescript
 
 * Create a folder to hands on the laboratory
 
