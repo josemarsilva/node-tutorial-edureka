@@ -1182,6 +1182,7 @@ $ node index.js
 * [Nodejs - Criando documentação com Swagger - Code/drops #85](https://www.youtube.com/watch?v=WhFx2heoFrA&list=PL85ITvJ7FLohhULgUFkYBf2xcXCG6yfVV&index=27)
 * Use only Node JS and build another with TypeScript
 
+
 ##### 3.5.21.1. Hands On Node, Express, Swagger-jsdoc, swagger-ui-express
 
 * Create a folder to hands on the laboratory
@@ -4226,6 +4227,72 @@ $ ng serve
 #### 3.5.22.13. Forms Reactive (Data-Driven)
 #### 3.5.22.14. HTTP
 #### 3.5.22.15. Debug
+
+
+#### 3.5.23. Hands On Node, TypeScript, AWS Amplify Cognito
+
+* https://github.com/aws-samples/cognito-amplify-nodejs
+
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-typescript-aws-amplify-cognito
+$ cd node-typescript-aws-amplify-cognito
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+  * Edit to inspect content of file `package.json`
+  * List sub-folder `ls -la ./node_modules` where news modules are installed
+
+```bash
+$ npm init -y # or a lot of <enter> later
+```
+
+* Install dependencies
+
+```bash
+$ npm install typescript ts-node @types/node
+$ npx tsc --init
+$ npm install aws-amplify @aws-amplify/core @aws-amplify/auth @aws-amplify/ui-react
+```
+
+* Edit file `.gitignore`
+
+```.gitignore
+aws-exports.js
+```
+
+* Edit file `aws-exports.js`
+
+```aws-exports.js
+const awsmobile = {
+  aws_project_region: 'YOUR_AWS_REGION',
+  aws_cognito_identity_pool_id: 'YOUR_COGNITO_IDENTITY_POOL_ID',
+  aws_cognito_region: 'YOUR_AWS_REGION',
+  aws_user_pools_id: 'YOUR_USER_POOL_ID',
+  aws_user_pools_web_client_id: 'YOUR_USER_POOL_CLIENT_ID',
+};
+
+export default awsmobile;
+```
+
+* Edit file `app.ts`
+
+```app.ts
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+  :
+```
+
+* Run application `npx ts-node app.ts`
+
+* Test application
+  * GET `http://localhost:3000` using browser or curl
+  * GET `http://localhost:3000/api-docs` using browser or curl
+  * Get `http://localhost:3000/v1/api/items` using browser or curl
+
+
 
 
 
