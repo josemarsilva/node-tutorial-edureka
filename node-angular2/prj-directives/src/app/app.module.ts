@@ -16,6 +16,8 @@ import { CustomAttrDirectiveDirective } from './shared/custom-attr-directive.dir
 import { CustomAttrDirectiveComponent } from './custom-attr-directive/custom-attr-directive.component';
 import { HighlightMouseDirectiveDirective } from './shared/highlight-mouse-directive.directive';
 import { HighlightMouseDirectiveComponent } from './highlight-mouse-directive/highlight-mouse-directive.component';
+import { HighlightCompleteDirective } from './shared/highlight-complete.directive';
+import { HighlightCompleteComponent } from './highlight-complete/highlight-complete.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HighlightMouseDirectiveComponent } from './highlight-mouse-directive/hi
     CustomAttrDirectiveDirective,
     CustomAttrDirectiveComponent,
     HighlightMouseDirectiveDirective,
-    HighlightMouseDirectiveComponent
+    HighlightMouseDirectiveComponent,
+    HighlightCompleteDirective,
+    HighlightCompleteComponent
   ],
   imports: [
     BrowserModule,

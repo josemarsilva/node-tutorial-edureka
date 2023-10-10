@@ -74,8 +74,9 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
         * [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
         * [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
-        * [3.5.22.8.8. Directives - custom attributes directive](#352288-directives---custom-attribue-directive)
-        * [3.5.22.8.9. Directives - HostListener and HostingBinding](#352289-directives---hostlistener-and-hostbinding)
+        * [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
+        * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
+        * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
 
 ## 2. Documentação
 
@@ -3537,6 +3538,8 @@ export class DirectiveNgswitchComponent {
 * Step-07: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -3599,6 +3602,8 @@ export class DirectiveNgforComponent {
 * Step-05: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -3713,6 +3718,8 @@ export class DirectiveNgclassComponent {
 * Step-07: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -3829,6 +3836,8 @@ import { FormsModule } from '@angular/forms';
 * Step-08: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -3909,6 +3918,8 @@ export class ElvisOperatorComponent {
 * Step-07: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -3986,6 +3997,8 @@ $ ng generate component ng-content
 * Step-07: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -4002,7 +4015,7 @@ $ ng serve
 ```
 
 
-#### 3.5.22.8.8. Directives - Custom attribue directive
+#### 3.5.22.8.8. Custom Directives - Custom attribue directive
 
 * [Curso Angular 2 #33: Custom attribue directive](https://www.youtube.com/watch?v=8fUa4HPOua4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=34)
 * Directive works as a Component without Template
@@ -4100,6 +4113,8 @@ export class CustomAttrDirectiveDirective {
 * Step-07: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -4114,12 +4129,13 @@ $ ng serve
 ```
 
 
-#### 3.5.22.8.9. Directives - HostListener and HostBinding
+#### 3.5.22.8.9. Custom Directives - HostListener and HostBinding
 
 * [Curso Angular #34: Diretivas: HostListener e HostBinding](https://www.youtube.com/watch?v=PUxHzEUDVG4&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=35)
 * Directive works as a Component without Template
 * Lets create a directive to test
 * Usually directive is shared with all application
+* _Attention_: It is not working properly. Debug shows enter end leave text, but colors do not change
 
 * Step-01: Create Directive to test `highlight-mouse-directive` using `shared` folder
 
@@ -4142,7 +4158,30 @@ $ ng generate component highlight-mouse-directive
   :
 ```
 
-* Step-03: Edit Directive Custom HostListener
+* Step-03: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `appHighlightMouseDirective`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<!-- <app-elvis-operator></app-elvis-operator> -->
+<!-- 
+<app-ng-content>
+    <div class="titulo">Conteúdo do Titulo do Painel</div>
+    <div class="corpo">Conteúdo do Corpo do Painel</div>
+</app-ng-content>
+ -->
+<!-- <app-custom-attr-directive></app-custom-attr-directive> -->
+<app-highlight-mouse-directive></app-highlight-mouse-directive>
+  :
+```
+
+
+* Step-04: Edit Custom Directive HostListener
   * Edit `.\src\app\shared\highlight-mouse-directive.directive.ts`
   * Import `HostListener, ElementRef, Renderer2`
   * Notation `@HostListener('mouseenter')` listener event and build a custom function `onMouseOver()`
@@ -4166,29 +4205,6 @@ export class HighlightMouseDirectiveComponent {
 ```
 
 
-* Step-04: Edit main app Template and configure use of selector
-  * Edit `.\src\app\app.component.html` use component selector `appHighlightMouseDirective`
-
-```.\node-angular2\prj-directives\src\app\app.component.html
-  :
-<!-- <app-directive-ngif></app-directive-ngif> -->
-<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
-<!-- <app-directive-ngfor></app-directive-ngfor> -->
-<!-- <app-directive-ngclass></app-directive-ngclass> -->
-<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
-<!-- <app-elvis-operator></app-elvis-operator> -->
-<!-- 
-<app-ng-content>
-    <div class="titulo">Conteúdo do Titulo do Painel</div>
-    <div class="corpo">Conteúdo do Corpo do Painel</div>
-</app-ng-content>
- -->
-<!-- <app-custom-attr-directive></app-custom-attr-directive> -->
-<app-highlight-mouse-directive></app-highlight-mouse-directive>
-  :
-```
-
-
 * Step-05: Edit Template
   * Edit `.\src\app\highlight-mouse-directive\highlight-mouse-directive.component.html`
   * Use selector `app-highlight-mouse-directive` for custom directive created in file `./shared\highlight-mouse-directive.directive.ts`
@@ -4206,6 +4222,8 @@ export class HighlightMouseDirectiveComponent {
 * Step-06: Run application and observe results
 
 ```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
 $ ng serve
 ```
 
@@ -4214,6 +4232,117 @@ $ ng serve
 | http://localhost:4200                                                                 |
 +---------------------------------------------------------------------------------------+
 | highlight-mouse-directive                                                             |
+|   Texto com highlight using @HostListener('mouseenter') e @HostListener('mouseleave') |
++---------------------------------------------------------------------------------------+
+```
+
+#### 3.5.22.8.10. Custom Directives - Input and Property Binding
+
+* [Curso Angular #35: Diretivas: Input e Property Binding](https://www.youtube.com/watch?v=rB3OjMOel3s&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=36)
+* Custom Directive Input and Property Binding
+* Allows we make association between a class variable with a HTML tag using this directive
+* Lets create a directive to test
+* Usually directive is shared with all application
+* _Attention_: It is not working properly. Debug shows enter end leave text, but colors do not change
+
+
+* Step-01: Create Directive to test `highlight-complete` using `shared` folder
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate directive shared/highlight-complete
+CREATE src/app/shared/highlight-complete.directive.spec.ts (269 bytes)
+CREATE src/app/shared/highlight-complete.directive.ts (163 bytes)
+UPDATE src/app/app.module.ts (2061 bytes)
+  :
+```
+
+* Step-02: Create Component to test `highlight-complete`
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng generate component highlight-complete
+  :
+```
+
+* Step-03: Edit main app Template and configure use of selector
+  * Edit `.\src\app\app.component.html` use component selector `appHighlightComplete`
+
+```.\node-angular2\prj-directives\src\app\app.component.html
+  :
+<!-- <app-directive-ngif></app-directive-ngif> -->
+<!-- <app-directive-ngswitch></app-directive-ngswitch> -->
+<!-- <app-directive-ngfor></app-directive-ngfor> -->
+<!-- <app-directive-ngclass></app-directive-ngclass> -->
+<!-- <app-directive-ngstyle></app-directive-ngstyle> -->
+<!-- <app-elvis-operator></app-elvis-operator> -->
+<!-- 
+<app-ng-content>
+    <div class="titulo">Conteúdo do Titulo do Painel</div>
+    <div class="corpo">Conteúdo do Corpo do Painel</div>
+</app-ng-content>
+ -->
+<!-- <app-custom-attr-directive></app-custom-attr-directive> -->
+<!-- <app-highlight-mouse-directive></app-highlight-mouse-directive> -->
+<app-highlight-complete></app-highlight-complete>
+  :
+```
+
+
+* Step-04: Edit Custom Directive highlight-complete
+  * Edit `.\src\app\shared\highlight-complete.directive.ts`
+  * Import HostListener `import { HostListener } from '@angular/core';`
+  * Import HostBinding `import { HostBinding } from '@angular/core';`
+  * Declare a property variable for background color `private backgroundColor: string = '';`
+  * Notation and associated custom functions to listener event `@HostListener('mouseenter') onMouseEnter(){ ...`
+  * Notation and associated custom functions to listener event `@HostListener('mouseleave') onMouseLeave(){ ...`
+  * Notation and associated custom function to binding event `@HostBinding('style.backgroundColor') get setColor() { ...`
+
+```.\src\app\shared\highlight-complete.directive.ts
+  :
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-highlight-complete',
+  templateUrl: './highlight-complete.component.html',
+  styleUrls: ['./highlight-complete.component.css']
+})
+export class HighlightMouseDirectiveComponent {
+
+}
+  :
+```
+
+
+* Step-05: Edit Template
+  * Edit `.\src\app\highlight-complete\highlight-complete.component.html`
+  * Use selector `app-highlight-complete` for custom directive created in file `./shared\highlight-complete.directive.ts`
+
+```.\src\app\highlight-complete\highlight-complete.component.html
+  :
+<h3>highlight-complete</h3>
+<p app-highlight-complete>
+    Texto com highlight using @HostListener('mouseenter') e @HostListener('mouseleave')
+</p>
+  :
+```
+
+
+* Step-06: Run application and observe results
+
+```bash
+$  pwd
+/mnt/c/GitHome/ws-github-03/study-node/node-angular2/prj-directives
+$ ng serve
+```
+
+```browser
++---------------------------------------------------------------------------------------+
+| http://localhost:4200                                                                 |
++---------------------------------------------------------------------------------------+
+| highlight-complete                                                             |
 |   Texto com highlight using @HostListener('mouseenter') e @HostListener('mouseleave') |
 +---------------------------------------------------------------------------------------+
 ```
@@ -4291,9 +4420,6 @@ import awsconfig from './aws-exports';
   * GET `http://localhost:3000` using browser or curl
   * GET `http://localhost:3000/api-docs` using browser or curl
   * Get `http://localhost:3000/v1/api/items` using browser or curl
-
-
-
 
 
 ## I - Referências
