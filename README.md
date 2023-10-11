@@ -4422,6 +4422,100 @@ import awsconfig from './aws-exports';
   * Get `http://localhost:3000/v1/api/items` using browser or curl
 
 
+#### 3.5.24. Hands On Node JS, Express, TypeScript, MongoDB, REST API
+
+* [The Complete Guide To Building A REST API With Node, Express, TypeScript & MongoDB + Authentication](https://www.youtube.com/watch?v=b8ZUb_Okxro&t=754s)
+
+
+* Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-express-typescript-rest-api-mongodb
+$ cd node-express-typescript-rest-api-mongodb
+```
+
+* Run npm init and answer <enter> for each configuration item accepting defaults values
+
+```bash
+$ npm init -y # or a lot of <enter> later
+```
+
+* Install dependencies
+
+```bash
+$ npm install -D typescript
+$ npm install -D ts-node
+$ npm install -D nodemon
+$ npm install -D @types/express @types/body-parser @types/cookie-parser @types/compression @types/cors
+$ npm install express body-parser cookie-parser compression cors --save
+$ npm install dotenv
+$ npm install mongoose --save
+$ npm install -D @types/mongoose
+$ npm install lodash --save
+$ npm install -D @types/lodash
+```
+
+* Configure project
+  * Edit file `tsconfig.json`
+  * Edit file `nodemon.json`
+  * Edit file `.gitignore`
+  * Edit `package.json` and add script
+
+```package.json
+  :
+  "scripts":
+    "start": "nodemon"
+  :
+```
+
+
+* Create entry point application
+  * Create folder  `./src` 
+  * Create file `./src/index.ts` with temporary contents `console.log("Hello Typescript!")`
+
+```bash
+$ pwd
+$ ..;/node-express-typescript-rest-api-mongodb
+$ mkdir src
+```
+
+* Run/start application  time using `npm start` 
+  * Expected result is `Hello Typescript!`
+
+* Create a cloud MongoDB database for application using  `https://cloud.mongodb.com/` 
+  * Create a database
+  * Create a database user with password 
+  * Add you IP address
+  * Save credentials into `.env` file
+
+* Edit `./src/index.ts` and build application
+
+* Run/start application  time using `npm start` 
+  * Expected result is `Server running on http://localhost:3000`
+  * Expected result `http://localhost:3000` is `Cannot GET /`
+
+* Create source database schema and model
+  * Create sub-folder `mkdir ./src/db`
+  * Create/Edit `./src/db/users.ts`
+
+* Create Helpers - to help authentication
+  * Create sub-folder `mkdir ./src/helpers`
+  * Create/Edit `./src/helpers/index.ts`
+
+
+* Create Controllers - authentication
+  * Create sub-folder `mkdir ./src/controllers`
+  * Create/Edit `./src/controllers/authentication.ts`
+
+* Create Router
+  * Create sub-folder `mkdir ./src/router`
+  * Create/Edit `./src/router/index.ts`
+
+* Create Middleware
+  * Create sub-folder `mkdir ./src/middlewares`
+  * Create/Edit `./src/middlewares/index.ts`
+
+
 ## I - Referências
 
 * https://loiane.training/curso/angular
