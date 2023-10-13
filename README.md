@@ -4515,6 +4515,70 @@ $ mkdir src
   * Create sub-folder `mkdir ./src/middlewares`
   * Create/Edit `./src/middlewares/index.ts`
 
+#### 3.5.25. Hands On Node JS Playwright
+
+* [Playwright enables reliable end-to-end testing for modern web apps.](https://playwright.dev/)
+* [Playwright Beginner Tutorial 1 | What is Playwright](https://www.youtube.com/watch?v=4_m3HsaNwOE&list=PLhW3qG5bs-L9sJKoT1LC5grGT77sfW0Z8&index=1)
+
+
+* **STEP-01**: Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-playwright
+$ cd node-playwright
+```
+
+* **STEP-02**: Initialize and Install Playwright - confirm, choose Typescript
+
+```bash
+$ npm init playwright@latest
+	:
+Need to install the following packages:
+  create-playwright@1.17.130
+	:
+Ok to proceed? (y) y
+Getting started with writing end-to-end tests with Playwright:
+Initializing project in '.'
+✔ Do you want to use TypeScript or JavaScript? · TypeScript
+✔ Where to put your end-to-end tests? · tests
+✔ Add a GitHub Actions workflow? (y/N) · false
+✔ Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true      
+✔ Install Playwright operating system dependencies (requires sudo / root - can be done manually via 'sudo npx playwright install-deps')? (y/N) · false
+	:
+Initializing NPM project (npm init -y)
+Wrote to /mnt/c/githome/ws-github-03/study-node/node-playwright/package.json:
+	:
+✔ Success! Created a Playwright Test project at /mnt/c/githome/ws-github-03/study-node/node-playwright
+	:
+```
+
+* **STEP-03**: Playwright command line Cheat List:
+  * `npx playwright test`: Runs all tests in all browsers in headless mode.
+  * `npx playwright test --workers 3`: Runs tests using 3 workers.
+  * `npx playwright test ./tests/one-example.spec.ts`: Run only one specific test file.
+  * `npx playwright test one-example.spec.ts another-example.spec.ts`: Run a list of specifics test files.
+  * `npx playwright test one another`: Run all test files names with "one" or "another" in the name.
+  * `npx playwright test -g "One example of has title"`: Run test with the title.
+  * `npx playwright test --project=chromium`: Runs the tests only using browser Chrome.
+  * `npx playwright test --debug`: Runs the tests in debug mode.
+  * `npx playwright test --ui`: Starts the interactive UI mode.
+  * `npx playwright codegen`: Auto generate tests with Codegen.
+
+
+* **STEP-04**: Create your first test in Typescript
+  * Edit file `my-first-test.spec.ts` in default folder `tests`
+
+
+```./tests/my-first-test.spec.ts
+	:
+import { test, expect } from '@playwright/test';
+	:
+test('Test Google page', async ({ page }) => {
+	:
+}	
+	:
+```
+
 
 ## I - Referências
 
