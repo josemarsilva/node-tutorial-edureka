@@ -4563,6 +4563,11 @@ Wrote to /mnt/c/githome/ws-github-03/study-node/node-playwright/package.json:
   * `npx playwright test --debug`: Runs the tests in debug mode.
   * `npx playwright test --ui`: Starts the interactive UI mode.
   * `npx playwright codegen`: Auto generate tests with Codegen.
+  * `npx playwright codegen --help`: See all Codegen options.
+  * `npx playwright codegen http://saucedemo.com`: Startup with specific site.
+  * `npx playwright codegen --browser firefox`: Record Codegen for specific browser.
+  * `npx playwright codegen --viewport-size=800,600`: Setup screen resolution.
+  * `npx playwright codegen --device="iPhone 11"`: Emulate device.
 
 
 * **STEP-04**: Create your first test in Typescript
@@ -4578,6 +4583,46 @@ test('Test Google page', async ({ page }) => {
 }	
 	:
 ```
+
+
+* **STEP-05**: Use Trace Viewer
+  * Edit file `playwright.config.ts` and check configuration `trace: 'on-first-retry',` and `retries: 1`
+  * Edit `./test/my-first-test.spec.ts` and configure `test.beforeAll()` and `test.afterAll()`
+  * Run test in headed mode `npx playwright test --headed --workers 1 --project=chromium`
+  * Open trace viewer file `my-first-test.zip` using command line `npx playwright show-trace my-first-test.zip` or using free online service `https://trace.playwright.dev/` open file `my-first-test.zip`
+
+```./test/my-first-test.spec.ts
+	:
+let context;
+let page;
+
+test.beforeAll(async ({ browser }) => {
+
+  // New Context
+  context = await browser.newContext();
+
+  // Start tracing context
+  await context.tracing.start({ snapshots: true, screenshots: true});
+
+  // New Page
+  page = await context.newPage();
+
+});
+
+test.afterAll(async ({}) => {
+
+  // Stop tracing context
+  await context.tracing.stop({ path: 'my-first-test.zip'});
+
+});
+	:
+```
+
+* **STEP-06**: How to find objects
+  * [Playwright Beginner Tutorial 7 | How To Find Web Objects](https://www.youtube.com/watch?v=wmy1Nu3X8l0&list=PLhW3qG5bs-L9sJKoT1LC5grGT77sfW0Z8&index=7)
+  * What are Selectors and Locators
+  * How to find web objects with Playwright, XPath, CSS, ID, etc
+  * How to find and record object locators using Playwright inspector
 
 
 ## I - Referências
