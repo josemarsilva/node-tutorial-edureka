@@ -77,6 +77,11 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
         * [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
         * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
         * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
+    + [3.5.23. Hands On Node, TypeScript, AWS Amplify Cognito](#3523-hands-on-node-typescript-aws-amplify-cognito)
+    + [3.5.24. Hands On Node JS, Express, TypeScript, MongoDB, REST API](#3524-hands-on-node-js-express-typescript-mongodb-rest-api)
+    + [3.5.25. Hands On Node JS Playwright](#3525-hands-on-node-js-playwright)
+    + [3.5.26. Hands On Node JS Typescript Observer](#3526-hands-on-node-js-typescript-observer)
+
 
 ## 2. Documentação
 
@@ -4621,8 +4626,87 @@ test.afterAll(async ({}) => {
 * **STEP-06**: How to find objects
   * [Playwright Beginner Tutorial 7 | How To Find Web Objects](https://www.youtube.com/watch?v=wmy1Nu3X8l0&list=PLhW3qG5bs-L9sJKoT1LC5grGT77sfW0Z8&index=7)
   * What are Selectors and Locators
+    * String/Properties of objects, are used to create Locators and may be CSS, Class, Name, ID, Text, XPath
+	* To find object use `page.locator(selector[, options])` from Playwright library
   * How to find web objects with Playwright, XPath, CSS, ID, etc
   * How to find and record object locators using Playwright inspector
+
+* Google search page, locating search text: `//input[@name="q"]`
+
+
+#### 3.5.26. Hands On Node JS Typescript Observer
+
+* [OBSERVERS no NODE.JS | Master Class](https://www.youtube.com/watch?v=_vK1djA6l3w)
+* Design Patter Observable - a) **Observer**: observe changes on specific suject; b) **Subject**: store value of something and all observer objects
+  * **Observer**: attached themselves to subjects
+  * **Subject**: notify all observables attached when change values
+
+* **STEP-01**: Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-typescript-observer-subject
+$ cd node-typescript-observer-subject
+```
+
+* **STEP-02**: Initialize project and Install package dependencies
+
+```bash
+$ yarn init -y
+$ yarn add typescript -D
+$ yarn add ts-node-dev -D
+```
+
+* **STEP-03**: Create sub-folders structure
+
+```bash
+$ pwd
+ ... /study-node/node-typescript-observer-subject
+$ mkdir ./src
+$ mkdir ./src/interfaces
+$ mkdir ./src/observables
+$ mkdir ./src/subjects
+```
+
+* **STEP-04**: Edit source code for **interfaces**
+  * Edit `node-typescript-observer-subject\src\interfaces\IObserver.ts` and prototype required function `update(value: string): void;`
+  * Edit `node-typescript-observer-subject\src\interfaces\ISubject.ts` and prototype required functions `attachObserver()`, `detachObserver()` and `notifyAll()`
+
+
+* **STEP-05**: Edit source code for **Subject** class
+  * Edit `node-typescript-observer-subject\src\subjects\index.ts` 
+  * Import `IObserver` and `ISubject`
+  * Declare `value` and `observables`
+  * Implement functions `setValue()`, `attachObserver()`, `detachObserver()` and `notifyAll()`
+
+* **STEP-06**: Edit source code for **Observer** class for Orders
+  * Edit `node-typescript-observer-subject\src\observables\OrderObserver.ts` 
+  * Import `IObserver`
+  * Implement function `constructor()`, `update()`
+
+* **STEP-07**: Edit source code for main server application entry point
+  * Edit `node-typescript-observer-subject\src\server.ts`
+  * Import `Subject` and `OrderObserver`
+  * Declare new `Subject`
+  * Declare new `OrderObserver` and attach to `Subject`
+  * Modify `Subject` value property
+
+* **STEP-08**: Configure `package.json` and `tsconfig.json`
+  * Edit `node-typescript-observer-subject\package.json` and create script entry `"dev:server": "tsnd --transpile-only --ignore-watch node_modules src/server.ts"`
+  * edit `node-typescript-observer-subject\tsconfig.json` and create configuration key `"moduleResolution": "NodeNext"`
+
+
+* **STEP-09**: Run application
+  * On current directory `study-node/node-typescript-observer-subject`
+  * Run application `yarn dev:server`
+
+```bash
+$ yarn dev:server
+yarn run v1.22.18
+$ tsnd --transpile-only --ignore-watch node_modules src/server.ts
+[INFO] 15:43:25 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.1, typescript ver. 5.2.2)
+update():  new value
+Done in 2.63s.
+```
 
 
 ## I - Referências

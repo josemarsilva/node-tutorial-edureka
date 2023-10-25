@@ -1,0 +1,13 @@
+{
+  "name": "node-typescript-observer-subject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "tsnd --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
