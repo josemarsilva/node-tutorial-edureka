@@ -4752,8 +4752,8 @@ const express = require('express');
 
 
 * **STEP-09**: Run application
-  * On current directory `study-node/node-typescript-observer-subject`
-  * Run application `yarn dev:server`
+  * On current directory `./study-node/node-express-webhooks`
+  * Run application `yarn start`
 
 ```bash
 yarn start
