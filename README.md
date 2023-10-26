@@ -4690,12 +4690,14 @@ $ mkdir ./src/subjects
   * Declare new `OrderObserver` and attach to `Subject`
   * Modify `Subject` value property
 
-* **STEP-08**: Configure `package.json` and `tsconfig.json`
+* **STEP-08**: Configure run script in `package.json` session called `scripts: { ... }`
   * Edit `node-typescript-observer-subject\package.json` and create script entry `"dev:server": "tsnd --transpile-only --ignore-watch node_modules src/server.ts"`
-  * edit `node-typescript-observer-subject\tsconfig.json` and create configuration key `"moduleResolution": "NodeNext"`
+
+* **STEP-09**: Configure run script in `tsconfig.json` session called `compilerOptions: { ... }`
+  * Edit `node-typescript-observer-subject\tsconfig.json` and create configuration key `"moduleResolution": "NodeNext"`
 
 
-* **STEP-09**: Run application
+* **STEP-10**: Run application
   * On current directory `study-node/node-typescript-observer-subject`
   * Run application `yarn dev:server`
 
@@ -4706,6 +4708,63 @@ $ tsnd --transpile-only --ignore-watch node_modules src/server.ts
 [INFO] 15:43:25 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.1, typescript ver. 5.2.2)
 update():  new value
 Done in 2.63s.
+```
+
+
+#### 3.5.27. Hands On Node JS Express WebHooks
+
+* [O que são WebHooks? - LuizTools](https://www.youtube.com/watch?v=R0QLbt3Br00)
+* [Tutorial de WebHooks na Prática! - LuizTools](https://www.youtube.com/watch?v=trd9UdLqPWQ)
+
+
+* **STEP-01**: Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-express-webhooks
+$ cd node-express-webhooks
+```
+
+* **STEP-02**: Initialize project and Install package dependencies
+
+```bash
+$ pwd
+/.../study-node/node-express-webhooks
+$ yarn init -y
+$ yarn add express dotenv nodemon
+```
+
+* **STEP-03**: Edit source code for WebHooks
+  * Edit `index.js`
+  * Import required libs
+  * Configure Middlewares: `app.use(express.json());`
+  * Configure Routes: `app.use("/", ...`, `app.use("/tradingview/buy", ...`, `app.use("/tradingview/sell", ...`
+  * Configure WebHooks routes
+
+```index.js
+  :
+require("dotenv").config();
+const express = require('express');
+  :
+```
+
+* **STEP-08**: Configure run script in `package.json` session called `scripts: { ... }`
+  * Edit `package.json` and create script entry `"start": "npx nodemon index"`
+
+
+* **STEP-09**: Run application
+  * On current directory `study-node/node-typescript-observer-subject`
+  * Run application `yarn dev:server`
+
+```bash
+yarn start
+yarn run v1.22.18
+$ npx nodemon index
+[nodemon] 3.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node index.js`
+Server started at 3000
 ```
 
 
