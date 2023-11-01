@@ -19,6 +19,7 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
       * [3.5.5. Events](#355-events)
       * [3.5.6. HTTP](#356-http)
       * [3.5.7. Data Types, Variables, Operators, Functions](#357-data-types-variables-operators-functions)
+      * [3.5.29. Arrays](#3529-arrays)
     + [3.5.2.Node JS - Intermediário e tópicos específicos](#352-node-js---intermediário-e-tópicos-específicos)
       - [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
       - [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-hands-on-nodejs-selenium-webdriver-chromedriver)
@@ -60,36 +61,36 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
           - [3.5.22.3.5. Create New Template](#352235-create-new-template) 
           - [3.5.22.3.6. ](#352236-cli-generate-services) 
         * [3.5.22.4. Data Binding](#35224-data-binding) 
-          * [3.5.22.4.1. Data Binding - Interpolation](#352241-data-binding---intepolation) 
-          * [3.5.22.4.2. Data Binding - Property Binding](#352242-data-binding---property-binding) 
-          * [3.5.22.4.3. Data Binding - Class Binding and Style Binding](#352243-data-binding---class-binding-and-style-binding) 
-          * [3.5.22.4.4. Data Binding - Event Binding](#352244-data-binding---event-binding) 
-          * [3.5.22.4.5. Data Binding - Two-Way Data binding](#352245-data-binding---two-way-data-binding)
-          * [3.5.22.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352246-reutilizando-componentes-com-input-propoerties)
-          * [3.5.22.4.7. Data Binding - Emitindo Eventos com Output properties](#352247-emitindo-eventos-com-output-properties)
-          * [3.5.22.4.8. Data Binding - Component Life Cycle](#352248-component-life-cycle)
-          * [3.5.22.4.9. Data Binding - DOM access and Template ViewChild](#352249-dom-access-and-template-viewchild)
+          - [3.5.22.4.1. Data Binding - Interpolation](#352241-data-binding---intepolation) 
+          - [3.5.22.4.2. Data Binding - Property Binding](#352242-data-binding---property-binding) 
+          - [3.5.22.4.3. Data Binding - Class Binding and Style Binding](#352243-data-binding---class-binding-and-style-binding) 
+          - [3.5.22.4.4. Data Binding - Event Binding](#352244-data-binding---event-binding) 
+          - [3.5.22.4.5. Data Binding - Two-Way Data binding](#352245-data-binding---two-way-data-binding)
+          - [3.5.22.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352246-reutilizando-componentes-com-input-propoerties)
+          - [3.5.22.4.7. Data Binding - Emitindo Eventos com Output properties](#352247-emitindo-eventos-com-output-properties)
+          - [3.5.22.4.8. Data Binding - Component Life Cycle](#352248-component-life-cycle)
+          - [3.5.22.4.9. Data Binding - DOM access and Template ViewChild](#352249-dom-access-and-template-viewchild)
         * [3.5.22.5. Angular CLI](#35225-angular-cli) 
-          * [3.5.22.5.1. Angular CLI - Install](#352251-angular-cli---install)
-          * [3.5.22.5.2. Angular CLI - Create Project](#352252-angular-cli---create-project)
-          * [3.5.22.5.3. Angular CLI - Start Project](#352253-angular-cli---start-project)
-          * [3.5.22.5.4. Angular CLI - Directive ng-if](#352254-angular-cli---directive-ng-if)
-          * [3.5.22.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352255-angular-cli---using-pre-processors-sass-less-and-stylus)
-          * [3.5.22.5.6. Angular CLI - Using lint, test and e2e](#352256-angular-cli---using-lint-test-e2e)
-          * [3.5.22.5.7. Angular CLI - Project folder strucuture](#352257-angular-cli---project-folders-structure)
+          - [3.5.22.5.1. Angular CLI - Install](#352251-angular-cli---install)
+          - [3.5.22.5.2. Angular CLI - Create Project](#352252-angular-cli---create-project)
+          - [3.5.22.5.3. Angular CLI - Start Project](#352253-angular-cli---start-project)
+          - [3.5.22.5.4. Angular CLI - Directive ng-if](#352254-angular-cli---directive-ng-if)
+          - [3.5.22.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352255-angular-cli---using-pre-processors-sass-less-and-stylus)
+          - [3.5.22.5.6. Angular CLI - Using lint, test and e2e](#352256-angular-cli---using-lint-test-e2e)
+          - [3.5.22.5.7. Angular CLI - Project folder strucuture](#352257-angular-cli---project-folders-structure)
         * [3.5.22.6. Build Deploy and Production](#35226-build-deploy-and-production) 
         * [3.5.22.7. Install libraries - Bootstrap](#35227-install-libraries-bootstrap) 
         * [3.5.22.8. Directives](#35228-directives) 
-          * [3.5.22.8.1. Directives - `*ngIf`](#352281-directives---ngif)
-          * [3.5.22.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352282-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
-          * [3.5.22.8.3. Directives - `*ngFor`](#352283-directives---ngfor)
-          * [3.5.22.8.4. Directives - `*ngClass`](#352284-directives---ngclass)
-          * [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
-          * [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
-          * [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
-          * [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
-          * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
-          * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
+          - [3.5.22.8.1. Directives - `*ngIf`](#352281-directives---ngif)
+          - [3.5.22.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352282-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
+          - [3.5.22.8.3. Directives - `*ngFor`](#352283-directives---ngfor)
+          - [3.5.22.8.4. Directives - `*ngClass`](#352284-directives---ngclass)
+          - [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
+          - [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
+          - [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
+          - [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
+          - [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
+          - [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
 
 
 ## 2. Documentação
@@ -4828,9 +4829,6 @@ O NestJS facilita a escrita de testes unitários para seus componentes, usando a
 ##### 3.5.28.12. WebSocket: 
 O NestJS suporta a criação de aplicativos WebSocket usando a biblioteca @nestjs/websockets.
 
-
-
-
 * **STEP-01**: Create a folder to hands on the laboratory
 
 ```bash
@@ -4846,6 +4844,33 @@ $ pwd
 $ yarn init -y
 ```
 
+
+##### 3.5.29. Arrays
+
+Os objetos **Array** em JavaScript têm uma variedade de métodos disponíveis para manipular e interagir com seus elementos. Aqui estão alguns dos métodos mais comuns que podem ser usados em um objeto **Array**:
+
+* `push()`: Adiciona um ou mais elementos ao final do array e retorna o novo comprimento do array.
+* `pop()`: Remove o último elemento do array e o retorna.
+* `unshift()`: Adiciona um ou mais elementos no início do array e retorna o novo comprimento do array.
+* `shift()`: Remove o primeiro elemento do array e o retorna.
+* `concat()`: Combina dois ou mais arrays e retorna um novo array resultante da concatenação.
+* `join()`: Converte todos os elementos do array em uma única string, separados por um delimitador especificado.
+* `slice()`: Retorna uma parte do array como um novo array, com base em um intervalo de índices especificado.
+* `splice()`: Altera o conteúdo de um array removendo, substituindo ou adicionando elementos.
+* `filter()`: Cria um novo array com todos os elementos que passam por um teste especificado em uma função.
+* `map()`: Cria um novo array com os resultados da aplicação de uma função a cada elemento do array.
+* `forEach()`: Executa uma função em cada elemento do array.
+* `find()`: Retorna o primeiro elemento no array que satisfaça uma função de teste especificada.
+* `findIndex()`: Retorna o índice do primeiro elemento no array que satisfaça uma função de teste especificada.
+* `sort()`: Classifica os elementos do array em ordem alfabética (por padrão) e os altera no lugar.
+* `reverse()`: Inverte a ordem dos elementos no array e os altera no lugar.
+* `reduce()`: Aplica uma função a um acumulador e a cada elemento no array (da esquerda para a direita) para reduzir o array a um único valor.
+* `reduceRight()`: Funciona como o reduce(), mas começa a redução a partir do final do array.
+* `every()`: Verifica se todos os elementos do array passam por um teste especificado em uma função.
+* `some()`: Verifica se pelo menos um elemento no array passa por um teste especificado em uma função.
+* `includes()`: Verifica se um elemento está presente no array e retorna true ou false.
+* `indexOf()`: Retorna o primeiro índice de um elemento no array, ou -1 se o elemento não for encontrado.
+* `lastIndexOf()`: Retorna o último índice de um elemento no array, ou -1 se o elemento não for encontrado.
 
 
 ## I - Referências
