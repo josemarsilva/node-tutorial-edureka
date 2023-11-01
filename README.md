@@ -11,76 +11,85 @@ Este repositório contém os artefatos do projeto / laboratório   **study-node*
     + [3.1.1. Tecnologias e ferramentas](#311-tecnologias-e-ferramentas)
     + [3.1.2. Ferramental de apoio](#312-ferramental-de-apoio)
   * [3.5. Guia de Estudo](#35-guia-de-estudo)
-    + [3.5.1. Node.js First Example](#351-node-js-first-example)
-    + [3.5.2. Blocking and Non-Blocking](#352-blocking-and-non-blocking)
-    + [3.5.3. NPM - Modules, Globas and Timers](#353-npm---modules-globals-and-timers)
-    + [3.5.4. Filesystem](#354-filesystem)
-    + [3.5.5. Events](#355-events)
-    + [3.5.6. HTTP](#356-http)
-    + [3.5.7. Data Types, Variables, Operators, Functions](#357-data-types-variables-operators-functions)
-    + [3.5.8. Express](#358-express)
-    + [3.5.9. Hands on Express features, Routing and REST API](#359-hands-on-express-features-routing-and-rest-api)
-    + [3.5.10. Hands on Express Generator](#3510-hands-on-express-generator)
-    + [3.5.11. RESTfull API](#3511-restfull-api)
-    + [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
-    + [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
-    + [3.5.14. Hands on Node.js and Docker](#3514-hands-on-nodejs-and-docker)
-    + [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-mongodb-express-angular-nodejs-stack-application-crud-tutorial)
-      - [3.5.15.1. Part I - Node, Express, MongoDb ![star.jpg](./doc/images/star.jpg)](#35151-part-i---node-express-mongodb)
-      - [3.5.15.1. Part II - Angular](#35152-part-ii---angular) 
-    + [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
-    + [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-hands-on-nodejs-selenium-webdriver-chromedriver)
-    + [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-nodejs-cucumber-selenium)
-    + [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
-    + [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
-    + [3.5.21. Hands On Node, Express, swagger-jsdoc, swagger-ui-express ![star.jpg](./doc/images/star.jpg)](#3521-hands-on-node-express-swagger-jsdoc-swagger-ui-express)
-      - [3.5.21.1. Hands On Node, Express, swagger-jsdoc, swagger-ui-express](#35211-hands-on-node-express-swagger-jsdoc-swagger-ui-express) 
-      - [3.5.21.2. Hands On Node, Express, swagger-jsdoc, swagger-ui-express, TypeScript](#35212-hands-on-node-express-swagger-jsdoc-swagger-ui-express-typescript) 
-    + [3.5.22. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3522-curso-angular-loiane-groner)
-      - [3.5.22.1. Introdução](#35221-introdução) 
-      - [3.5.22.2. Typescript](#35222-typescript) 
-      - [3.5.22.3. Components and Templates](#35223-components-and-templates) 
-        * [3.5.22.3.1. New Angular Project](#352231-new-angular-project) 
-        * [3.5.22.3.2. Manual New Component on existing Angular project](#352232-manual-new-component-on-existing-angular-project) 
-        * [3.5.22.3.3. CLI New Component on existing Angular project](#352233-cli-new-component-on-existing-angular-project) 
-        * [3.5.22.3.4. Create New Modules](#352234-create-new-modules) 
-        * [3.5.22.3.5. Create New Template](#352235-create-new-template) 
-        * [3.5.22.3.6. ](#352236-cli-generate-services) 
-      - [3.5.22.4. Data Binding](#35224-data-binding) 
-        * [3.5.22.4.1. Data Binding - Interpolation](#352241-data-binding---intepolation) 
-        * [3.5.22.4.2. Data Binding - Property Binding](#352242-data-binding---property-binding) 
-        * [3.5.22.4.3. Data Binding - Class Binding and Style Binding](#352243-data-binding---class-binding-and-style-binding) 
-        * [3.5.22.4.4. Data Binding - Event Binding](#352244-data-binding---event-binding) 
-        * [3.5.22.4.5. Data Binding - Two-Way Data binding](#352245-data-binding---two-way-data-binding)
-        * [3.5.22.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352246-reutilizando-componentes-com-input-propoerties)
-        * [3.5.22.4.7. Data Binding - Emitindo Eventos com Output properties](#352247-emitindo-eventos-com-output-properties)
-        * [3.5.22.4.8. Data Binding - Component Life Cycle](#352248-component-life-cycle)
-        * [3.5.22.4.9. Data Binding - DOM access and Template ViewChild](#352249-dom-access-and-template-viewchild)
-      - [3.5.22.5. Angular CLI](#35225-angular-cli) 
-        * [3.5.22.5.1. Angular CLI - Install](#352251-angular-cli---install)
-        * [3.5.22.5.2. Angular CLI - Create Project](#352252-angular-cli---create-project)
-        * [3.5.22.5.3. Angular CLI - Start Project](#352253-angular-cli---start-project)
-        * [3.5.22.5.4. Angular CLI - Directive ng-if](#352254-angular-cli---directive-ng-if)
-        * [3.5.22.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352255-angular-cli---using-pre-processors-sass-less-and-stylus)
-        * [3.5.22.5.6. Angular CLI - Using lint, test and e2e](#352256-angular-cli---using-lint-test-e2e)
-        * [3.5.22.5.7. Angular CLI - Project folder strucuture](#352257-angular-cli---project-folders-structure)
-      - [3.5.22.6. Build Deploy and Production](#35226-build-deploy-and-production) 
-      - [3.5.22.7. Install libraries - Bootstrap](#35227-install-libraries-bootstrap) 
-      - [3.5.22.8. Directives](#35228-directives) 
-        * [3.5.22.8.1. Directives - `*ngIf`](#352281-directives---ngif)
-        * [3.5.22.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352282-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
-        * [3.5.22.8.3. Directives - `*ngFor`](#352283-directives---ngfor)
-        * [3.5.22.8.4. Directives - `*ngClass`](#352284-directives---ngclass)
-        * [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
-        * [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
-        * [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
-        * [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
-        * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
-        * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
-    + [3.5.23. Hands On Node, TypeScript, AWS Amplify Cognito](#3523-hands-on-node-typescript-aws-amplify-cognito)
-    + [3.5.24. Hands On Node JS, Express, TypeScript, MongoDB, REST API](#3524-hands-on-node-js-express-typescript-mongodb-rest-api)
-    + [3.5.25. Hands On Node JS Playwright](#3525-hands-on-node-js-playwright)
-    + [3.5.26. Hands On Node JS Typescript Observer](#3526-hands-on-node-js-typescript-observer)
+    + [3.5.1.Node JS - Básico](#351-node-js---básico)
+      - [3.5.1. Node.js First Example](#351-node-js-first-example)
+      - [3.5.2. Blocking and Non-Blocking](#352-blocking-and-non-blocking)
+      - [3.5.3. NPM - Modules, Globas and Timers](#353-npm---modules-globals-and-timers)
+      - [3.5.4. Filesystem](#354-filesystem)
+      - [3.5.5. Events](#355-events)
+      - [3.5.6. HTTP](#356-http)
+      - [3.5.7. Data Types, Variables, Operators, Functions](#357-data-types-variables-operators-functions)
+    + [3.5.2.Node JS - Intermediário e tópicos específicos](#352-node-js---intermediário-e-tópicos-específicos)
+      - [3.5.12. Hands on fast-xml-parser](#3512-hands-on-fast-xml-parser)
+      - [3.5.17. Hands on Node.js Selenium WebDriver ChromeDriver](#3517-hands-on-nodejs-selenium-webdriver-chromedriver)
+      - [3.5.18. Hands on Node.js Cucumber Selenium ](#3518-hands-on-nodejs-cucumber-selenium)
+      - [3.5.25. Hands On Node JS Playwright](#3525-hands-on-node-js-playwright)
+    + [3.5.3.Node JS - Express server](#353-node-js---express-server)
+      - [3.5.8. Express](#358-express)
+      - [3.5.9. Hands on Express features, Routing and REST API](#359-hands-on-express-features-routing-and-rest-api)
+      - [3.5.10. Hands on Express Generator](#3510-hands-on-express-generator)
+      - [3.5.11. RESTfull API](#3511-restfull-api)
+      - [3.5.13. Hands On Laboratory Creating Node.js Project with dependencies (express, jade, nano, body-parser, errorhandler, url, serve-favicon, logger, json, express-session)](#3513-hands-on-laboratory-creating-nodejs-project-with-dependencies-express-jade-nano-body-parser-errorhandler-url-serve-favicon-logger-json-express-session)
+      - [3.5.15. Hands on MEAN (Mongodb, Express, Angular, Node.js) Stack Application CRUD Tutorial](#3515-hands-on-mean-mongodb-express-angular-nodejs-stack-application-crud-tutorial)
+        * [3.5.15.1. Part I - Node, Express, MongoDb ![star.jpg](./doc/images/star.jpg)](#35151-part-i---node-express-mongodb)
+        * [3.5.15.1. Part II - Angular](#35152-part-ii---angular) 
+      - [3.5.19. Hands On Node, Express, Redis e Cache](#3519-hands-on-node-express-redis-e-cache)
+      - [3.5.20. Hands On Node, Express, Redis and Node-Fetch](#3520-hands-on-node-express-redis-e-cache)
+      - [3.5.21. Hands On Node, Express, swagger-jsdoc, swagger-ui-express ![star.jpg](./doc/images/star.jpg)](#3521-hands-on-node-express-swagger-jsdoc-swagger-ui-express)
+        * [3.5.21.1. Hands On Node, Express, swagger-jsdoc, swagger-ui-express](#35211-hands-on-node-express-swagger-jsdoc-swagger-ui-express) 
+        * [3.5.21.2. Hands On Node, Express, swagger-jsdoc, swagger-ui-express, TypeScript](#35212-hands-on-node-express-swagger-jsdoc-swagger-ui-express-typescript) 
+    + [3.5.4.Node JS - Docker](#354-node-js---docker)
+      - [3.5.14. Hands on Node.js and Docker](#3514-hands-on-nodejs-and-docker)
+    + [3.5.5.Node JS - Angular](#355-node-js---angular)
+      - [3.5.16. Angular and RxJS](#3516-angular-and-rxjs)
+    + [3.5.6.Node JS - Typescript](#356-node-js---typescript)
+      - [3.5.23. Hands On Node, TypeScript, AWS Amplify Cognito](#3523-hands-on-node-typescript-aws-amplify-cognito)
+      - [3.5.24. Hands On Node JS, Express, TypeScript, MongoDB, REST API](#3524-hands-on-node-js-express-typescript-mongodb-rest-api)
+      - [3.5.26. Hands On Node JS Typescript Observer](#3526-hands-on-node-js-typescript-observer)
+    + [3.5.7.Node JS - NestJs](#357-node-js---nestjs)
+      - [3.5.28. Hands On Node JS Typescript NestJS](#3526-hands-on-node-js-typescript-nestjs)
+
+      - [3.5.22. Curso Angular - Loiane Groner ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg) ![star.jpg](./doc/images/star.jpg)](#3522-curso-angular-loiane-groner)
+        * [3.5.22.1. Introdução](#35221-introdução) 
+        * [3.5.22.2. Typescript](#35222-typescript) 
+        * [3.5.22.3. Components and Templates](#35223-components-and-templates) 
+          - [3.5.22.3.1. New Angular Project](#352231-new-angular-project) 
+          - [3.5.22.3.2. Manual New Component on existing Angular project](#352232-manual-new-component-on-existing-angular-project) 
+          - [3.5.22.3.3. CLI New Component on existing Angular project](#352233-cli-new-component-on-existing-angular-project) 
+          - [3.5.22.3.4. Create New Modules](#352234-create-new-modules) 
+          - [3.5.22.3.5. Create New Template](#352235-create-new-template) 
+          - [3.5.22.3.6. ](#352236-cli-generate-services) 
+        * [3.5.22.4. Data Binding](#35224-data-binding) 
+          * [3.5.22.4.1. Data Binding - Interpolation](#352241-data-binding---intepolation) 
+          * [3.5.22.4.2. Data Binding - Property Binding](#352242-data-binding---property-binding) 
+          * [3.5.22.4.3. Data Binding - Class Binding and Style Binding](#352243-data-binding---class-binding-and-style-binding) 
+          * [3.5.22.4.4. Data Binding - Event Binding](#352244-data-binding---event-binding) 
+          * [3.5.22.4.5. Data Binding - Two-Way Data binding](#352245-data-binding---two-way-data-binding)
+          * [3.5.22.4.6. Data Binding - Reutilizando Componentes com Input Propoerties](#352246-reutilizando-componentes-com-input-propoerties)
+          * [3.5.22.4.7. Data Binding - Emitindo Eventos com Output properties](#352247-emitindo-eventos-com-output-properties)
+          * [3.5.22.4.8. Data Binding - Component Life Cycle](#352248-component-life-cycle)
+          * [3.5.22.4.9. Data Binding - DOM access and Template ViewChild](#352249-dom-access-and-template-viewchild)
+        * [3.5.22.5. Angular CLI](#35225-angular-cli) 
+          * [3.5.22.5.1. Angular CLI - Install](#352251-angular-cli---install)
+          * [3.5.22.5.2. Angular CLI - Create Project](#352252-angular-cli---create-project)
+          * [3.5.22.5.3. Angular CLI - Start Project](#352253-angular-cli---start-project)
+          * [3.5.22.5.4. Angular CLI - Directive ng-if](#352254-angular-cli---directive-ng-if)
+          * [3.5.22.5.5. Angular CLI - Using-pre-processors sass, less and stylus](#352255-angular-cli---using-pre-processors-sass-less-and-stylus)
+          * [3.5.22.5.6. Angular CLI - Using lint, test and e2e](#352256-angular-cli---using-lint-test-e2e)
+          * [3.5.22.5.7. Angular CLI - Project folder strucuture](#352257-angular-cli---project-folders-structure)
+        * [3.5.22.6. Build Deploy and Production](#35226-build-deploy-and-production) 
+        * [3.5.22.7. Install libraries - Bootstrap](#35227-install-libraries-bootstrap) 
+        * [3.5.22.8. Directives](#35228-directives) 
+          * [3.5.22.8.1. Directives - `*ngIf`](#352281-directives---ngif)
+          * [3.5.22.8.2. Directives - `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`](#352282-directives---ngswitch-ngswitchcase-and-ngswitchdefault)
+          * [3.5.22.8.3. Directives - `*ngFor`](#352283-directives---ngfor)
+          * [3.5.22.8.4. Directives - `*ngClass`](#352284-directives---ngclass)
+          * [3.5.22.8.5. Directives - `*ngStyle`](#352285-directives---ngstyle)
+          * [3.5.22.8.6. Directives - Elvis operator](#352286-directives---elvis-operator)
+          * [3.5.22.8.7. Directives - `ng-content`](#352287-directives---ng-content)
+          * [3.5.22.8.8. Custom Directives - Custom attributes directive](#352288-custom-directives---custom-attribue-directive)
+          * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
+          * [3.5.22.8.9. Custom Directives - HostListener and HostingBinding](#352289-custom-directives---hostlistener-and-hostbinding)
 
 
 ## 2. Documentação
@@ -116,6 +125,15 @@ De uma forma geral, vamos tentar <ins>definir</ins> e <ins>caracterizar</ins> al
 
 
 ### 3.5. Guia de Estudo
+
+### 3.5.1. Node JS - Básico
+### 3.5.2. Node JS - Intermediário e tópicos específicos
+### 3.5.3. Node JS - Express server
+### 3.5.4. Node JS - Docker
+### 3.5.5. Node JS - Angular
+### 3.5.6. Node JS - Typescript
+### 3.5.7. Node JS - NestJs
+
 
 ### 3.5.1. Node Js First Example
 
@@ -4766,6 +4784,68 @@ $ npx nodemon index
 [nodemon] starting `node index.js`
 Server started at 3000
 ```
+
+
+#### 3.5.28. Hands On Node JS Typescript NestJS 
+
+* 
+
+O NestJS é um framework para desenvolvimento de aplicativos server-side com Node.js, que utiliza a linguagem TypeScript. Ele foi projetado para ser eficiente, escalável e fácil de manter, e se baseia em conceitos e padrões familiares, como os do Angular. Aqui estão alguns dos principais conceitos e componentes do NestJS e como eles funcionam:
+
+##### 3.5.28.1. Módulos: 
+O NestJS organiza seu aplicativo em módulos. Cada módulo é uma coleção de controladores, provedores e outros componentes relacionados. Os módulos ajudam a manter o código organizado e a separar as preocupações.
+
+##### 3.5.28.2. Controladores: 
+Os controladores são responsáveis por lidar com as requisições HTTP. Eles contêm rotas e manipuladores de rota que processam as solicitações e retornam respostas. Os controladores são decorados com o @Controller para definir as rotas.
+
+##### 3.5.28.3. Provedores: 
+Os provedores são classes que gerenciam a lógica de negócios da aplicação. Eles são injetados em controladores e outros provedores. Os provedores podem ser decorados com @Injectable e podem conter lógica de acesso a banco de dados, integração com serviços externos, etc.
+
+##### 3.5.28.4. Injeção de Dependência: 
+O NestJS utiliza um sistema de injeção de dependência para fornecer componentes (como provedores) onde são necessários. Isso facilita a reutilização de código e o teste unitário.
+
+##### 3.5.28.5. Middleware: 
+O NestJS suporta middlewares que podem ser usados para executar lógica em camadas antes ou depois do processamento da rota. Middlewares podem ser aplicados a nível de aplicativo, controlador ou rota.
+
+##### 3.5.28.6. Guards: 
+Guards são usados para proteger rotas ou controladores. Eles podem executar lógica de autorização antes de permitir ou negar o acesso a uma rota.
+
+##### 3.5.28.7. Interceptores: 
+Interceptors permitem que você execute lógica antes ou depois de uma requisição passar pelo controlador. Eles podem ser usados para modificar a resposta ou fazer log, por exemplo.
+
+##### 3.5.28.8. DTO (Data Transfer Object): 
+Os DTOs são objetos usados para transferir dados entre o cliente e o servidor. Eles ajudam a validar e tipar os dados de entrada.
+
+##### 3.5.28.9. Roteamento: 
+O roteamento é definido nos controladores e é mapeado para funções de manipulação de rota. O NestJS utiliza o Decorator @Get, @Post, @Put, etc., para definir as rotas.
+
+##### 3.5.28.10. Middleware Global: 
+Você pode definir middlewares globais que são aplicados a todas as rotas da aplicação.
+
+##### 3.5.28.11. Teste Unitário: 
+O NestJS facilita a escrita de testes unitários para seus componentes, usando a injeção de dependência e a modularização.
+
+##### 3.5.28.12. WebSocket: 
+O NestJS suporta a criação de aplicativos WebSocket usando a biblioteca @nestjs/websockets.
+
+
+
+
+* **STEP-01**: Create a folder to hands on the laboratory
+
+```bash
+$ mkdir node-typescript-nestjs
+$ cd node-typescript-nestjs
+```
+
+* **STEP-02**: Initialize project and Install package dependencies
+
+```bash
+$ pwd
+/.../study-node/node-typescript-nestjs
+$ yarn init -y
+```
+
 
 
 ## I - Referências
